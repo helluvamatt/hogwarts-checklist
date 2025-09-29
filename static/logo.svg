@@ -1,0 +1,63 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:oklch(40.84% 0.1165 38.17);stop-opacity:1" />
+      <stop offset="50%" style="stop-color:oklch(45% 0.13 35);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:oklch(35% 0.1 40);stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:oklch(59.6% 0.1274 163.23);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:oklch(50% 0.15 160);stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="oklch(26% 0.007 34.298)" stroke="oklch(40.84% 0.1165 38.17)" stroke-width="2"/>
+
+  <!-- Stars around the H -->
+  <g fill="oklch(59.6% 0.1274 163.23)" filter="url(#glow)">
+    <polygon points="15,20 16,23 19,23 16.5,25 17.5,28 15,26 12.5,28 13.5,25 11,23 14,23" opacity="0.8"/>
+    <polygon points="85,25 86,28 89,28 86.5,30 87.5,33 85,31 82.5,33 83.5,30 81,28 84,28" opacity="0.6"/>
+    <polygon points="20,75 21,78 24,78 21.5,80 22.5,83 20,81 17.5,83 18.5,80 16,78 19,78" opacity="0.7"/>
+    <polygon points="80,70 81,73 84,73 81.5,75 82.5,78 80,76 77.5,78 78.5,75 76,73 79,73" opacity="0.9"/>
+  </g>
+
+  <!-- Magic sparkles -->
+  <g fill="oklch(59.6% 0.1274 163.23)" opacity="0.8">
+    <circle cx="25" cy="35" r="1.5"/>
+    <circle cx="75" cy="40" r="1"/>
+    <circle cx="30" cy="65" r="1.2"/>
+    <circle cx="70" cy="60" r="0.8"/>
+    <circle cx="85" cy="55" r="1.5"/>
+    <circle cx="15" cy="55" r="1"/>
+  </g>
+
+  <!-- The letter H -->
+  <g fill="url(#primaryGradient)" stroke="oklch(59.6% 0.1274 163.23)" stroke-width="0.5" filter="url(#glow)">
+    <!-- Left vertical bar -->
+    <rect x="32" y="25" width="8" height="50" rx="2"/>
+    <!-- Right vertical bar -->
+    <rect x="60" y="25" width="8" height="50" rx="2"/>
+    <!-- Horizontal crossbar -->
+    <rect x="32" y="46" width="36" height="8" rx="2"/>
+  </g>
+
+  <!-- Magical swirls -->
+  <g fill="none" stroke="oklch(59.6% 0.1274 163.23)" stroke-width="1.5" opacity="0.6">
+    <path d="M 22 45 Q 18 40 22 35 Q 26 30 22 25" stroke-linecap="round"/>
+    <path d="M 78 55 Q 82 60 78 65 Q 74 70 78 75" stroke-linecap="round"/>
+  </g>
+
+  <!-- Small magical orbs -->
+  <g fill="oklch(59.6% 0.1274 163.23)" opacity="0.7">
+    <circle cx="88" cy="45" r="2" filter="url(#glow)"/>
+    <circle cx="12" cy="60" r="1.8" filter="url(#glow)"/>
+  </g>
+</svg>
