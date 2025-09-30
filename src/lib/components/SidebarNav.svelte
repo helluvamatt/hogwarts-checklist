@@ -1,6 +1,7 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
+  import { activeId } from '$lib/active-id.svelte';
   import type { CollectibleType } from '$lib/models/CollectibleType';
 
   interface Props {
@@ -16,7 +17,7 @@
   <li class="menu-title">Collectibles</li>
   {#each collectibles as type (type.id)}
     <li>
-      <a href="{resolve('/')}#{type.id}" class="flex flex-row items-center gap-2">
+      <a href="{resolve('/')}#{type.id}" class="flex flex-row items-center gap-2" class:menu-active={activeId.current === type.id}>
         {#if type.icon}
           <div aria-label={type.name} class="mask size-4 bg-base-content" style={`mask-image: url('${type.icon}')`}></div>
         {/if}

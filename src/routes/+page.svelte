@@ -2,6 +2,8 @@
   import { resolve } from '$app/paths';
   import { ArrowUpToLine, Info } from '@lucide/svelte';
   import Item from '$lib/components/Item.svelte';
+  import ObservableContainer from '$lib/components/ObservableContainer.svelte';
+  import { activeId } from '$lib/active-id.svelte';
   import { usePlayerState } from '$lib/player-state.svelte';
 
   const { data } = $props();
@@ -23,7 +25,7 @@
   }
 </script>
 
-<div class="space-y-2 lg:space-y-4">
+<ObservableContainer bind:activeId={activeId.current} class="space-y-2 lg:space-y-4">
 
   {#if !playerState.loading && !playerState.profile}
     <div class="alert bg-accent text-accent-content">
@@ -63,7 +65,7 @@
   </div>
 
   {#each collectibles as type (type.id)}
-    <div id={type.id} class="space-y-2 lg:space-y-4">
+    <div id={type.id} data-activate="observable" class="space-y-2 lg:space-y-4">
       <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-2">
         <div class="flex flex-row items-center gap-2">
           {#if type.icon}
@@ -99,4 +101,4 @@
       {/if}
     </div>
   {/each}
-</div>
+</ObservableContainer>
