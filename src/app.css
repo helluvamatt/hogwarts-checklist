@@ -94,8 +94,22 @@ Original color palette:
 
 /* Tailwind Theme */
 @theme {
-    /* Set default font stacks */
-    --font-base: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-sans: var(--font-base);
-    --font-headings: 'Metamorphous', var(--font-base);
+  /* Set default font stacks */
+  --font-base: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: var(--font-base);
+  --font-headings: 'Metamorphous', var(--font-base);
+
+  /* House colors */
+  --color-gryffindor-base: oklch(25.8% 0.092 26.042);
+  --color-gryffindor-accent: oklch(42.1% 0.095 57.708);
+  --color-hufflepuff-base: oklch(56.2% 0.114 91.930);
+  --color-hufflepuff-accent: oklch(42.9% 0.088 96.680);
+  --color-ravenclaw-base: oklch(28.2% 0.091 267.935);
+  --color-ravenclaw-accent: oklch(39.1% 0.09 240.876);
+  --color-slytherin-base: oklch(26.6% 0.065 152.934);
+  --color-slytherin-accent: oklch(37.8% 0.077 168.94);
+}
+
+:root {
+  scrollbar-gutter: stable;
 }

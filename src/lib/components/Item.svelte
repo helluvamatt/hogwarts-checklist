@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Square, SquareCheckBig } from '@lucide/svelte';
-  import type { CollectibleItem } from '$lib/models/CollectibleItem';
-  import { usePlayerState } from '$lib/player-state.svelte';
+  import { usePlayerState } from '$lib';
+  import type { CollectibleItem } from '$lib';
 
   interface Props {
     item: CollectibleItem

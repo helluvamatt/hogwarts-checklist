@@ -1,19 +1,27 @@
+import type { DeepReadonly } from '$lib/models/DeepReadonly';
 import type { PlayerProfile } from '$lib/models/PlayerProfile';
-import { deletePlayerProfile, getPlayerProfile, setPlayerProfile } from '$lib/player-profile';
+import { getPlayerProfile, setPlayerProfile } from '$lib/player-profile';
 import { getContext, hasContext, onMount, setContext } from 'svelte';
+import { SvelteDate } from 'svelte/reactivity';
 
 interface PlayerState {
   readonly loading: boolean;
-  readonly profile: Readonly<PlayerProfile> | undefined;
+  readonly profile: DeepReadonly<PlayerProfile>;
   setPlayerProfile(value: PlayerProfile): Promise<void>;
-  deletePlayerProfile(): Promise<void>;
 }
 
 export function providePlayerState(): PlayerState {
   if (hasContext('playerProfile')) return getContext<PlayerState>('playerProfile');
 
   let loading = $state<boolean>(true);
-  let profile = $state.raw<PlayerProfile|undefined>(undefined);
+  const now = new SvelteDate().toISOString();
+  let profile = $state.raw<PlayerProfile>({
+    version: 1,
+    playerName: '',
+    playerHouse: 'Gryffindor',
+    completedItems: {},
+    lastUpdated: now,
+  });
 
   const state: PlayerState = {
     get loading() {
@@ -25,16 +33,13 @@ export function providePlayerState(): PlayerState {
     async setPlayerProfile(value: PlayerProfile): Promise<void> {
       profile = value;
       await setPlayerProfile(value);
-    },
-    async deletePlayerProfile(): Promise<void> {
-      profile = undefined;
-      await deletePlayerProfile();
     }
   }
 
   setContext('playerProfile', state);
   onMount(async () => {
-    profile = await getPlayerProfile();
+    const read = await getPlayerProfile();
+    if (read) profile = read;
     loading = false;
   });
   return state;

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
   import { page } from '$app/state';
-  import { activeId } from '$lib/active-id.svelte';
-  import type { CollectibleType } from '$lib/models/CollectibleType';
+  import { activeId } from '$lib';
+  import type { CollectibleType } from '$lib';
 
   interface Props {
     collectibles: CollectibleType[]

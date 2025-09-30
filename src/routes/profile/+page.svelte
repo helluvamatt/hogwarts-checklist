@@ -1,94 +1,58 @@
 <script lang="ts">
-  import { asset, resolve } from '$app/paths';
-  import { goto } from '$app/navigation';
+  import Modal from '$lib/components/Modal.svelte';
+  import pDebounce from 'p-debounce';
+  import { asset } from '$app/paths';
   import { Import, Download } from '@lucide/svelte';
-  import { usePlayerState } from '$lib/player-state.svelte';
-  import { type PlayerHouse } from '$lib/models/PlayerHouse';
-  import { PlayerProfileSchema } from '$lib/models/PlayerProfile';
-  import { PlayerInformationSchema, type PlayerInformation } from '$lib/models/PlayerInformation';
+  import { usePlayerState, PlayerProfileSchema, AsyncFacade } from '$lib';
+  import type { PlayerProfile, Facade } from '$lib';
+  type PlayerHouse = PlayerProfile['playerHouse'];
 
   const playerState = usePlayerState();
 
-  // Form state management
-  let formData = $state<PlayerInformation>({
-    name: '',
-    house: 'Gryffindor'
-  });
-
   // Validation errors state
-  let errors = $state<{ [P in keyof PlayerInformation]?: string; }>({});
-  let generalError = $state<string | undefined>(undefined);
+  let errors = $state<{ [P in keyof Pick<PlayerProfile, 'playerName'|'playerHouse'|'profilePicture'>]?: string; }>({});
 
   // UI state
-  let showDeleteModal = $state(false);
-  let isSubmitting = $state(false);
+  let generalError = $state<string | undefined>(undefined);
+  let showResetModal = $state<boolean>(false);
   let fileInput: HTMLInputElement;
   let importInput: HTMLInputElement;
 
-  // Initialize form with existing profile data
-  $effect(() => {
-    if (playerState.profile) {
-      formData.name = playerState.profile.player.name;
-      formData.house = playerState.profile.player.house;
-      formData.profilePicture = playerState.profile.player.profilePicture;
-    }
-  });
+  // Form field facades
+  const playerName: Facade<string> = new AsyncFacade<string>(
+    () => playerState.profile.playerName,
+    pDebounce((v: string) => updateProfile({ playerName: v }), 300));
+  const playerHouse: Facade<PlayerHouse> = new AsyncFacade<PlayerHouse>(
+    () => playerState.profile.playerHouse,
+    (v: PlayerHouse) => updateProfile({ playerHouse: v }));
 
-  // Form submission handler
-  async function handleSubmit(event: Event) {
-    event.preventDefault();
-
-    if (isSubmitting) return;
-    isSubmitting = true;
-    errors = {};
-
+  // Update the profile state
+  async function updateProfile(value: Partial<PlayerProfile>) {
     try {
-      // Validate with Zod
-      const validation = PlayerInformationSchema.safeParse(formData);
-
-      if (!validation.success) {
-        // Update errors state
-        const fieldErrors: Record<string, string> = {};
-        validation.error.issues.forEach(issue => {
-          const path = issue.path.join('.');
-          fieldErrors[path] = issue.message;
-        });
-        errors = fieldErrors;
-        return;
-      }
-
-      // Update the profile state
       await playerState.setPlayerProfile({
-        version: 0,
-        player: validation.data,
-        completedItems: playerState.profile?.completedItems || {},
+        ...playerState.profile,
+        ...value,
         lastUpdated: new Date().toISOString()
       });
-
-      // Redirect to summary
-      await goto(resolve('/'));
 
     } catch (error) {
       console.error('Failed to save profile:', error);
       generalError = 'Failed to save profile. Please try again.';
-    } finally {
-      isSubmitting = false;
     }
   }
 
   // File upload handling
-  async function handleFileUpload(event: Event) {
+  function handleFileUpload(event: Event) {
     const target = event.target as HTMLInputElement;
     const file = target.files?.[0];
     if (!file) return;
 
     // Convert to base64
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
       const result = e.target?.result;
-      if (typeof result === 'string') {
-        formData.profilePicture = result;
-      }
+      if (typeof result !== 'string') return;
+      await updateProfile({ profilePicture: result });
     };
     reader.readAsDataURL(file);
   }
@@ -103,11 +67,17 @@
 
     const link = document.createElement('a');
     link.href = url;
-    link.download = `hogwarts-profile-${formData.name || 'wizard'}.json`;
+    link.download = `hogwarts-profile-${playerState.profile.playerName || 'player'}.json`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
+  }
+
+  // Clear profile picture
+  async function clearProfilePicture() {
+    if (fileInput) fileInput.value = '';
+    await updateProfile({ profilePicture: undefined });
   }
 
   // Import profile
@@ -138,23 +108,18 @@
     }
   }
 
-  // Delete profile
-  async function handleDeleteProfile() {
+  // Reset progress
+  async function handleResetProgress() {
     try {
-      await playerState.deletePlayerProfile();
-      showDeleteModal = false;
-      await goto(resolve('/'));
+      await playerState.setPlayerProfile({
+        ...playerState.profile,
+        completedItems: {},
+        lastUpdated: new Date().toISOString()
+      });
+      showResetModal = false;
     } catch (error) {
-      console.error('Failed to delete profile:', error);
-      generalError = 'Failed to delete profile. Please try again.';
-    }
-  }
-
-  // Clear profile picture
-  function clearProfilePicture() {
-    formData.profilePicture = undefined;
-    if (fileInput) {
-      fileInput.value = '';
+      console.error('Failed to dreset progress:', error);
+      generalError = 'Failed to reset progress. Please try again.';
     }
   }
 
@@ -192,15 +157,15 @@
     <div class="alert alert-error mb-6">{generalError}</div>
   {/if}
 
-  <form onsubmit={handleSubmit} novalidate>
+  <form onsubmit={e => e.preventDefault()} novalidate>
     <fieldset class="fieldset bg-base-200 border-base-300 rounded-box border p-4 mb-4 lg:mb-6">
-      <legend class="fieldset-legend">Player Details</legend>
+      <legend class="fieldset-legend -my-4 lg:-my-6">Player Details</legend>
       <!-- Name input -->
       <label>
         <span class="label mb-1">Name</span>
-        <input type="text" bind:value={formData.name} class="input w-full" class:input-error={errors.name} />
-        {#if errors.name}
-          <span class="label text-error text-sm">{errors.name}</span>
+        <input type="text" bind:value={playerName.value} class="input w-full" class:input-error={errors.playerName} />
+        {#if errors.playerName}
+          <span class="label text-error text-sm">{errors.playerName}</span>
         {/if}
       </label>
       <!-- House selection -->
@@ -213,7 +178,7 @@
                 type="radio"
                 name="house"
                 value={house.name}
-                bind:group={formData.house}
+                bind:group={playerHouse.value}
                 class="sr-only peer"
               />
               <span class="card bg-base-200 border-2 peer-checked:border-primary peer-checked:bg-primary/10 transition-all hover:shadow-md">
@@ -224,14 +189,14 @@
               </span>
             </label>
           {/each}
-          {#if errors.house}
-            <div class="col-span-full text-error text-sm">{errors.house}</div>
+          {#if errors.playerHouse}
+            <div class="col-span-full text-error text-sm">{errors.playerHouse}</div>
           {/if}
         </div>
       </div>
     </fieldset>
     <fieldset class="fieldset bg-base-200 border-base-300 rounded-box border p-4 mb-4 lg:mb-6">
-      <legend class="fieldset-legend">Player Picture</legend>
+      <legend class="fieldset-legend -my-4 lg:-my-6">Player Picture</legend>
       <p class="mb-2 text-base-content/70">Upload a picture of your character to personalize your profile. Supported formats: JPG, PNG, GIF.</p>
       <!-- Profile picture upload -->
       <label>
@@ -244,69 +209,34 @@
       <div class="flex flex-row items-center gap-4 mt-2">
         <div class="avatar flex-1 max-w-xs">
           <div class="rounded-2xl">
-            {#if formData.profilePicture}
-              <img src={formData.profilePicture} alt="Profile" />
+            {#if playerState.profile.profilePicture}
+              <img src={playerState.profile.profilePicture} alt="Profile" />
             {:else}
               <div class="w-full aspect-square bg-base-300 flex items-center justify-center p-8"><span class="text-base-content/50 text-4xl text-center">No picture</span></div>
             {/if}
           </div>
         </div>
-        {#if formData.profilePicture}
+        {#if playerState.profile.profilePicture}
           <button type="button" class="btn btn-error btn-outline btn-sm" onclick={clearProfilePicture}>Remove</button>
         {/if}
       </div>
     </fieldset>
-
-    <div class="flex flex-col lg:flex-row gap-2 lg:justify-between">
-      <button
-        type="button"
-        class="btn btn-error btn-outline"
-        onclick={() => showDeleteModal = true}
-        disabled={!playerState.profile}
-      >
-        Delete Profile
-      </button>
-
-      <button
-        type="submit"
-        class="btn btn-primary"
-        disabled={isSubmitting}
-      >
-        {#if isSubmitting}
-          <span class="loading loading-spinner loading-sm"></span>
-          Saving...
-        {:else}
-          Save Profile
-        {/if}
-      </button>
-    </div>
+    <fieldset class="fieldset bg-error/10 border-error rounded-box border p-4 mb-4 lg:mb-6">
+      <legend class="fieldset-legend text-error -my-4 lg:-my-6">Danger Zone</legend>
+      <p class="text-error">Resetting your progress will clear all completed items but retain your profile details. This action cannot be undone.</p>
+      <div>
+        <button type="button" class="btn btn-error btn-outline" onclick={() => showResetModal = true} disabled={!playerState.profile}>Reset Progress</button>
+      </div>
+    </fieldset>
   </form>
 </div>
 
 <!-- Delete confirmation modal -->
-{#if showDeleteModal}
-  <div class="modal modal-open">
-    <div class="modal-box">
-      <h3 class="font-bold text-lg">Delete Profile</h3>
-      <p class="py-4">
-        Are you sure you want to delete your wizard profile? This action cannot be undone and will remove all your progress.
-      </p>
-      <div class="modal-action">
-        <button
-          type="button"
-          class="btn"
-          onclick={() => showDeleteModal = false}
-        >
-          Cancel
-        </button>
-        <button
-          type="button"
-          class="btn btn-error"
-          onclick={handleDeleteProfile}
-        >
-          Delete
-        </button>
-      </div>
-    </div>
+<Modal open={showResetModal} onclose={() => showResetModal = false}>
+  <h3 class="font-bold text-lg">Reset Progress</h3>
+  <p class="py-4">Are you sure you want to reset your progress? This action cannot be undone.</p>
+  <div class="modal-action">
+    <button type="button" class="btn" onclick={() => showResetModal = false}>Cancel</button>
+    <button type="button" class="btn btn-error" onclick={handleResetProgress}>Reset</button>
   </div>
-{/if}
+</Modal>

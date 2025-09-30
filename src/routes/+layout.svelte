@@ -4,8 +4,7 @@
   import { Menu, X } from '@lucide/svelte';
   import ProfileCard from '$lib/components/ProfileCard.svelte';
   import SidebarNav from '$lib/components/SidebarNav.svelte';
-  import { activeId } from '$lib/active-id.svelte';
-  import { providePlayerState } from '$lib/player-state.svelte';
+  import { activeId, providePlayerState } from '$lib';
   import '../app.css';
 
   let { children, data } = $props();

@@ -1,4 +1,4 @@
-import { PlayerProfileSchema, type PlayerProfile } from './models/PlayerProfile';
+import { PlayerProfileSchema, type PlayerProfile } from '$lib/models/PlayerProfile';
 
 const STORAGE_KEY = 'playerProfile';
 
@@ -25,11 +25,5 @@ export function setPlayerProfile(profile: PlayerProfile): Promise<void> {
   } catch (error) {
     console.error('Failed to save player profile to localStorage:', error);
   }
-  return Promise.resolve();
-}
-
-export function deletePlayerProfile(): Promise<void> {
-  if (typeof window === 'undefined') return Promise.resolve();
-  window.localStorage.removeItem(STORAGE_KEY);
   return Promise.resolve();
 }

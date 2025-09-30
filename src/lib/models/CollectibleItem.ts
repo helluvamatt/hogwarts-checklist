@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const CollectibleItemSchema = z.object({
   id: z.string(),
-  subtype: z.string().optional(),
+  subtypeId: z.string().optional(),
   name: z.string(),
   description: z.string().optional(),
   internalGameId: z.string().optional() // For future savegame import feature

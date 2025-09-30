@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { resolve } from '$app/paths';
-  import { ArrowUpToLine, Info } from '@lucide/svelte';
+  import { ArrowUpToLine } from '@lucide/svelte';
   import Item from '$lib/components/Item.svelte';
   import ObservableContainer from '$lib/components/ObservableContainer.svelte';
-  import { activeId } from '$lib/active-id.svelte';
-  import { usePlayerState } from '$lib/player-state.svelte';
+  import { activeId, usePlayerState } from '$lib';
 
   const { data } = $props();
   const playerState = usePlayerState();
@@ -26,17 +24,6 @@
 </script>
 
 <ObservableContainer bind:activeId={activeId.current} class="space-y-2 lg:space-y-4">
-
-  {#if !playerState.loading && !playerState.profile}
-    <div class="alert bg-accent text-accent-content">
-      <Info class="size-6 shrink-0" />
-      <span>Create a player profile to start tracking your collectibles!</span>
-      <div>
-        <a href={resolve('/profile')} class="btn btn-sm">Create Profile</a>
-      </div>
-    </div>
-  {/if}
-
   <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
     {#each collectibles as type (type.id)}
       <a href="#{type.id}" class="card card-xs md:card-sm bg-base-200 transition-colors hover:bg-base-300">
@@ -87,7 +74,7 @@
             <h2>{subtype.name}</h2>
           </div>
           <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-            {#each type.items.filter(item => item.subtype === subtype.id) as item (item.id)}
+            {#each type.items.filter(item => item.subtypeId === subtype.id) as item (item.id)}
               <Item {item} />
             {/each}
           </div>
