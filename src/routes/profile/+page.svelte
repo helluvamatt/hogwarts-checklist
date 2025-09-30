@@ -6,7 +6,6 @@
   import { type PlayerHouse } from '$lib/models/PlayerHouse';
   import { PlayerProfileSchema } from '$lib/models/PlayerProfile';
   import { PlayerInformationSchema, type PlayerInformation } from '$lib/models/PlayerInformation';
-  import { deletePlayerProfile } from '$lib/player-profile';
 
   const playerState = usePlayerState();
 
@@ -58,13 +57,13 @@
         return;
       }
 
-      // Update the profile in state (will trigger localStorage save via $effect)
-      playerState.profile = {
+      // Update the profile state
+      await playerState.setPlayerProfile({
         version: 0,
         player: validation.data,
         completedItems: playerState.profile?.completedItems || {},
         lastUpdated: new Date().toISOString()
-      };
+      });
 
       // Redirect to summary
       await goto(resolve('/'));
@@ -129,7 +128,7 @@
       }
 
       // Update state
-      playerState.profile = validation.data;
+      await playerState.setPlayerProfile(validation.data);
 
       // Reset file input
       target.value = '';
@@ -142,8 +141,7 @@
   // Delete profile
   async function handleDeleteProfile() {
     try {
-      await deletePlayerProfile();
-      playerState.profile = undefined;
+      await playerState.deletePlayerProfile();
       showDeleteModal = false;
       await goto(resolve('/'));
     } catch (error) {
@@ -166,20 +164,13 @@
     { name: 'Ravenclaw', crest: asset('/ravenclaw.png') },
     { name: 'Slytherin', crest: asset('/slytherin.png') }
   ] as const;
-
-  // const houseColors = {
-  //   Gryffindor: 'from-red-600 to-yellow-500',
-  //   Hufflepuff: 'from-yellow-500 to-black',
-  //   Ravenclaw: 'from-blue-600 to-bronze',
-  //   Slytherin: 'from-green-600 to-gray-400'
-  // };
 </script>
 
 <svelte:head>
   <title>Profile | Hogwarts Checklist</title>
 </svelte:head>
 
-<div class="container mx-auto p-2 space-y-2 md:space-y-4 lg:p-4 lg:space-y-6 max-w-4xl">
+<div class="space-y-2 lg:space-y-4">
   <div class="flex flex-row items-center gap-4 mb-2 lg:mb-4">
     <h1 class="flex-1">Profile</h1>
     {#if playerState.profile}

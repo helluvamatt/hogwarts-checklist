@@ -1,22 +1,41 @@
 import type { PlayerProfile } from '$lib/models/PlayerProfile';
-import { getPlayerProfile, setPlayerProfile } from '$lib/player-profile';
+import { deletePlayerProfile, getPlayerProfile, setPlayerProfile } from '$lib/player-profile';
 import { getContext, hasContext, onMount, setContext } from 'svelte';
 
-type PlayerState = { profile: Readonly<PlayerProfile> | undefined };
+interface PlayerState {
+  readonly loading: boolean;
+  readonly profile: Readonly<PlayerProfile> | undefined;
+  setPlayerProfile(value: PlayerProfile): Promise<void>;
+  deletePlayerProfile(): Promise<void>;
+}
 
-export function providePlayerState() {
-  if (hasContext('playerProfile')) return;
+export function providePlayerState(): PlayerState {
+  if (hasContext('playerProfile')) return getContext<PlayerState>('playerProfile');
 
-  const state = $state.raw<PlayerState>({ profile: undefined });
+  let loading = $state<boolean>(true);
+  let profile = $state.raw<PlayerProfile|undefined>(undefined);
 
-  $effect(() => {
-    if (!state.profile) return;
-    setPlayerProfile(state.profile).catch(); // TODO Handle error
-  });
+  const state: PlayerState = {
+    get loading() {
+      return loading;
+    },
+    get profile() {
+      return profile;
+    },
+    async setPlayerProfile(value: PlayerProfile): Promise<void> {
+      profile = value;
+      await setPlayerProfile(value);
+    },
+    async deletePlayerProfile(): Promise<void> {
+      profile = undefined;
+      await deletePlayerProfile();
+    }
+  }
 
   setContext('playerProfile', state);
   onMount(async () => {
-    state.profile = await getPlayerProfile();
+    profile = await getPlayerProfile();
+    loading = false;
   });
   return state;
 }

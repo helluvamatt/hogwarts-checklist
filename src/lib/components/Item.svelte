@@ -17,18 +17,18 @@
   function toggleItemCollection(itemId: string, checked: boolean) {
     if (!playerState.profile) return;
 
-    playerState.profile = {
+    playerState.setPlayerProfile({
       ...playerState.profile,
       completedItems: {
         ...playerState.profile.completedItems,
         [itemId]: checked
       },
       lastUpdated: new Date().toISOString()
-    };
+    });
   }
 </script>
 
-<div class="card card-xs sm:card-sm md:card-md lg:card-lg bg-base-200 card-border shadow-sm">
+<div class="card card-xs md:card-sm bg-base-200 card-border shadow-sm">
   <div class="card-body">
     <h3 class="card-title">{item.name}</h3>
     {#if item.description}
