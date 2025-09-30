@@ -1,0 +1,96 @@
+[
+  {
+    "id": "hogwarts",
+    "name": "Hogwarts",
+    "sublocations": [
+      {
+        "id": "astronomy-wing",
+        "name": "Astronomy Wing"
+      },
+      {
+        "id": "bell-tower-wing",
+        "name": "Bell Tower Wing"
+      },
+      {
+        "id": "grand-staircase",
+        "name": "Grand Staircase"
+      },
+      {
+        "id": "the-great-hall",
+        "name": "The Great Hall"
+      },
+      {
+        "id": "library-annex",
+        "name": "Library Annex"
+      },
+      {
+        "id": "south-wing",
+        "name": "South Wing"
+      }
+    ]
+  },
+  {
+    "id": "hogsmeade",
+    "name": "Hogsmeade",
+    "sublocations": [
+      {
+        "id": "north-hogsmeade",
+        "name": "North Hogsmeade"
+      },
+      {
+        "id": "south-hogsmeade",
+        "name": "South Hogsmeade"
+      },
+      {
+        "id": "west-hogsmeade",
+        "name": "West Hogsmeade"
+      }
+    ]
+  },
+  {
+    "id": "the-highlands",
+    "name": "The Highlands",
+    "sublocations": [
+      {
+        "id": "north-ford-bog",
+        "name": "North Ford Bog"
+      },
+      {
+        "id": "hogsmeade-valley",
+        "name": "Hogsmeade Valley"
+      },
+      {
+        "id": "north-hogwarts-region",
+        "name": "North Hogwarts Region"
+      },
+      {
+        "id": "south-hogwarts-region",
+        "name": "South Hogwarts Region"
+      },
+      {
+        "id": "hogwarts-valley",
+        "name": "Hogwarts Valley"
+      },
+      {
+        "id": "feldcroft-region",
+        "name": "Feldcroft Region"
+      },
+      {
+        "id": "coastal-cavern-region",
+        "name": "Coastal Cavern Region"
+      },
+      {
+        "id": "south-sea-bog",
+        "name": "South Sea Bog"
+      },
+      {
+        "id": "cragcroftshire",
+        "name": "Cragcroftshire"
+      },
+      {
+        "id": "clagmar-coast",
+        "name": "Clagmar Coast"
+      }
+    ]
+  }
+]

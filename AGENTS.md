@@ -70,9 +70,22 @@ interface CollectibleSubtype {
   description?: string;
 }
 
+interface Location {
+  id: string;
+  name: string;
+  sublocations?: Sublocation[];
+}
+
+interface Sublocation {
+  id: string;
+  name: string;
+}
+
 interface CollectibleItem {
   id: string;
   subtypeId?: string; // Optional link to subtype
+  locationId?: string; // Optional link to location
+  sublocationId?: string; // Optional link to sublocation
   name: string;
   description?: string;
   internalGameId?: string; // For future savegame import feature

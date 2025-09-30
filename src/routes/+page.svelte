@@ -14,6 +14,7 @@
       playerItems: profile ? type.items.filter((item) => profile.completedItems[item.id]).map(item => item.id) : undefined
     }));
   });
+  const { locations } = data;
 
   function getCompletionBadgeClass(percentage: number): string {
     if (percentage === 100) return 'badge-success';
@@ -24,7 +25,7 @@
 </script>
 
 <ObservableContainer bind:activeId={activeId.current} class="space-y-2 lg:space-y-4">
-  <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+  <div id="summary" data-activate="observable" class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
     {#each collectibles as type (type.id)}
       <a href="#{type.id}" class="card card-xs md:card-sm bg-base-200 transition-colors hover:bg-base-300">
         <div class="card-body">

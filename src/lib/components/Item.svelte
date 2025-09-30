@@ -1,13 +1,17 @@
 <script lang="ts">
+  import Tag from '$lib/components/Tag.svelte';
   import { Square, SquareCheckBig } from '@lucide/svelte';
-  import { usePlayerState } from '$lib';
-  import type { CollectibleItem } from '$lib';
+  import { type CollectibleItem, type CollectibleSubtype, type CollectibleType, type Location, usePlayerState } from '$lib';
 
   interface Props {
-    item: CollectibleItem
+    item: CollectibleItem,
+    type?: CollectibleType,
+    subtype?: CollectibleSubtype,
+    location?: Location,
+    sublocation?: Location
   }
 
-  const { item }: Props = $props();
+  const { item, type, subtype, location, sublocation }: Props = $props();
   const playerState = usePlayerState();
 
   function isItemCollected(itemId: string): boolean {
@@ -31,6 +35,22 @@
 <div class="card card-xs md:card-sm bg-base-200 card-border shadow-sm">
   <div class="card-body">
     <h3 class="card-title">{item.name}</h3>
+    {#if type || subtype || location || sublocation}
+      <div class="flex flex-row gap-2">
+        {#if type}
+          <Tag tag={type} />
+        {/if}
+        {#if subtype}
+          <Tag tag={subtype} />
+        {/if}
+        {#if location}
+          <Tag tag={location} />
+        {/if}
+        {#if sublocation}
+          <Tag tag={sublocation} />
+        {/if}
+      </div>
+    {/if}
     {#if item.description}
       <p>{item.description}</p>
     {/if}
