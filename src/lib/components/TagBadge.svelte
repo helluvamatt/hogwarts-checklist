@@ -1,15 +1,14 @@
 <script lang="ts">
-  type Tag = {
-    id: string;
-    name: string;
-    icon?: string;
-  };
+  import { type Tag } from '$lib';
+
   type TagType = 'primary'|'secondary'|'accent'|'neutral'|'info'|'success'|'warning'|'error';
   interface Props {
     tag: Tag;
     type?: TagType;
+    soft?: boolean;
+    outline?: boolean;
   }
-  const { tag, type }: Props = $props();
+  let { tag, type, soft, outline }: Props = $props();
   const badgeClasses: Record<TagType, string> = {
     primary: 'badge-primary',
     secondary: 'badge-secondary',
@@ -22,7 +21,7 @@
   };
 </script>
 
-<div class="badge {type ? badgeClasses[type] : undefined}">
+<div class="badge {type ? badgeClasses[type] : undefined}" class:badge-outline={outline} class:badge-soft={soft}>
   {#if tag.icon}
     <div aria-label={tag.name} class="mr-2 mask size-4 bg-base-content" style={`mask-image: url('${tag.icon}')`}></div>
   {/if}

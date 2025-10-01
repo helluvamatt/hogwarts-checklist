@@ -4,4 +4,6 @@ export * from './CollectibleType';
 export * from './DeepReadonly';
 export * from './Location';
 export * from './PlayerProfile';
+export * from './ResolvedCollectibleItem';
 export * from './Sublocation';
+export * from './Tag';

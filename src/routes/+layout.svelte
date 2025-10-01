@@ -4,7 +4,7 @@
   import { Menu, X } from '@lucide/svelte';
   import ProfileCard from '$lib/components/ProfileCard.svelte';
   import SidebarNav from '$lib/components/SidebarNav.svelte';
-  import { activeId, providePlayerState } from '$lib';
+  import { providePlayerState } from '$lib';
   import '../app.css';
 
   let { children, data } = $props();
@@ -16,7 +16,6 @@
 
   afterNavigate(() => {
     drawerOpen = false;
-    activeId.current = undefined;
   });
 </script>
 
