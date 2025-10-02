@@ -26,6 +26,10 @@
       {
         "id": "south-wing",
         "name": "South Wing"
+      },
+      {
+        "id": "room-of-requirement",
+        "name": "Room of Requirement"
       }
     ]
   },
@@ -54,6 +58,10 @@
       {
         "id": "north-ford-bog",
         "name": "North Ford Bog"
+      },
+      {
+        "id": "forbidden-forest",
+        "name": "Forbidden Forest"
       },
       {
         "id": "hogsmeade-valley",
