@@ -12,10 +12,10 @@
 
   const sortTransformers: Record<SortBy, SortTransformer> = {
     type: (type, locations) => {
-      const locationGroups: SortGroupWithSubgroups[] = locations.map<SortGroupWithSubgroups>(loc => ({ id: loc.id, name: loc.name, icon: loc.icon, subgroups: loc.sublocations ? loc.sublocations.map<SortGroup>(sub => ({ ...sub, items: [] })) : [], items: [] }));
+      const locationGroups: () => SortGroupWithSubgroups[] = () => locations.map<SortGroupWithSubgroups>(loc => ({ id: loc.id, name: loc.name, icon: loc.icon, subgroups: loc.sublocations ? loc.sublocations.map<SortGroup>(sub => ({ ...sub, items: [] })) : [], items: [] }));
       const groups: SortGroupWithSubgroups[] = type.subtypes?.length
-        ? [...type.subtypes.map(st => ({ ...st, items: [], subgroups: locationGroups })), { id: 'none', name: 'No Type', items: [], subgroups: locationGroups }]
-        : [{ id: 'none', name: 'No Type', items: [], subgroups: locationGroups }];
+        ? [...type.subtypes.map(st => ({ ...st, items: [], subgroups: locationGroups() })), { id: 'none', name: 'No Type', items: [], subgroups: locationGroups() }]
+        : [{ id: 'none', name: 'No Type', items: [], subgroups: locationGroups() }];
       const reducer: SortReducer = (groups, item) => {
         const subtypeGroupKey = type.subtypes?.length ? item.subtypeId : 'none';
         const subtypeGroup = groups.find(g => g.id === subtypeGroupKey);
@@ -23,6 +23,7 @@
         const sublocationGroup = locationGroup?.subgroups?.find(g => g.id === item.sublocationId);
         if (sublocationGroup) {
           sublocationGroup.items.push(item);
+          sublocationGroup.hasItems = true;
           locationGroup!.hasItems = true;
           subtypeGroup!.hasItems = true;
         } else if (locationGroup) {
@@ -38,18 +39,15 @@
       return type.items.reduce<SortGroupWithSubgroups[]>(reducer, groups);
     },
     location: (type, locations) => {
+      const subtypeGroups: () => SortGroup[] = () => type.subtypes ? type.subtypes.map<SortGroup>(st => ({ ...st, items: [] })) : [];
       const groups: SortGroupWithSubgroups[] = [
         ...locations.map<SortGroupWithSubgroups>(loc => ({
           id: loc.id,
           name: loc.name,
           icon: loc.icon,
-          subgroups: loc.sublocations
-            ? loc.sublocations.map<SortGroupWithSubgroups>(sub => ({ ...sub, subgroups: type.subtypes ? type.subtypes.map<SortGroup>(st => ({ ...st, items: [] })) : [], items: [] }))
-            : type.subtypes
-              ? type.subtypes.map<SortGroupWithSubgroups>(st => ({ ...st, items: [] }))
-              : [],
+          subgroups: loc.sublocations ? loc.sublocations.map<SortGroupWithSubgroups>(sub => ({ ...sub, subgroups: subtypeGroups(), items: [] })) : subtypeGroups(),
           items: [] })),
-        { id: 'none', name: 'No Location', description: 'Located anywhere in the world', subgroups: type.subtypes ? type.subtypes.map<SortGroup>(st => ({ ...st, items: [] })) : [], items: [] }
+        { id: 'none', name: 'No Location', description: 'Located anywhere in the world', subgroups: subtypeGroups(), items: [] }
       ];
       const reducer: SortReducer = (groups, item) => {
         const locationGroupKey = item.locationId ?? 'none';
@@ -59,6 +57,7 @@
         const subtypeGroup = locationGroupKey !== 'none' ? sublocationOrSubtypeGroup?.subgroups?.find(g => g.id === item.subtypeId) : undefined;
         if (subtypeGroup) {
           subtypeGroup.items.push(item);
+          subtypeGroup.hasItems = true;
           sublocationOrSubtypeGroup!.hasItems = true;
           locationGroup!.hasItems = true;
         } else if (sublocationOrSubtypeGroup) {
