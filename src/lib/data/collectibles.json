@@ -127,14 +127,14 @@
         "locationId": "the-highlands",
         "sublocationId": "feldcroft-region",
         "name": "#18",
-        "description": "After activating the ancient magic hotspot fly up to the rune on the right. Next fly to the platform to the West and attack the hook holding the pallet of rocks. Drop down and use Depulso on the mechanism to open the gate straight ahead of you. Head inside and collect the second rune. Head back out and immediately go to the right and follow the room until you can’t anymore. Hop on your broom and go up until you see the relic on a platform above you."
+        "description": "After activating the ancient magic hotspot fly up to the rune on the right. Next fly to the platform to the West and attack the hook holding the pallet of rocks. Drop down and use Depulso on the mechanism to open the gate straight ahead of you. Head inside and collect the second rune. Head back out and immediately go to the right and follow the room until you can't anymore. Hop on your broom and go up until you see the relic on a platform above you."
       },
       {
         "id": "19",
         "locationId": "the-highlands",
         "sublocationId": "feldcroft-region",
         "name": "#19",
-        "description": "After activating the ancient magic hotspot, fly your broom up to the first relic it showed you (You can’t mount your broom inside the building but if you step outside and mount your broom you can go back inside flying). Head up to the top landing and you will see the second rune on the top platform on the South side of the manor. For the last rune head up to the highest portion of the manor on your broom and you can collect it in front of the frog statue."
+        "description": "After activating the ancient magic hotspot, fly your broom up to the first relic it showed you (You can't mount your broom inside the building but if you step outside and mount your broom you can go back inside flying). Head up to the top landing and you will see the second rune on the top platform on the South side of the manor. For the last rune head up to the highest portion of the manor on your broom and you can collect it in front of the frog statue."
       },
       {
         "id": "20",
@@ -411,7 +411,7 @@
         "locationId": "the-highlands",
         "sublocationId": "hogwarts-valley",
         "name": "Coastal Cavern",
-        "description": "After passing through the tunnel near East South Sea Bog Floo Flames, you’ll emerge at North Poidsear Coast Floo Flames. Straight ahead, you can see this set of Balloons."
+        "description": "After passing through the tunnel near East South Sea Bog Floo Flames, you'll emerge at North Poidsear Coast Floo Flames. Straight ahead, you can see this set of Balloons."
       },
       {
         "id": "south-of-poidsear-coast",
@@ -520,7 +520,7 @@
       {
         "id": "butterfly-8",
         "name": "Butterfly #8",
-        "description": "For this one just head on over next to the lake on the very west side of the map. You need to be in between the mountain and the lake and that’s how you’ll know you’re in the right place."
+        "description": "For this one just head on over next to the lake on the very west side of the map. You need to be in between the mountain and the lake and that's how you'll know you're in the right place."
       },
       {
         "id": "butterfly-9",
@@ -530,7 +530,7 @@
       {
         "id": "butterfly-10",
         "name": "Butterfly #10",
-        "description": "For this one be directly in the center of the map and just east of the very large mountain that you can see next to it. There’s a simple road here with grass and you can see the butterflies easily."
+        "description": "For this one be directly in the center of the map and just east of the very large mountain that you can see next to it. There's a simple road here with grass and you can see the butterflies easily."
       },
       {
         "id": "butterfly-11",
@@ -550,7 +550,7 @@
       {
         "id": "butterfly-14",
         "name": "Butterfly #14",
-        "description": "All the way to the southeast edge of the map for this one. There’s no other way around it, you will need to fly around to be able to get to this one easily. There are so many rocks and hills that you might get confused."
+        "description": "All the way to the southeast edge of the map for this one. There's no other way around it, you will need to fly around to be able to get to this one easily. There are so many rocks and hills that you might get confused."
       },
       {
         "id": "butterfly-15",
@@ -797,39 +797,48 @@
     "subtypes": [
       {
         "id": "jumping",
-        "name": "Jumping"
+        "name": "Jumping",
+        "description": "One of the more finicky trials, you need to climb up onto these stones and then run or jump across each of them without falling to the ground. It's straightforward, but can be a bit tricky depending on your control setup."
       },
       {
         "id": "lumos",
-        "name": "Lumos"
+        "name": "Lumos",
+        "description": "If a trial has stone blocks that have been hollowed out with a crystal placed inside, you need to gather nearby moths. Just look for glowing swarms of moths, then bring them to the crystals using Lumos."
       },
       {
         "id": "incendio",
-        "name": "Incendio"
+        "name": "Incendio",
+        "description": "Another simple trial, you need to locate the torches in the area and light them. Once you light a torch, it'll begin descending into the ground, so you have to light all the torches before one of them enters the ground. Depending on the trial, you can sometimes use Incendio but may need to use Confringo if you can't get up close to a particular torch."
       },
       {
         "id": "confringo",
-        "name": "Confringo"
+        "name": "Confringo",
+        "description": "When a trial has a few large stones that appear to have glowing green energy in their cracks, just obliterate them all with Confringo in order to complete the trial."
       },
       {
         "id": "depulso",
-        "name": "Depulso"
+        "name": "Depulso",
+        "description": "Occasionally you'll see a solitary large stone orb that needs to be moved into a recess in the ground. Various movement spells can be applied here but the most straightforward method is simply using Wingardium Leviosa."
       },
       {
         "id": "reparo",
-        "name": "Reparo"
+        "name": "Reparo",
+        "description": "When you activate this trial, a few statues close by will crumble apart. Simply fix them all up with Repairo. If you have difficulties locating one of them, you can use Revelio to find any you're missing."
       },
       {
         "id": "flipendo",
-        "name": "Flipendo"
+        "name": "Flipendo",
+        "description": "You'll sometimes find stone cubes resting on pillars, with the stones being covered in markings. You need to use Flipendo to flip them until each stone cube is properly lined up with the pillar on which it is resting."
       },
       {
         "id": "basic-cast",
-        "name": "Basic Cast"
+        "name": "Basic Cast",
+        "description": "In this trial, you'll notice several fragile stone orbs scattered around the area. Destroy them with a basic cast to solve the trial."
       },
       {
         "id": "accio",
-        "name": "Accio"
+        "name": "Accio",
+        "description": "You'll find stone discs in the ground, with indents for stone balls to fit neatly in. Looking around, you can find these piles of stones and use Accio to bring them to the discs in the ground. Do this for each disc. If you're having trouble finding the different stone orbs, you can use Revelio to look around, and you may need to use Incendio to clear away brambles and leaves."
       }
     ],
     "items": [
@@ -1659,7 +1668,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Augurey Skeleton",
-        "description": "This skeleton of an Irish phoenix or Augurey can be found in a large display case in the Defence Against Dark Arts Tower. It’s located on the same floor as the classroom, over on the west side of the floor past the stairs and the playing instruments."
+        "description": "This skeleton of an Irish phoenix or Augurey can be found in a large display case in the Defence Against Dark Arts Tower. It's located on the same floor as the classroom, over on the west side of the floor past the stairs and the playing instruments."
       },
       {
         "id": "revelio-hebridean-black-skeleton-astronomy-wing",
@@ -1667,7 +1676,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Hebridean Black Skeleton",
-        "description": "This large dragon skeleton that hangs in the Defence Against Dark Arts classroom is allegedly a trophy taken by Professor Hecat after defeating a poaching ring. You can only access it after you’ve completed your first Defence Against Dark Arts lesson, and you’ll find the page on the low balcony."
+        "description": "This large dragon skeleton that hangs in the Defence Against Dark Arts classroom is allegedly a trophy taken by Professor Hecat after defeating a poaching ring. You can only access it after you've completed your first Defence Against Dark Arts lesson, and you'll find the page on the low balcony."
       },
       {
         "id": "revelio-tapestry-of-barnabas-the-barmy-astronomy-wing",
@@ -1675,7 +1684,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Tapestry of Barnabas the Barmy",
-        "description": "This tapestry depicts Barnabas the Barmy’s foolish attempts to teach trolls the art of ballet. You can find near the very top of the Defense Against Dark Arts Tower, up one floor from the Charms Classroom Floo Flame on a short hallway leading to more stairs up to the Astronomy Tower."
+        "description": "This tapestry depicts Barnabas the Barmy's foolish attempts to teach trolls the art of ballet. You can find near the very top of the Defense Against Dark Arts Tower, up one floor from the Charms Classroom Floo Flame on a short hallway leading to more stairs up to the Astronomy Tower."
       },
       {
         "id": "revelio-astronomy-telescope-astronomy-wing",
@@ -1715,7 +1724,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Pungent Passage",
-        "description": "From the West Tower Floo Flames, head left down some steps and you’ll find yourself in Pungent Passage. About half way along on the right, you’ll find this Field Guide page."
+        "description": "From the West Tower Floo Flames, head left down some steps and you'll find yourself in Pungent Passage. About half way along on the right, you'll find this Field Guide page."
       },
       {
         "id": "revelio-the-old-librarian-bell-tower-wing",
@@ -1795,7 +1804,7 @@
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "Urn of Ashes",
-        "description": "This particular urn is rumored to have belonged to a pioneer in dragon taming. It can be found on a display area at the entrance to the Bell Tower Wing’s dungeons, which can be accessed by going south from the Bell Tower Courtyard Floo Flame and then down the stairs in the North Hall."
+        "description": "This particular urn is rumored to have belonged to a pioneer in dragon taming. It can be found on a display area at the entrance to the Bell Tower Wing's dungeons, which can be accessed by going south from the Bell Tower Courtyard Floo Flame and then down the stairs in the North Hall."
       },
       {
         "id": "revelio-sleeping-dragon-statue-bell-tower-wing",
@@ -1875,7 +1884,7 @@
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "Hogwarts Owls",
-        "description": "Confusingly this one isn’t technically in the Hogwarts Grounds. Head to Owlery as marked in the map above. Enter the building and climb up the stairs until you can’t go any further unless you take a ladder. Cast Revelio to reveal the Field Guide Page. We recommend getting the next two pages while you’re here."
+        "description": "Confusingly this one isn't technically in the Hogwarts Grounds. Head to Owlery as marked in the map above. Enter the building and climb up the stairs until you can't go any further unless you take a ladder. Cast Revelio to reveal the Field Guide Page. We recommend getting the next two pages while you're here."
       },
       {
         "id": "revelio-ravenclaw-bust-grand-staircase",
@@ -1883,7 +1892,7 @@
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
         "name": "Ravenclaw Bust",
-        "description": "If you chose Ravenclaw as your house, this will be the first Field Guide Page you acquire with Professor Weasley. If not, you can find this by heading West from the Ravenclaw Tower Floo Flame and up the small spiral staircase. Halfway up (before reaching the door to the Common Room), you’ll find the bust along the wall."
+        "description": "If you chose Ravenclaw as your house, this will be the first Field Guide Page you acquire with Professor Weasley. If not, you can find this by heading West from the Ravenclaw Tower Floo Flame and up the small spiral staircase. Halfway up (before reaching the door to the Common Room), you'll find the bust along the wall."
       },
       {
         "id": "revelio-ravenclaw-doorknocker-grand-staircase",
@@ -1907,7 +1916,7 @@
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
         "name": "Hufflepuff Barrels",
-        "description": "If you didn’t choose this house, you can find it by going to the Grand Staircase Floo Flame, and turning around to head East down a leafy spiral staircase to the cellar, where you can find the barrels at the very back alcove."
+        "description": "If you didn't choose this house, you can find it by going to the Grand Staircase Floo Flame, and turning around to head East down a leafy spiral staircase to the cellar, where you can find the barrels at the very back alcove."
       },
       {
         "id": "revelio-house-elf-recipe-book-grand-staircase",
@@ -1915,7 +1924,7 @@
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
         "name": "House-Elf Recipe Book",
-        "description": "You can find it on the leafy small circular stairwell down to the Hufflepuff Common Room, located just behind the Grand Staircase Floo Flame. It’s halfway down the stairwell with an assortment of food you can eat."
+        "description": "You can find it on the leafy small circular stairwell down to the Hufflepuff Common Room, located just behind the Grand Staircase Floo Flame. It's halfway down the stairwell with an assortment of food you can eat."
       },
       {
         "id": "revelio-the-hogwarts-architect-grand-staircase",
@@ -1986,7 +1995,7 @@
         "subtypeId": "revelio",
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
-        "name": "Headmaster’s Office Gargoyle",
+        "name": "Headmaster's Office Gargoyle",
         "description": "It can be found at the top of the Grand Staircase Tower, past the Trophy Room Floo Flame - but you will need to have gained the Alohomora unlocking spell to unlock the level 1 gate at the end of the room. After unlocking the gate, travel up through the winding passages (and grab a Legendary Chest on the first door on the left) before climbing yet more staircases past locked doors to reach a landing where the giant gargoyle sits on the left, next to a Moth Frame painting."
       },
       {
@@ -2083,7 +2092,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Black Lake",
-        "description": "Once you’ve visited Hogsmeade for the first time, the gate to the boathouse will be unlocked along the Northeast part of the Viaduct Courtyard, and you can take the long winding path down the boathouse, where the page will be next to a docked boat."
+        "description": "Once you've visited Hogsmeade for the first time, the gate to the boathouse will be unlocked along the Northeast part of the Viaduct Courtyard, and you can take the long winding path down the boathouse, where the page will be next to a docked boat."
       },
       {
         "id": "revelio-underground-harbour-the-great-hall",
@@ -2091,7 +2100,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Underground Harbour",
-        "description": "In order to find this Field Guide Page, you need to locate a secret lift down to the harbor, which will become active after you’ve visited Hogsmeade for the first time. From the Viaduct Courtyard Floo Flame, head North along the lower walkway past a tree to look along the stone walls for a doorway leading to a very small lift elevator. Take it down to the Underground Harbour and inspect one of the boats on the far right of the dock to find the page."
+        "description": "In order to find this Field Guide Page, you need to locate a secret lift down to the harbor, which will become active after you've visited Hogsmeade for the first time. From the Viaduct Courtyard Floo Flame, head North along the lower walkway past a tree to look along the stone walls for a doorway leading to a very small lift elevator. Take it down to the Underground Harbour and inspect one of the boats on the far right of the dock to find the page."
       },
       {
         "id": "revelio-kitchen-tables-the-great-hall",
@@ -2115,7 +2124,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Deathday Party Room",
-        "description": "From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and you’ll see a locked metal door (requires Alohomora to unlock). Follow the corridor through to the next room. The Field Guide page can be found on the right-hand side of the room."
+        "description": "From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and you'll see a locked metal door (requires Alohomora to unlock). Follow the corridor through to the next room. The Field Guide page can be found on the right-hand side of the room."
       },
       {
         "id": "revelio-headless-hunt-tapestry-the-great-hall",
@@ -2123,7 +2132,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Headless Hunt Tapestry",
-        "description": "From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and you’ll see a locked metal door (requires Alohomora to unlock). Follow the corridor through to the next room. The Field Guide page can be found on the left-hand side of the room."
+        "description": "From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and you'll see a locked metal door (requires Alohomora to unlock). Follow the corridor through to the next room. The Field Guide page can be found on the left-hand side of the room."
       },
       {
         "id": "revelio-detention-chamber-the-great-hall",
@@ -2131,7 +2140,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Detention Chamber",
-        "description": "From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and go to the end of the corridor, where you’ll find a locked door (requires Alohomora Level 2 to unlock). Inside, the Field Guide page is just ahead."
+        "description": "From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and go to the end of the corridor, where you'll find a locked door (requires Alohomora Level 2 to unlock). Inside, the Field Guide page is just ahead."
       },
       {
         "id": "revelio-portrait-of-sir-cadogan-library-annex",
@@ -2155,7 +2164,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Central Hall Fountain",
-        "description": "You can find it quite easily after using the Central Hall Floo Flame with Ms. Weasely, and you’ll see it adorning the center of the large busy room."
+        "description": "You can find it quite easily after using the Central Hall Floo Flame with Ms. Weasely, and you'll see it adorning the center of the large busy room."
       },
       {
         "id": "revelio-statue-of-gregory-the-smarmy-library-annex",
@@ -2170,7 +2179,7 @@
         "subtypeId": "revelio",
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
-        "name": "Professor Sharp’s Auror Badge",
+        "name": "Professor Sharp's Auror Badge",
         "description": "You can find it on a table in the back of the Potions Classroom (easily reached by Floo Flame), off to the side of the Central Hall."
       },
       {
@@ -2195,7 +2204,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Arithmancy Classroom",
-        "description": "You’ll need to solve an Arithmancy Door puzzle yourself to reach it - head up the northern spiral staircase in the Viaduct entrance to the Divination Floo Flame, and exit out onto a wooden walkway. Follow the walkway to find one of many Arithmancy Doors around Hogwarts - but this one has a chest next to it that holds the cipher. To solve it, reference the number associated with the magical creatures by interacting with the ? and ?? blocks on the wall to equal the circled number in the middle sections. Once the door is opened, head down the hall into the Arithmancy Classroom to find the Field Guide Page."
+        "description": "You'll need to solve an Arithmancy Door puzzle yourself to reach it - head up the northern spiral staircase in the Viaduct entrance to the Divination Floo Flame, and exit out onto a wooden walkway. Follow the walkway to find one of many Arithmancy Doors around Hogwarts - but this one has a chest next to it that holds the cipher. To solve it, reference the number associated with the magical creatures by interacting with the ? and ?? blocks on the wall to equal the circled number in the middle sections. Once the door is opened, head down the hall into the Arithmancy Classroom to find the Field Guide Page."
       },
       {
         "id": "revelio-enchanted-books-library-annex",
@@ -2203,7 +2212,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Enchanted Books",
-        "description": "You can find this Field Guide Page on the bottom floor of the Restricted Section of the Library, which you’ll unlock during a main quest with Sebastian Sallow. Once you sneak past two ghosts and reach the bottom floor, cast Revelio in the first room to find the page."
+        "description": "You can find this Field Guide Page on the bottom floor of the Restricted Section of the Library, which you'll unlock during a main quest with Sebastian Sallow. Once you sneak past two ghosts and reach the bottom floor, cast Revelio in the first room to find the page."
       },
       {
         "id": "revelio-gorgon-portrait-library-annex",
@@ -2211,7 +2220,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Gorgon Portrait",
-        "description": "This painting can be found in the Long Gallery, a very long hallway connecting two locked doors - one below the Potions Classroom in the Library Annex, and one right through the giant doors at the Bell Tower Courtyard Floo Flame. Once in the Long Gallery, look to the side of the door to the Bell Tower to find an Arithmancy Puzzle Door. Using the 0-9 animal to number clues against the ? and ?? blocks, solve the equations and enter (2) and (1) on the ? and ?? blocks to open the door. Inside, you’ll find the painting of a Gorgon from Greece, and you can reveal the Field Guide Page. Just be wary if you interact with it, as it will petrify you!"
+        "description": "This painting can be found in the Long Gallery, a very long hallway connecting two locked doors - one below the Potions Classroom in the Library Annex, and one right through the giant doors at the Bell Tower Courtyard Floo Flame. Once in the Long Gallery, look to the side of the door to the Bell Tower to find an Arithmancy Puzzle Door. Using the 0-9 animal to number clues against the ? and ?? blocks, solve the equations and enter (2) and (1) on the ? and ?? blocks to open the door. Inside, you'll find the painting of a Gorgon from Greece, and you can reveal the Field Guide Page. Just be wary if you interact with it, as it will petrify you!"
       },
       {
         "id": "revelio-portrait-of-baruffio-south-wing",
@@ -2259,7 +2268,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "The Well of Four Beasts",
-        "description": "You can only access after you’ve traveled to Hogsmeade for the first time and are allowed to leave the school, after which you can leave the Clockwork Courtyard Floo Flame through the large gate and find it outside."
+        "description": "You can only access after you've traveled to Hogsmeade for the first time and are allowed to leave the school, after which you can leave the Clockwork Courtyard Floo Flame through the large gate and find it outside."
       },
       {
         "id": "revelio-jewel-encrusted-tortoise-shell-south-wing",
@@ -2267,7 +2276,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Jewel-Encrusted Tortoise Shell",
-        "description": "After completing Mr. Moon’s quest and gaining access to the Faculty Tower, climb up to the third floor and look for the shell behind a display case by a locked door."
+        "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the third floor and look for the shell behind a display case by a locked door."
       },
       {
         "id": "revelio-boris-the-bewildered-south-wing",
@@ -2275,15 +2284,15 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Boris the Bewildered",
-        "description": "After completing Mr. Moon’s quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing near the Prefect’s Bathroom, and use Revelio on it."
+        "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing near the Prefect's Bathroom, and use Revelio on it."
       },
       {
         "id": "revelio-prefects-bathroom-south-wing",
         "subtypeId": "revelio",
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
-        "name": "Prefect’s Bathroom",
-        "description": "After completing Mr. Moon’s quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing with two statues, and enter the door opposite the hall to the Clock Tower to find the bathroom with a mermaid painting hiding the Guide Page."
+        "name": "Prefect's Bathroom",
+        "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing with two statues, and enter the door opposite the hall to the Clock Tower to find the bathroom with a mermaid painting hiding the Guide Page."
       },
       {
         "id": "revelio-unicorn-fountain-south-wing",
@@ -2291,7 +2300,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Unicorn Fountain",
-        "description": "After completing Mr. Moon’s quest and gaining access to the Faculty Tower, climb up to the very top of the staircase until you reach the Hospital Wing Floo Flame, and use Revelio on the nearby statue."
+        "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the very top of the staircase until you reach the Hospital Wing Floo Flame, and use Revelio on the nearby statue."
       },
       {
         "id": "revelio-clock-mechanics-south-wing",
@@ -2299,7 +2308,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Clock Mechanics",
-        "description": "Once you’ve learned Alohomora, you can either climb up the Clock Tower Courtyard from the locked bottom door, or head to the top of the Faculty Tower and across the hall to the top floor of the Clock Tower, and go down a few levels to find the main gears and reveal the Field Guide Page."
+        "description": "Once you've learned Alohomora, you can either climb up the Clock Tower Courtyard from the locked bottom door, or head to the top of the Faculty Tower and across the hall to the top floor of the Clock Tower, and go down a few levels to find the main gears and reveal the Field Guide Page."
       },
       {
         "id": "revelio-adventure-novel-set-south-wing",
@@ -2344,7 +2353,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Defence Against Dark Arts Tower Moth Frame",
-        "description": "The frame can be found on the fourth floor of the Defence Against Dark Arts Tower, just a bit South of the tower Floo Flame. This particular moth is hiding one floor up, right outside of Professor Fig’s classroom and the Floo Flame here, in front of a large tapestry. Collect it by using Lumos and bring it back downstairs before dousing the light to get another Field Page."
+        "description": "The frame can be found on the fourth floor of the Defence Against Dark Arts Tower, just a bit South of the tower Floo Flame. This particular moth is hiding one floor up, right outside of Professor Fig's classroom and the Floo Flame here, in front of a large tapestry. Collect it by using Lumos and bring it back downstairs before dousing the light to get another Field Page."
       },
       {
         "id": "lumos-astronomy-tower-moth-frame-astronomy-wing",
@@ -2352,7 +2361,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Astronomy Tower Moth Frame",
-        "description": "The frame can be found on the Astronomy Tower’s lower landing, located up the stairs from the main tower Floo Flame, below the spiral stairs up to the telescopes. This particular moth is hiding just a bit higher among all the telescopes on the balcony at the top of the tower. Head upstairs to the large moving orbs and look for a chalkboard next to a telescope where the moth hides. Use Lumos to summon it to your wand, then take it back down and turn out the light to get the Field Page."
+        "description": "The frame can be found on the Astronomy Tower's lower landing, located up the stairs from the main tower Floo Flame, below the spiral stairs up to the telescopes. This particular moth is hiding just a bit higher among all the telescopes on the balcony at the top of the tower. Head upstairs to the large moving orbs and look for a chalkboard next to a telescope where the moth hides. Use Lumos to summon it to your wand, then take it back down and turn out the light to get the Field Page."
       },
       {
         "id": "lumos-north-hall-moth-frame-bell-tower-wing",
@@ -2360,7 +2369,7 @@
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "North Hall Moth Frame",
-        "description": "The frame can be found on a landing up some stairs in the North Hall, above the door to the Belltower Room. You can reach it either going south from the Bell Tower Floo Flame, or Northwest from the Transfiguration Courtyard Floo Flame. Head down the stairs from the frame and into the History of Magic classroom, and head to the far side to unlock a level 1 door. You’ll enter the Heiroglyphic Hall and see the sphinx from the painting, and just to the right of its will be the wayward moth. Use Lumos to attract it to your wand, then return to the frame to get a Field Guide Page."
+        "description": "The frame can be found on a landing up some stairs in the North Hall, above the door to the Belltower Room. You can reach it either going south from the Bell Tower Floo Flame, or Northwest from the Transfiguration Courtyard Floo Flame. Head down the stairs from the frame and into the History of Magic classroom, and head to the far side to unlock a level 1 door. You'll enter the Heiroglyphic Hall and see the sphinx from the painting, and just to the right of its will be the wayward moth. Use Lumos to attract it to your wand, then return to the frame to get a Field Guide Page."
       },
       {
         "id": "lumos-courtyard-moth-frame-bell-tower-wing",
@@ -2384,15 +2393,15 @@
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
         "name": "Great Hall Moth Frame",
-        "description": "Despite being listed as a Grand Staircase Field Page, The frame can be found in the small antechamber room found between the Reception Hall and Great Hall itself, flanked by various banners and flags. This particular moth is hiding just in the room ahead, at the far back of the large Great Hall dining area. It’s located on the wall behind the owl lectern and staff tables, and you can use Lumos to guide it to your wand"
+        "description": "Despite being listed as a Grand Staircase Field Page, The frame can be found in the small antechamber room found between the Reception Hall and Great Hall itself, flanked by various banners and flags. This particular moth is hiding just in the room ahead, at the far back of the large Great Hall dining area. It's located on the wall behind the owl lectern and staff tables, and you can use Lumos to guide it to your wand"
       },
       {
         "id": "lumos-headmasters-office-moth-frame-grand-staircase",
         "subtypeId": "lumos",
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
-        "name": "Headmaster’s Office Moth Frame",
-        "description": "It can be found at the top of the Grand Staircase Tower, past the Trophy Room Floo Flame - but you will need to have gained the Alohomora unlocking spell to unlock the level 1 gate at the end of the room. After unlocking the gate, travel up through the winding passages (and grab a Legendary Chest on the first door on the left) before climbing yet more staircases past locked doors to reach a landing where the giant gargoyle sits on the left, next to the Moth Frame painting. Illuminate it with Lumos to find the moth’s location. As it happens, the location is back down the stairs you came from, in the winding corridor hall that housed the legendary chest"
+        "name": "Headmaster's Office Moth Frame",
+        "description": "It can be found at the top of the Grand Staircase Tower, past the Trophy Room Floo Flame - but you will need to have gained the Alohomora unlocking spell to unlock the level 1 gate at the end of the room. After unlocking the gate, travel up through the winding passages (and grab a Legendary Chest on the first door on the left) before climbing yet more staircases past locked doors to reach a landing where the giant gargoyle sits on the left, next to the Moth Frame painting. Illuminate it with Lumos to find the moth's location. As it happens, the location is back down the stairs you came from, in the winding corridor hall that housed the legendary chest"
       },
       {
         "id": "lumos-slytherin-dungeon-moth-frame-the-great-hall",
@@ -2432,7 +2441,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Long Galley Moth Frame",
-        "description": "The frame can be found in the Long Gallery, a very long hallway connecting two locked doors - one below the Potions Classroom in the Library Annex, and one right through the giant doors at the Bell Tower Courtyard Floo Flame. Once in the Long Gallery, head halfway down the hall to find the blank canvas, and use Lumos to reveal the moth’s location in a painting. You can find the moth by heading back towards the Bell Tower Courtyard, on top of a Troll display on the right."
+        "description": "The frame can be found in the Long Gallery, a very long hallway connecting two locked doors - one below the Potions Classroom in the Library Annex, and one right through the giant doors at the Bell Tower Courtyard Floo Flame. Once in the Long Gallery, head halfway down the hall to find the blank canvas, and use Lumos to reveal the moth's location in a painting. You can find the moth by heading back towards the Bell Tower Courtyard, on top of a Troll display on the right."
       },
       {
         "id": "lumos-gryffindor-tower-moth-frame-south-wing",
@@ -2440,7 +2449,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Gryffindor Tower Moth Frame",
-        "description": "* Requires Depulso\nReturn to the Gryffindor Tower main floor across the bridge from the Clocktower Courtyard Floo Flame. When inspecting the Map of Argyllshire that had its own Field Guide Page, you can now use Depulso to push in the button above the map, which will reveal a secret room. Inside, you can find a Moth Frame. The painting will reveal the outside of the unlocked Gryffindor Tower bathroom, which happens to be just around the corner from the map of Argyllshire. You’ll have to enter the bathroom, then use Lumos next to the coat rack to lure the moth away."
+        "description": "* Requires Depulso\nReturn to the Gryffindor Tower main floor across the bridge from the Clocktower Courtyard Floo Flame. When inspecting the Map of Argyllshire that had its own Field Guide Page, you can now use Depulso to push in the button above the map, which will reveal a secret room. Inside, you can find a Moth Frame. The painting will reveal the outside of the unlocked Gryffindor Tower bathroom, which happens to be just around the corner from the map of Argyllshire. You'll have to enter the bathroom, then use Lumos next to the coat rack to lure the moth away."
       },
       {
         "id": "lumos-clock-tower-moth-frame-south-wing",
@@ -2448,7 +2457,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Clock Tower Moth Frame",
-        "description": "Travel to the Clock Tower Courtyard Floo Flame, and use Alohomora on the level 1 locked door to the right of the gate leading outside. Inside, you’ll find the empty moth frame, and lighting it up with Lumos will show you the location of the wayward moth. Luckily, the moth hasn’t gone far. Leave the Clock Tower, and take an immediate right in the outdoor courtyard to head under a stone awning, and look right again to find the moth among the stone pillars."
+        "description": "Travel to the Clock Tower Courtyard Floo Flame, and use Alohomora on the level 1 locked door to the right of the gate leading outside. Inside, you'll find the empty moth frame, and lighting it up with Lumos will show you the location of the wayward moth. Luckily, the moth hasn't gone far. Leave the Clock Tower, and take an immediate right in the outdoor courtyard to head under a stone awning, and look right again to find the moth among the stone pillars."
       },
       {
         "id": "accio-charms-hall-flying-page-astronomy-wing",
@@ -2464,7 +2473,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Dungeons Flying Page",
-        "description": "First, fast travel to the Bell Tower Courtyard Floo Flame in The Bell Tower Wing of Hogwarts. From where you spawn in, take the left stairs (those going south), and head through the door in front of you. Take a sharp left down some more stairs. Follow the path down until you see a large dragon statue on the left. Go right down the corridor and follow it until you come where the passage opens up into a room full of barrels. Look up and you’ll see a Field Guide Page looping in the air near the ceiling."
+        "description": "First, fast travel to the Bell Tower Courtyard Floo Flame in The Bell Tower Wing of Hogwarts. From where you spawn in, take the left stairs (those going south), and head through the door in front of you. Take a sharp left down some more stairs. Follow the path down until you see a large dragon statue on the left. Go right down the corridor and follow it until you come where the passage opens up into a room full of barrels. Look up and you'll see a Field Guide Page looping in the air near the ceiling."
       },
       {
         "id": "accio-bell-tower-flying-page-bell-tower-wing",
@@ -2544,7 +2553,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Dungeons Flying Page",
-        "description": "This page can be found in the Dungeons where the Death Day Parties are held. From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and you’ll see a locked metal door (requires Alohomora to unlock). Follow the corridor through to the next room. The Field Guide page can be flying over head."
+        "description": "This page can be found in the Dungeons where the Death Day Parties are held. From the Lower Grand Staircase Floo Flames, go down the stairs and turn right. Follow the corridor to the end, then turn right and go up the steps. Take the second left and you'll see a locked metal door (requires Alohomora to unlock). Follow the corridor through to the next room. The Field Guide page can be flying over head."
       },
       {
         "id": "accio-central-hall-flying-page-1-library-annex",
@@ -2584,7 +2593,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Infirmary Flying Page",
-        "description": "After completing Mr. Moon’s quest and gaining access to the Faculty Tower, climb up to the second floor and look up the stairwell leading to the third floor up. Here you’ll spot the page among the rafters, so use Accio to grab it."
+        "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the second floor and look up the stairwell leading to the third floor up. Here you'll spot the page among the rafters, so use Accio to grab it."
       },
       {
         "id": "accio-clock-tower-flying-page-south-wing",
@@ -2640,7 +2649,7 @@
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "North Hall Dragon Brazier",
-        "description": "After you gain the ability to unlock doors, head to the upper North Hall by going south from the Bell Tower Courtyard Floo Flame. On the upper floor, you’ll find a level 1 locked door to unlock. On the other side, the abandoned passage holds an Arithmancy Door, but an earlier alcove hides a dragon brazier you can ignite with incendio. Doing so will get you a Field Guide Page."
+        "description": "After you gain the ability to unlock doors, head to the upper North Hall by going south from the Bell Tower Courtyard Floo Flame. On the upper floor, you'll find a level 1 locked door to unlock. On the other side, the abandoned passage holds an Arithmancy Door, but an earlier alcove hides a dragon brazier you can ignite with incendio. Doing so will get you a Field Guide Page."
       },
       {
         "id": "incendio-confringo-bell-tower-exterior-brazier-bell-tower-wing",
@@ -2672,7 +2681,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Great Hall Dragon Basin",
-        "description": "In the dining area, look off to the Northwest for stairs up to a second floor storage area, and you’ll find a small walkway here with the dragon brazier at the end that you can light up for a field page."
+        "description": "In the dining area, look off to the Northwest for stairs up to a second floor storage area, and you'll find a small walkway here with the dragon brazier at the end that you can light up for a field page."
       },
       {
         "id": "incendio-confringo-boathouse-dragon-basin-the-great-hall",
@@ -2680,7 +2689,7 @@
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Boathouse Dragon Basin",
-        "description": "Once you’ve visited Hogsmeade for the first time, the gate to the boathouse will be unlocked along the Northeast part of the Viaduct Courtyard, and you can take the long winding path down the boathouse, where the brazier will be by the door."
+        "description": "Once you've visited Hogsmeade for the first time, the gate to the boathouse will be unlocked along the Northeast part of the Viaduct Courtyard, and you can take the long winding path down the boathouse, where the brazier will be by the door."
       },
       {
         "id": "incendio-confringo-slytherin-dungeons-dragon-basin-the-great-hall",
@@ -2728,7 +2737,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Transfiguration Courtyard Statue",
-        "description": "From the Clocktower Courtyard Floo Flame, head to the East corner under the stone awning to find a statue holding an orb. Use the Levioso spell to raise the orb, and you’ll be given a page."
+        "description": "From the Clocktower Courtyard Floo Flame, head to the East corner under the stone awning to find a statue holding an orb. Use the Levioso spell to raise the orb, and you'll be given a page."
       },
       {
         "id": "levioso-astronomy-tower-statue-astronomy-wing",
@@ -2744,7 +2753,7 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Alchemy Class Statue",
-        "description": "Head down the stairs in the North Hall into the dungeons and down the long winding passage to a cellar area full of casks and barred doors, and you’ll find one that has a level 1 lock on it. After picking the lock, interact with the Frog Statue to be teleported through a series of them all across this dungeon room. The first stop will put you right next to a statue you can cast Levioso on to reveal a Field Guide Page"
+        "description": "Head down the stairs in the North Hall into the dungeons and down the long winding passage to a cellar area full of casks and barred doors, and you'll find one that has a level 1 lock on it. After picking the lock, interact with the Frog Statue to be teleported through a series of them all across this dungeon room. The first stop will put you right next to a statue you can cast Levioso on to reveal a Field Guide Page"
       },
       {
         "id": "levioso-heiroglyphic-hall-statue-bell-tower-wing",
@@ -2768,7 +2777,7 @@
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "North Exit Statue",
-        "description": "Fast Travel to the Hogwarts North Exit Floo Flame. Head to the room above the main gate leading out of Hogwarts. Inside, you’ll find a statue. Cast Levioso at the globe to reveal the Field Guide Page."
+        "description": "Fast Travel to the Hogwarts North Exit Floo Flame. Head to the room above the main gate leading out of Hogwarts. Inside, you'll find a statue. Cast Levioso at the globe to reveal the Field Guide Page."
       },
       {
         "id": "levioso-owlery-statue-bell-tower-wing",
@@ -2808,7 +2817,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Restricted Section Statue",
-        "description": "It is located in the Restricted Section of the Library, which you can only gain access to when undertaking a main quest with Sebastian Sallow. After sneaking down to the lower floors past the ghosts, you’ll enter a storage room, and the statue can be found down the stairs."
+        "description": "It is located in the Restricted Section of the Library, which you can only gain access to when undertaking a main quest with Sebastian Sallow. After sneaking down to the lower floors past the ghosts, you'll enter a storage room, and the statue can be found down the stairs."
       },
       {
         "id": "levioso-central-hall-statue-library-annex",
@@ -2816,7 +2825,7 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Central Hall Statue",
-        "description": "Once you can unlock doors, head Northeast from the Central Hall statue to look right from the door to the Greenhouses and you’ll spot a level 1 locked door. Once unlocked, enter to find a chest and a statue you can use Levioso on to reveal a Field Guide Page."
+        "description": "Once you can unlock doors, head Northeast from the Central Hall statue to look right from the door to the Greenhouses and you'll spot a level 1 locked door. Once unlocked, enter to find a chest and a statue you can use Levioso on to reveal a Field Guide Page."
       },
       {
         "id": "levioso-quad-statue-south-wing",
@@ -2824,7 +2833,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Quad Statue",
-        "description": "Though listed in the South Wing, you can actually find it at the edge of the outdoor Quad area between the Grand Staircase and Great Hall. It’s easiest to reach either from the Quad Courtyard Floo Flame and traveling South against the higher walkway."
+        "description": "Though listed in the South Wing, you can actually find it at the edge of the outdoor Quad area between the Grand Staircase and Great Hall. It's easiest to reach either from the Quad Courtyard Floo Flame and traveling South against the higher walkway."
       },
       {
         "id": "levioso-clock-tower-statue-south-wing",
@@ -2840,7 +2849,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Hospital Wing Statue",
-        "description": "After completing Mr. Moon’s quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing across from the statue of Boris, and use Levioso to reveal the page."
+        "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing across from the statue of Boris, and use Levioso to reveal the page."
       },
       {
         "id": "revelio-hengist-of-woodcroft-north-hogsmeade",
@@ -2856,7 +2865,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Scrivenshaft Cats",
-        "description": "While facing the statue of Hengist, turn left and go into the blue building you see. Inside, you’ll find a back area that has two cats. The field guide page is in the archway of the backroom."
+        "description": "While facing the statue of Hengist, turn left and go into the blue building you see. Inside, you'll find a back area that has two cats. The field guide page is in the archway of the backroom."
       },
       {
         "id": "revelio-honeydukes-north-hogsmeade",
@@ -2864,7 +2873,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Honeydukes",
-        "description": "From Scribenshaft Cats, turn left and head back towards the statue. Across from it, you’ll find the sweets shop, Honeydukes. The field guide page is right at the front door on the outside of the building."
+        "description": "From Scribenshaft Cats, turn left and head back towards the statue. Across from it, you'll find the sweets shop, Honeydukes. The field guide page is right at the front door on the outside of the building."
       },
       {
         "id": "revelio-fizzing-whizbees-north-hogsmeade",
@@ -2880,7 +2889,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Exploding Bon Bons",
-        "description": "Next, head into Honeydukes and you’ll find the next page on the north side of the building next to the pot of gold."
+        "description": "Next, head into Honeydukes and you'll find the next page on the north side of the building next to the pot of gold."
       },
       {
         "id": "revelio-tea-shop-decor-north-hogsmeade",
@@ -2888,7 +2897,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Tea Shop Decor",
-        "description": "Exit Honeydukes and head across the street to Steepley & Sons. Go through the front door and turn left. You’ll find the next page near the table that’s against the green wall."
+        "description": "Exit Honeydukes and head across the street to Steepley & Sons. Go through the front door and turn left. You'll find the next page near the table that's against the green wall."
       },
       {
         "id": "revelio-magical-mail-north-hogsmeade",
@@ -2896,7 +2905,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Magical Mail",
-        "description": "Exit the tea shop and turn left to find the post office. You’ll find the next page inside the post office between the blue shelves."
+        "description": "Exit the tea shop and turn left to find the post office. You'll find the next page inside the post office between the blue shelves."
       },
       {
         "id": "revelio-dogweed-and-deathcap-tree-north-hogsmeade",
@@ -2904,7 +2913,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Dogweed And Deathcap Tree",
-        "description": "The next one is across the river, on the northwestern side of Hogsmeade. Head across the bridge near Brood and Peck, and make your way up the hill towards Dogweed And Deathcap. You’ll find the page inside, next to the tree."
+        "description": "The next one is across the river, on the northwestern side of Hogsmeade. Head across the bridge near Brood and Peck, and make your way up the hill towards Dogweed And Deathcap. You'll find the page inside, next to the tree."
       },
       {
         "id": "revelio-abandoned-shop-north-hogsmeade",
@@ -2912,7 +2921,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Abandoned Shop",
-        "description": "From Dogweed And Deathcap, head down the road moving south. As you make your way down the road, you’ll see another building up another road to your right. The page is in front of The Old Fool abandoned shop."
+        "description": "From Dogweed And Deathcap, head down the road moving south. As you make your way down the road, you'll see another building up another road to your right. The page is in front of The Old Fool abandoned shop."
       },
       {
         "id": "revelio-brood-and-peck-north-hogsmeade",
@@ -2936,7 +2945,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Above Dogweed And Deathcap",
-        "description": "Head back to Dogweed and Deathcap, and you’ll find this Accio page flying around the top of the building. If you are having trouble getting it, you can climb up to the cliffs behind the building to get a better angle."
+        "description": "Head back to Dogweed and Deathcap, and you'll find this Accio page flying around the top of the building. If you are having trouble getting it, you can climb up to the cliffs behind the building to get a better angle."
       },
       {
         "id": "accio-near-the-water-mill-north-hogsmeade",
@@ -2944,7 +2953,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Near The Water Mill",
-        "description": "From Dogweed And Deathcap, head down the path and take a left at the fork. Head up this path towards the water mill, and you’ll find the page flying around nearby."
+        "description": "From Dogweed And Deathcap, head down the path and take a left at the fork. Head up this path towards the water mill, and you'll find the page flying around nearby."
       },
       {
         "id": "accio-brood-and-peck-north-hogsmeade",
@@ -2952,7 +2961,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Brood and Peck",
-        "description": "Head back down the hill and make your way across the bridge near Brood and Peck. You’ll find the next page flying over the bridge."
+        "description": "Head back down the hill and make your way across the bridge near Brood and Peck. You'll find the next page flying over the bridge."
       },
       {
         "id": "accio-behind-steeply-sons-north-hogsmeade",
@@ -2960,7 +2969,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Behind Steeply & Sons",
-        "description": "Make your way back towards Hogsmeade Square and head between the buildings to the right of Steeply & Sons. You’ll find the page flying around near the cliff behind the building."
+        "description": "Make your way back towards Hogsmeade Square and head between the buildings to the right of Steeply & Sons. You'll find the page flying around near the cliff behind the building."
       },
       {
         "id": "accio-northernmost-cliffs-north-hogsmeade",
@@ -2968,7 +2977,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Northernmost Cliffs",
-        "description": "Head back to Hogsmeade Square, and follow the path north towards the unnamed buildings above Honeydukes. You’ll find the page flying around near the cliffs."
+        "description": "Head back to Hogsmeade Square, and follow the path north towards the unnamed buildings above Honeydukes. You'll find the page flying around near the cliffs."
       },
       {
         "id": "accio-behind-brood-and-peck-north-hogsmeade",
@@ -2992,7 +3001,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Dogweed And Deathcap",
-        "description": "Inside the Dogweed And Deathcap shop, you’ll find a moth mirror. After casting Lumos in front of the mirror, head out of the shop and up cliffs behind it to find the moth on the edge of the chimney."
+        "description": "Inside the Dogweed And Deathcap shop, you'll find a moth mirror. After casting Lumos in front of the mirror, head out of the shop and up cliffs behind it to find the moth on the edge of the chimney."
       },
       {
         "id": "lumos-the-old-fool-north-hogsmeade",
@@ -3000,7 +3009,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "The Old Fool",
-        "description": "Inside the Old Fool abandoned shop, you’ll find the moth mirror hung on the center wall. Exit the shop, turn left, and head around to the back of the building. The moth will be on a box near a pine tree."
+        "description": "Inside the Old Fool abandoned shop, you'll find the moth mirror hung on the center wall. Exit the shop, turn left, and head around to the back of the building. The moth will be on a box near a pine tree."
       },
       {
         "id": "lumos-water-mill-north-hogsmeade",
@@ -3008,7 +3017,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "north-hogsmeade",
         "name": "Water Mill",
-        "description": "North of Hogsmeade Square, you’ll find a building with a water mill connected. Go inside the building and you’ll find the mirror on the ground to your left. Exit the way you came, and you’ll find the moth perched on a lamp next to the nearest house slightly down the hill."
+        "description": "North of Hogsmeade Square, you'll find a building with a water mill connected. Go inside the building and you'll find the mirror on the ground to your left. Exit the way you came, and you'll find the moth perched on a lamp next to the nearest house slightly down the hill."
       },
       {
         "id": "revelio-the-three-broomsticks-private-room-south-hogsmeade",
@@ -3024,7 +3033,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "The Three Broomsticks",
-        "description": "Enter the bar through the main entrance, and you’ll see a fireplace on the far side of the room. You’ll find the Revelio page just in front of the fireplace."
+        "description": "Enter the bar through the main entrance, and you'll see a fireplace on the far side of the room. You'll find the Revelio page just in front of the fireplace."
       },
       {
         "id": "revelio-butterbeer-barrels-south-hogsmeade",
@@ -3032,14 +3041,14 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Butterbeer Barrels",
-        "description": "Head outside The Three Broomsticks and make your way around to the eastern side of the building. Here you’ll find some large butterbeer barrels, and the guide page will be in front of them."
+        "description": "Head outside The Three Broomsticks and make your way around to the eastern side of the building. Here you'll find some large butterbeer barrels, and the guide page will be in front of them."
       },
       {
         "id": "revelio-ceridwens-precarious-cauldrons-south-hogsmeade",
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
-        "name": "Ceridwen’s Precarious Cauldrons",
+        "name": "Ceridwen's Precarious Cauldrons",
         "description": "In front of Tomes and Scrolls you'll find Ceridwen's Cauldrons. The field guide page is near the stack of cauldrons next to the front door."
       },
       {
@@ -3047,8 +3056,8 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
-        "name": "Ollivander’s Wand Shop",
-        "description": "Navigate to the front door of Ollivander’s Wand Shop. Cast Revelio near the door to reveal the guide page."
+        "name": "Ollivander's Wand Shop",
+        "description": "Navigate to the front door of Ollivander's Wand Shop. Cast Revelio near the door to reveal the guide page."
       },
       {
         "id": "revelio-hogsmeade-south-hogsmeade",
@@ -3056,7 +3065,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Hogsmeade",
-        "description": "This is the first one you have access to when you initially arrive in Hogsmeade. You’ll find the guide page at the base of the bridge you take to enter the town."
+        "description": "This is the first one you have access to when you initially arrive in Hogsmeade. You'll find the guide page at the base of the bridge you take to enter the town."
       },
       {
         "id": "revelio-spintwitches-sporting-needs-south-hogsmeade",
@@ -3064,7 +3073,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Spintwitches Sporting Needs",
-        "description": "This field guide page isn’t initially available when you arrive in Hogsmeade. You’ll need to take your first broom flying class, which is a few chapters into the main story. After doing so, the broom shop will be unlocked. Head through the front door and the page will be immediately on your left."
+        "description": "This field guide page isn't initially available when you arrive in Hogsmeade. You'll need to take your first broom flying class, which is a few chapters into the main story. After doing so, the broom shop will be unlocked. Head through the front door and the page will be immediately on your left."
       },
       {
         "id": "revelio-enchanted-staircase-south-hogsmeade",
@@ -3088,7 +3097,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Tomes And Scrolls Shop",
-        "description": "Head inside the shop and you’ll find a box on a table that you can interact with. After doing so, a staircase will assemble. Take that up to the second floor, and you’ll find the page flying around."
+        "description": "Head inside the shop and you'll find a box on a table that you can interact with. After doing so, a staircase will assemble. Take that up to the second floor, and you'll find the page flying around."
       },
       {
         "id": "accio-outside-the-tomes-shop-south-hogsmeade",
@@ -3096,7 +3105,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Outside The Tomes Shop",
-        "description": "After exiting the shop, turn around and face the front door. You’ll see the page flying around to the left of it."
+        "description": "After exiting the shop, turn around and face the front door. You'll see the page flying around to the left of it."
       },
       {
         "id": "accio-pink-leaved-tree-south-hogsmeade",
@@ -3104,7 +3113,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Pink Leaved Tree",
-        "description": "Now turn around so that your back is to the shop entrance, and head across the street between the buildings, heading in an eastward direction. You’ll find it flying around a pink-leaved tree."
+        "description": "Now turn around so that your back is to the shop entrance, and head across the street between the buildings, heading in an eastward direction. You'll find it flying around a pink-leaved tree."
       },
       {
         "id": "accio-northwest-of-the-tomes-shop-south-hogsmeade",
@@ -3112,7 +3121,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Northwest Of The Tomes Shop",
-        "description": "Head back to the tomes shop and make your way down the adjacent street. Move northwest until you can see Hogwarts in the distance. You’ll see the page flying around in the open."
+        "description": "Head back to the tomes shop and make your way down the adjacent street. Move northwest until you can see Hogwarts in the distance. You'll see the page flying around in the open."
       },
       {
         "id": "accio-next-to-the-three-broomsticks-south-hogsmeade",
@@ -3120,7 +3129,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
         "name": "Next To The Three Broomsticks",
-        "description": "Make your way to the outside of The Three Broomsticks. You’ll find the page flying between the bar and the locked building next to it."
+        "description": "Make your way to the outside of The Three Broomsticks. You'll find the page flying between the bar and the locked building next to it."
       },
       {
         "id": "accio-alley-by-tomes-and-scrolls-south-hogsmeade",
@@ -3144,7 +3153,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Gladrags Wizardwear",
-        "description": "Head to Hogsmeade Square and make your way across the street to Gladrags Wizardwear. You’ll find the page near the front door entrance."
+        "description": "Head to Hogsmeade Square and make your way across the street to Gladrags Wizardwear. You'll find the page near the front door entrance."
       },
       {
         "id": "revelio-gladrags-mannequin-west-hogsmeade",
@@ -3152,7 +3161,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Gladrags Mannequin",
-        "description": "Head into the shop through the front door. You’ll see the owner to your left, and to your right will be a mannequin bust. The page is right in front of the mannequin."
+        "description": "Head into the shop through the front door. You'll see the owner to your left, and to your right will be a mannequin bust. The page is right in front of the mannequin."
       },
       {
         "id": "revelio-sneakoscope-west-hogsmeade",
@@ -3160,15 +3169,15 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Sneakoscope",
-        "description": "The next one is in the same building, on the other side of the clothing shop. Head down the steps and you’ll find the next page in front of a desk near a skeleton."
+        "description": "The next one is in the same building, on the other side of the clothing shop. Head down the steps and you'll find the next page in front of a desk near a skeleton."
       },
       {
         "id": "revelio-zonkos-joke-shop-west-hogsmeade",
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Zonko’s Joke Shop",
-        "description": "Make your way to the front entrance of the joke shop. Cast Revelio and you’ll find the guide page by the main entrance, near the butterbeer barrels."
+        "name": "Zonko's Joke Shop",
+        "description": "Make your way to the front entrance of the joke shop. Cast Revelio and you'll find the guide page by the main entrance, near the butterbeer barrels."
       },
       {
         "id": "revelio-frog-spawn-soap-west-hogsmeade",
@@ -3176,7 +3185,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Frog Spawn Soap",
-        "description": "Next, head inside Zonko’s Joke Shop. The first Revelio page is on the bottom floor next to a tiny stage with a curtain."
+        "description": "Next, head inside Zonko's Joke Shop. The first Revelio page is on the bottom floor next to a tiny stage with a curtain."
       },
       {
         "id": "revelio-dungbomb-west-hogsmeade",
@@ -3184,7 +3193,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Dungbomb",
-        "description": "After grabbing the Frog Spawn Soap, head up to the second floor. You’ll find the next page in the back near the railing that overlooks the first floor."
+        "description": "After grabbing the Frog Spawn Soap, head up to the second floor. You'll find the next page in the back near the railing that overlooks the first floor."
       },
       {
         "id": "revelio-water-well-west-hogsmeade",
@@ -3192,7 +3201,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Water Well",
-        "description": "Make your way to the center of town. In the middle of the street, positioned between Madam Snelling’s Tress Emporium and Gladrags Wizardwear, you’ll find a well. Cast Revelio near the well to reveal the hidden page."
+        "description": "Make your way to the center of town. In the middle of the street, positioned between Madam Snelling's Tress Emporium and Gladrags Wizardwear, you'll find a well. Cast Revelio near the well to reveal the hidden page."
       },
       {
         "id": "revelio-hogsmeade-community-garden-west-hogsmeade",
@@ -3207,24 +3216,24 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "J. Pippin’s Potions",
-        "description": "Unlike most of the other shops, there isn’t a guide page outside of J. Pippin’s Potions. Instead, head inside and you’ll find it near the potions behind the shopkeeper."
+        "name": "J. Pippin's Potions",
+        "description": "Unlike most of the other shops, there isn't a guide page outside of J. Pippin's Potions. Instead, head inside and you'll find it near the potions behind the shopkeeper."
       },
       {
         "id": "revelio-mounted-hogs-head-west-hogsmeade",
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Mounted Hog’s Head",
-        "description": "South of the West Hogsmeade Floo Flame, you’ll find the Hog’s Head pub. Go inside and the page will be behind the bartender."
+        "name": "Mounted Hog's Head",
+        "description": "South of the West Hogsmeade Floo Flame, you'll find the Hog's Head pub. Go inside and the page will be behind the bartender."
       },
       {
         "id": "revelio-hogs-head-docks-west-hogsmeade",
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Hog’s Head Docks",
-        "description": "Exit the pub from the back entrance, and turn to your right. You’ll find the next page by the docks, facing west."
+        "name": "Hog's Head Docks",
+        "description": "Exit the pub from the back entrance, and turn to your right. You'll find the next page by the docks, facing west."
       },
       {
         "id": "revelio-the-magic-neep-cart-west-hogsmeade",
@@ -3240,15 +3249,15 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Above The Magic Neep",
-        "description": "As you are approaching the shop, look up above the shop, and you’ll find it flying around near the roof."
+        "description": "As you are approaching the shop, look up above the shop, and you'll find it flying around near the roof."
       },
       {
         "id": "accio-behind-hogs-head-pub-west-hogsmeade",
         "subtypeId": "accio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Behind Hog’s Head Pub",
-        "description": "Make your way back to Hog’s Head Pub. Outside, in the back where you found the Revelio page, you’ll see the next page flying around over the river to the west."
+        "name": "Behind Hog's Head Pub",
+        "description": "Make your way back to Hog's Head Pub. Outside, in the back where you found the Revelio page, you'll see the next page flying around over the river to the west."
       },
       {
         "id": "accio-between-two-houses-west-hogsmeade",
@@ -3256,7 +3265,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Between Two Houses",
-        "description": "From J. Pippin’s Potions, head north up the street. At the bend, you’ll see the page flying between two houses."
+        "description": "From J. Pippin's Potions, head north up the street. At the bend, you'll see the page flying between two houses."
       },
       {
         "id": "accio-between-two-shops-west-hogsmeade",
@@ -3264,7 +3273,7 @@
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
         "name": "Between Two Shops",
-        "description": "From Hogsmeade Square, make your way toward Madam Snellins Tress Emporium. You’ll find the next one between her shop and Gladrags Wizardwear."
+        "description": "From Hogsmeade Square, make your way toward Madam Snellins Tress Emporium. You'll find the next one between her shop and Gladrags Wizardwear."
       },
       {
         "id": "accio-near-the-western-cliffs-west-hogsmeade",
@@ -3279,8 +3288,8 @@
         "subtypeId": "lumos",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Behind Hog’s Head",
-        "description": "To find the mirror, make your way to the back area of Hog’s Head. Behind the adjacent buildings, start moving in an eastward direction until you find the mirror next to the locked eye-chest. To find the moth, head back to the Hog’s Head Dock, and it will be on a box near where you found the Revelio page."
+        "name": "Behind Hog's Head",
+        "description": "To find the mirror, make your way to the back area of Hog's Head. Behind the adjacent buildings, start moving in an eastward direction until you find the mirror next to the locked eye-chest. To find the moth, head back to the Hog's Head Dock, and it will be on a box near where you found the Revelio page."
       },
       {
         "id": "revelio-spider-sign-north-ford-bog",
@@ -3504,7 +3513,7 @@
         "locationId": "the-highlands",
         "sublocationId": "south-hogwarts-region",
         "name": "Groundskeepers Tools",
-        "description": "From the Hogwarts South Exit Floo Flames, head along the cobbled path and down the hill. You’ll see a small building on the way down. Go inside to find this Field Guide page.\n\n**Note:** While this is part of the Hogwarts Revelio Collections, it counts towards the Highlands Field Guide Page count of 31"
+        "description": "From the Hogwarts South Exit Floo Flames, head along the cobbled path and down the hill. You'll see a small building on the way down. Go inside to find this Field Guide page.\n\n**Note:** While this is part of the Hogwarts Revelio Collections, it counts towards the Highlands Field Guide Page count of 31"
       },
       {
         "id": "revelio-hogsmeade-station-ticket-office-south-hogwarts-region",
@@ -3539,48 +3548,56 @@
       {
         "id": "professor-figs-classroom",
         "locationId": "hogwarts",
+        "sublocationId": "astronomy-wing",
         "name": "Professor Fig's Classroom",
-        "description": "1. Teleport to the Professor Fig’s Classroom floo flame in the Astronomy Wing, and enter the door ahead of you. \n2. Go up the stairs into his office and find the Demiguise statue toward the back of the office."
+        "description": "1. Teleport to the Professor Fig's Classroom floo flame in the Astronomy Wing, and enter the door ahead of you. \n2. Go up the stairs into his office and find the Demiguise statue toward the back of the office."
       },
       {
         "id": "transfiguration-classroom",
         "locationId": "hogwarts",
+        "sublocationId": "astronomy-wing",
         "name": "Transfiguration Classroom",
         "description": "1. Teleport to the Transfiguration Classroom floo flame in the Astronomy Wing.\n2. Turn around and go through the doors on your left.\n3. Proceed forward and go down all of the stairs on the right.\n4. Go inside the door and head down even more stairs until you reach the dragon statue.\n5. Turn right and find the door with a level one lock on your left.\n6. Unlock the door with Alohomora, and find the Demiguise statue on your right."
       },
       {
         "id": "transfiguration-courtyard",
         "locationId": "hogwarts",
+        "sublocationId": "astronomy-wing",
         "name": "Transfiguration Courtyard",
         "description": "1. Use the Transfiguration Courtyard floo flame in the Astronomy Wing.\n2. Turn around and enter the doors to the Defence Against the Dark Arts Tower.\n3. Go right up the small set of stairs and find the door with a level two lock and two talking gargoyles on both sides of it.\n4. Use Alohomora to open the door, and collect the Demiguise Moon from the statue inside."
       },
       {
         "id": "hogwarts-north-exit",
         "locationId": "hogwarts",
+        "sublocationId": "bell-tower-wing",
         "name": "Hogwarts North Exit",
-        "description": "1. Teleport to the Hogwarts North Exit floo flame located in the Bell Tower Wing.\n2. Turn around and turn left as soon as you’re within castle walls.\n3. Find the door with a level one lock on the right side of the stairs (don’t go up the stairs).\n4. Unlock the door and head inside to find a Demiguise statue on the right."
+        "description": "1. Teleport to the Hogwarts North Exit floo flame located in the Bell Tower Wing.\n2. Turn around and turn left as soon as you're within castle walls.\n3. Find the door with a level one lock on the right side of the stairs (don't go up the stairs).\n4. Unlock the door and head inside to find a Demiguise statue on the right."
       },
       {
         "id": "beasts-classroom",
         "locationId": "hogwarts",
+        "sublocationId": "bell-tower-wing",
         "name": "Beasts Classroom",
         "description": "1. Fast travel to the Beasts Classroom floo flame which is located in the Bell Tower Wing.\n2. Turn around to find a door with a level two lock.\n3. Unlock the door, and collect the Demiguise moon inside."
       },
       {
         "id": "divination-classroom",
         "locationId": "hogwarts",
+        "sublocationId": "library-annex",
         "name": "Divination Classroom",
-        "description": "1. Teleport to the Divination Classroom floo flame in the Library Annex.\n2. Proceed up the stairs, and climb up the ladder that falls down.\n3. Collect the Demiguise moon from the statue on Professor Onai’s desk."
+        "description": "1. Teleport to the Divination Classroom floo flame in the Library Annex.\n2. Proceed up the stairs, and climb up the ladder that falls down.\n3. Collect the Demiguise moon from the statue on Professor Onai's desk."
       },
       {
         "id": "restricted-section",
         "locationId": "hogwarts",
+        "sublocationId": "library-annex",
         "name": "Restricted Section",
         "description": "1. Teleport to the Library floo flame in the Library Annex, and turn around towards the fenced area of the library.\n2. Enter the fenced area, which should seem familiar from the “Secrets of the Restricted Section” quest.\n3. Proceed to the bottom of the restricted section, and proceed through the rooms to find the Demiguise statue."
       },
       {
         "id": "potions-classroom",
         "locationId": "hogwarts",
+        "sublocationId": "library-annex",
         "name": "Potions Classroom",
         "description": "1. Travel to the Potions Classroom floo flame in the Library Annex, and enter the doors ahead.\n2. Go down the spiral staircase on the left, and proceed through the corridor until you find a door on the left with a level one lock.\n3. Unlock the door, and head down the hallway until you find a door with a level two lock on your left.\n4. Use Alohomora to open the door, and grab the Demiguise moon from the statue inside."
       },
@@ -3614,13 +3631,13 @@
         "id": "hogs-head",
         "locationId": "hogsmeade",
         "name": "Hog's Head",
-        "description": "1. Go to Hog’s Head in Hogsmeade, and go inside.\n2. Enter the room on the right side to find a Demiguise statue on top of some crates"
+        "description": "1. Go to Hog's Head in Hogsmeade, and go inside.\n2. Enter the room on the right side to find a Demiguise statue on top of some crates"
       },
       {
         "id": "house-by-jpippins-potions",
         "locationId": "hogsmeade",
         "name": "House By J.Pippin's Potions",
-        "description": "1. Make your way to J. Pippin’s Potions, and find the house to the north of it.\n2. Unlock the level two lock on the door, and enter the house.\n3. Go up the stairs, and collect the Demiguise moon on top of the dresser."
+        "description": "1. Make your way to J. Pippin's Potions, and find the house to the north of it.\n2. Unlock the level two lock on the door, and enter the house.\n3. Go up the stairs, and collect the Demiguise moon on top of the dresser."
       },
       {
         "id": "three-broomsticks",
@@ -3653,58 +3670,80 @@
         "description": "1. Make your way to the house behind Honeydukes, and unlock the door.\n2. Collect the Demiguise moon inside."
       },
       {
-        "id": "pitt-upon-ford----northford-bog",
-        "name": "Pitt-Upon-Ford -- Northford Bog",
-        "description": "1. Make your way to Pitt-upon-ford, which is in North Ford Bog.\n2. Travel to the floo flame, and take the path that leads south until you find a three-story house on the right.\n3. Enter the house and climb up the stairs to the top where you’ll find the Demiguise statue on the floor."
+        "id": "pitt-upon-ford",
+        "locationId": "the-highlands",
+        "sublocationId": "north-ford-bog",
+        "name": "Pitt-Upon-Ford",
+        "description": "1. Make your way to Pitt-upon-ford, which is in North Ford Bog.\n2. Travel to the floo flame, and take the path that leads south until you find a three-story house on the right.\n3. Enter the house and climb up the stairs to the top where you'll find the Demiguise statue on the floor."
       },
       {
-        "id": "upper-hogsfield----hogsmeade-valley",
-        "name": "Upper Hogsfield -- Hogsmeade Valley",
+        "id": "upper-hogsfield",
+        "name": "Upper Hogsfield",
+        "locationId": "the-highlands",
+        "sublocationId": "hogsmeade-valley",
         "description": "1. Travel to the floo flame in Upper Hogsfield, which is in the northern section of Hogsmeade Valley.\n2. Follow the path that leads north to a house with a wheel beside the door.\n3. Unlock the level one lock on the door to immediately find a Demiguise statue."
       },
       {
-        "id": "aranshire----south-hogwarts-region",
-        "name": "Aranshire -- South Hogwarts Region",
+        "id": "aranshire",
+        "locationId": "the-highlands",
+        "sublocationId": "south-hogwarts-region",
+        "name": "Aranshire",
         "description": "1. Travel to Aranshire, which is located on the eastern side of the South Hogwarts Region.\n2. Enter the closest house to the floo flame, which has a level one lock.\n3. Head upstairs to find the Demiguise statue."
       },
       {
-        "id": "lower-hogsfield----south-hogwarts",
-        "name": "Lower Hogsfield -- South Hogwarts",
+        "id": "lower-hogsfield",
+        "locationId": "the-highlands",
+        "sublocationId": "south-hogwarts-region",
+        "name": "Lower Hogsfield",
         "description": "1. Head to Lower Hogsfield, which is located to the south of Hogwarts in the South Hogwarts Region.\n2. Enter the house with a rounded roof, which has a level one lock on the door.\n3. Let the door close to find the Demiguise statue on the floor."
       },
       {
-        "id": "brocburrow---hogwarts-valley",
-        "name": "Brocburrow - Hogwarts Valley",
+        "id": "brocburrow",
+        "locationId": "the-highlands",
+        "sublocationId": "hogwarts-valley",
+        "name": "Brocburrow",
         "description": "1. Travel to Brocburrow, which is located in the northeastern section of Hogwarts Valley.\n2. Make your way to the center of the town, which has a well and a few market stalls.\n3. Face northwest towards the two houses, and enter the house on the right that has a level one lock.\n4. Find the Demiguise statue on the floor immediately to the left after entering the house."
       },
       {
-        "id": "keenbridge---hogwarts-valley",
-        "name": "Keenbridge - Hogwarts Valley",
+        "id": "keenbridge",
+        "locationId": "the-highlands",
+        "sublocationId": "hogwarts-valley",
+        "name": "Keenbridge",
         "description": "1. Travel to Keenbridge, which is located around the center of Hogwarts Valley.\n2. Follow the path that heads west out of Keenbridge to a house with pumpkins outside and a clothes line coming down from the roof.\n3. Unlock the door with a level one lock using Alohomora, and find the Demiguise statue immediately inside."
       },
       {
-        "id": "feldcroft----feldcroft-region",
-        "name": "Feldcroft -- Feldcroft Region",
+        "id": "feldcroft",
+        "locationId": "the-highlands",
+        "sublocationId": "feldcroft-region",
+        "name": "Feldcroft",
         "description": "1. Make your way to Feldcroft, which is located in the center of the Feldcroft region.\n2. Head to the east side of the town, and find the house with a clothes line coming from the roof.\n3. Enter the house to find a Demiguise statue on the window sill on the left."
       },
       {
-        "id": "irondale----feldcroft-region",
-        "name": "Irondale -- Feldcroft Region",
+        "id": "irondale",
+        "locationId": "the-highlands",
+        "sublocationId": "feldcroft-region",
+        "name": "Irondale",
         "description": "1. Travel to Irondale, which is located in the southeast of the Feldcroft Region.\n2. Find the house with a triangle roof and Althea Twiddle outside.\n3. Head inside and search behind the counter on the right to find the Demiguise statue."
       },
       {
-        "id": "marunweem----marunweem-lake",
-        "name": "Marunweem -- Marunweem Lake",
+        "id": "marunweem",
+        "locationId": "the-highlands",
+        "sublocationId": "marunweem-lake",
+        "name": "Marunweem",
         "description": "1. Head to Marunweem, which is located in the Marunweem Lake region.\n2. From the floo flame, head north and take the first right turn.\n3. Follow the path to the first home you come across on the left.\n4. Unlock the door using Alohomora, and find Demiguise statue behind the counter"
       },
       {
-        "id": "brainburgh----manor-cape",
-        "name": "Brainburgh -- Manor Cape",
+        "id": "brainburgh",
+        "locationId": "the-highlands",
+        "sublocationId": "manor-cape",
+        "name": "Brainburgh",
         "description": "1. Travel to the floo flame in Bainburgh, which is located in the northern section of Manor Cape.\n2. Turn left when looking away from the floo flame, and head towards the house on the left.\n3. Unlock the door, and collect the Demiguise moon from the statue inside."
       },
       {
-        "id": "cragcroft----cragcroftshire",
-        "name": "Cragcroft -- Cragcroftshire",
+        "id": "cragcroft",
+        "locationId": "the-highlands",
+        "sublocationId": "cragcroftshire",
+        "name": "Cragcroft",
         "description": "1. Travel to center of Cragcroft, which is located in the eastern section of Cragcroftshire.\n2. Make your way to the center of Cragcroft, which is indicated by a large tree.\n3. Face northwest and move towards the house beside the vendor, Bella Navarro.\n4. Head inside and go to the top floor to find a Demiguise statue."
       }
     ]
@@ -6641,7 +6680,7 @@
       {
         "id": "alls-well-that-ends-bell",
         "subtypeId": "side-quests",
-        "name": "All’s Well That Ends Bell"
+        "name": "All's Well That Ends Bell"
       },
       {
         "id": "a-bird-in-the-hand",
@@ -6651,7 +6690,7 @@
       {
         "id": "beeting-a-curse",
         "subtypeId": "side-quests",
-        "name": "‘Beeting’ a Curse"
+        "name": "‘Beeting' a Curse"
       },
       {
         "id": "birds-of-a-feather",
@@ -6666,7 +6705,7 @@
       {
         "id": "brothers-keeper",
         "subtypeId": "side-quests",
-        "name": "Brother’s Keeper"
+        "name": "Brother's Keeper"
       },
       {
         "id": "cache-in-the-castle",
@@ -6701,7 +6740,7 @@
       {
         "id": "dissending-for-sweets",
         "subtypeId": "side-quests",
-        "name": "‘Dissending’ for Sweets"
+        "name": "‘Dissending' for Sweets"
       },
       {
         "id": "e-vase-ive-manoeuvre",
@@ -6761,7 +6800,7 @@
       {
         "id": "mer-ky-depths",
         "subtypeId": "side-quests",
-        "name": "‘Mer-Ky’ Depths"
+        "name": "‘Mer-Ky' Depths"
       },
       {
         "id": "minding-your-own-business-playstation-exclusive",
@@ -6811,22 +6850,22 @@
       {
         "id": "summoners-court-match-1",
         "subtypeId": "side-quests",
-        "name": "Summoner’s Court: Match 1"
+        "name": "Summoner's Court: Match 1"
       },
       {
         "id": "summoners-court-match-2",
         "subtypeId": "side-quests",
-        "name": "Summoner’s Court: Match 2"
+        "name": "Summoner's Court: Match 2"
       },
       {
         "id": "summoners-court-match-3",
         "subtypeId": "side-quests",
-        "name": "Summoner’s Court: Match 3"
+        "name": "Summoner's Court: Match 3"
       },
       {
         "id": "summoners-court-match-4",
         "subtypeId": "side-quests",
-        "name": "Summoner’s Court: Match 4"
+        "name": "Summoner's Court: Match 4"
       },
       {
         "id": "sweeping-the-competition",
@@ -8226,7 +8265,7 @@
       {
         "id": "zonkos-chief-prankster-coat",
         "subtypeId": "challenges",
-        "name": "Zonko’s Chief Prankster Coat"
+        "name": "Zonko's Chief Prankster Coat"
       },
       {
         "id": "beast-rescuer-robe",
@@ -8246,7 +8285,7 @@
       {
         "id": "starry-eyed-seers-cape",
         "subtypeId": "challenges",
-        "name": "Starry-Eyed Seer’s Cape"
+        "name": "Starry-Eyed Seer's Cape"
       },
       {
         "id": "venomous-tentacula-robe",
@@ -8271,7 +8310,7 @@
       {
         "id": "treasure-seekers-longcoat",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker’s Longcoat"
+        "name": "Treasure-Seeker's Longcoat"
       },
       {
         "id": "house-fan-atic-school-robe",
@@ -8286,7 +8325,7 @@
       {
         "id": "authentic-historians-uniform",
         "subtypeId": "quests",
-        "name": "Authentic Historian’s Uniform"
+        "name": "Authentic Historian's Uniform"
       },
       {
         "id": "beaked-skull-mask",
@@ -8296,12 +8335,12 @@
       {
         "id": "quidditch-captains-cape",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain’s Cape"
+        "name": "Quidditch Captain's Cape"
       },
       {
         "id": "herodianas-cape",
         "subtypeId": "quests",
-        "name": "Herodiana’s Cape"
+        "name": "Herodiana's Cape"
       },
       {
         "id": "dark-arts-mask",
@@ -8376,7 +8415,7 @@
       {
         "id": "treasure-seekers-gloves",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker’s Gloves"
+        "name": "Treasure-Seeker's Gloves"
       },
       {
         "id": "dark-arts-garrison-hat",
@@ -8386,12 +8425,12 @@
       {
         "id": "dragonhide-protectors-cloak",
         "subtypeId": "challenges",
-        "name": "Dragonhide Protector’s Cloak"
+        "name": "Dragonhide Protector's Cloak"
       },
       {
         "id": "summoners-court-champion-gloves",
         "subtypeId": "quests",
-        "name": "Summoner’s Court Champion Gloves"
+        "name": "Summoner's Court Champion Gloves"
       },
       {
         "id": "dark-arts-scarf",
@@ -8436,7 +8475,7 @@
       {
         "id": "treasure-seekers-bicorne-hat",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker’s Bicorne Hat"
+        "name": "Treasure-Seeker's Bicorne Hat"
       },
       {
         "id": "hogwarts-regalia-spectacles",
@@ -8446,7 +8485,7 @@
       {
         "id": "potioneers-cap",
         "subtypeId": "quests",
-        "name": "Potioneer’s Cap"
+        "name": "Potioneer's Cap"
       },
       {
         "id": "bookish-half-rim-spectacles",
@@ -8456,12 +8495,12 @@
       {
         "id": "herodianas-cap",
         "subtypeId": "quests",
-        "name": "Herodiana’s Cap"
+        "name": "Herodiana's Cap"
       },
       {
         "id": "zonkos-chief-prankster-spectacles",
         "subtypeId": "challenges",
-        "name": "Zonko’s Chief Prankster Spectacles"
+        "name": "Zonko's Chief Prankster Spectacles"
       },
       {
         "id": "niffler-fur-lined-hat",
@@ -8486,7 +8525,7 @@
       {
         "id": "treasure-seekers-scarf",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker’s Scarf"
+        "name": "Treasure-Seeker's Scarf"
       },
       {
         "id": "legendary-masquerade-mask",
@@ -8516,7 +8555,7 @@
       {
         "id": "treasure-seekers-attire",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker’s Attire"
+        "name": "Treasure-Seeker's Attire"
       },
       {
         "id": "legendary-gloves",
@@ -8526,7 +8565,7 @@
       {
         "id": "herodianas-attire",
         "subtypeId": "quests",
-        "name": "Herodiana’s Attire"
+        "name": "Herodiana's Attire"
       },
       {
         "id": "highland-explorer-gloves",
@@ -8541,7 +8580,7 @@
       {
         "id": "quidditch-captains-gloves",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain’s Gloves"
+        "name": "Quidditch Captain's Gloves"
       },
       {
         "id": "mermish-liaison-uniform",
@@ -8576,7 +8615,7 @@
       {
         "id": "quidditch-captains-helmet",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain’s Helmet"
+        "name": "Quidditch Captain's Helmet"
       },
       {
         "id": "halloween-pumpkin-mask",
@@ -8596,12 +8635,12 @@
       {
         "id": "officers-hat",
         "subtypeId": "challenges",
-        "name": "Officer’s Hat"
+        "name": "Officer's Hat"
       },
       {
         "id": "zonkos-chief-prankster-hat",
         "subtypeId": "challenges",
-        "name": "Zonko’s Chief Prankster Hat"
+        "name": "Zonko's Chief Prankster Hat"
       },
       {
         "id": "lucky-leprechaun-hat",
@@ -8621,7 +8660,7 @@
       {
         "id": "starry-eyed-seers-scarf",
         "subtypeId": "challenges",
-        "name": "Starry-Eyed Seer’s Scarf"
+        "name": "Starry-Eyed Seer's Scarf"
       },
       {
         "id": "legendary-armored-attire",
@@ -8641,22 +8680,22 @@
       {
         "id": "zonkos-chief-prankster-ensemble",
         "subtypeId": "challenges",
-        "name": "Zonko’s Chief Prankster Ensemble"
+        "name": "Zonko's Chief Prankster Ensemble"
       },
       {
         "id": "quidditch-captains-uniform",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain’s Uniform"
+        "name": "Quidditch Captain's Uniform"
       },
       {
         "id": "secret-solvers-bathing-costume",
         "subtypeId": "challenges",
-        "name": "Secret Solver’s Bathing Costume"
+        "name": "Secret Solver's Bathing Costume"
       },
       {
         "id": "starry-eyed-seers-ensemble",
         "subtypeId": "challenges",
-        "name": "Starry-Eyed Seer’s Ensemble"
+        "name": "Starry-Eyed Seer's Ensemble"
       },
       {
         "id": "hogwarts-regalia-ensemble",
@@ -8666,12 +8705,12 @@
       {
         "id": "protectors-ensemble",
         "subtypeId": "challenges",
-        "name": "Protector’s Ensemble"
+        "name": "Protector's Ensemble"
       },
       {
         "id": "officers-uniform",
         "subtypeId": "challenges",
-        "name": "Officer’s Uniform"
+        "name": "Officer's Uniform"
       },
       {
         "id": "lucky-leprechaun-ensemble",
