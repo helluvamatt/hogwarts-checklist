@@ -14,6 +14,49 @@
     }));
   });
 
+  type ProgressEntry = {
+    id: string;
+    label: string;
+    totalItemCount: number;
+    playerItemCount: number;
+  };
+  const progress: ProgressEntry[] = $derived.by(() => {
+    let results: ProgressEntry[] = [];
+    const profile = playerState.profile;
+    const allItems = collectibles.flatMap(group => group.items);
+    const playerItemIds = collectibles.flatMap(group => group.playerItems);
+
+    // Total Completion
+    results.push({
+      id: 'all',
+      label: 'Total Completion',
+      totalItemCount: allItems.length,
+      playerItemCount: playerItemIds.length
+    });
+
+    // By Location
+    const byLocation = allItems.reduce<ProgressEntry[]>((agg, item) => {
+      if (item.locationId) {
+        const entry = agg.find(e => e.id === item.locationId);
+        if (entry) {
+          entry.totalItemCount++;
+          if (profile?.completedItems?.[item.id]) entry.playerItemCount++;
+        }
+      }
+      return agg;
+    }, data.locations.map(l => ({ id: l.id, label: l.name, totalItemCount: 0, playerItemCount: 0 })));
+    results = results.concat(byLocation);
+
+    return results;
+  });
+
+  function getCompletionTextClass(percentage: number): string {
+    if (percentage === 100) return 'text-success';
+    if (percentage >= 75) return 'text-info';
+    if (percentage >= 50) return 'text-warning';
+    return 'text-error';
+  }
+
   function getCompletionBadgeClass(percentage: number): string {
     if (percentage === 100) return 'badge-success';
     if (percentage >= 75) return 'badge-info';
@@ -26,7 +69,17 @@
   <aside class="hidden lg:block w-64 shrink-0 sticky top-2 lg:top-4 left-0 space-y-2 lg:space-y-4">
     <ProfileCard profile={playerState.profile} />
   </aside>
-  <main class="flex-grow">
+  <main class="flex-grow space-y-2 lg:space-y-4">
+    <div class="stats shadow bg-base-200">
+      {#each progress as entry(entry.id)}
+        {@const percentage = entry.playerItemCount / entry.totalItemCount * 100}
+        <div class="stat">
+          <div class="stat-title">{entry.label}</div>
+          <div class="stat-value {getCompletionTextClass(percentage)}">{percentage.toFixed(0)}%</div>
+          <div class="stat-desc">{entry.playerItemCount} of {entry.totalItemCount} collected</div>
+        </div>
+      {/each}
+    </div>
     <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
       {#each collectibles as type (type.id)}
         <a href={resolve('/collectibles/[typeId]', { typeId: type.id })} class="card card-xs md:card-sm bg-base-200 transition-colors hover:bg-base-300">
