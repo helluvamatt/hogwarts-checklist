@@ -32,7 +32,7 @@
     {/if}
   </div>
   {#if group.description}
-    <div class="text-base-content/50">{@html marked(group.description)}</div>
+    <div class="prose mb-6 lg:mb-8">{@html marked(group.description)}</div>
   {/if}
   {#if !group.hasItems}
     <p class="text-base-content/50 italic">No items here.</p>

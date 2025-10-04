@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { marked } from 'marked';
   import TagBadge from '$lib/components/TagBadge.svelte';
   import { type ResolvedCollectibleItem, usePlayerState } from '$lib';
 
@@ -36,7 +37,7 @@
       <h5>{item.name}</h5>
       <div class="list-col-wrap">
         {#if item.description}
-          <p class="text-xs">{item.description}</p>
+          <div class="prose">{@html marked(item.description)}</div>
         {/if}
       </div>
       {#if !hideTags}
