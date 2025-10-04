@@ -14,16 +14,19 @@
   const { items, hideTags, hideType, hideSubtype, hideLocation, hideSublocation }: Props = $props();
   const playerState = usePlayerState();
 
-  function isItemCollected(itemId: string): boolean {
-    return playerState.profile?.completedItems?.[itemId] === true;
+  function isItemCollected(typeId: string, itemId: string): boolean {
+    return playerState.profile?.completedItems?.[typeId]?.[itemId] === true;
   }
 
-  function toggleItemCollection(itemId: string, checked: boolean) {
+  function toggleItemCollection(typeId: string, itemId: string, checked: boolean) {
     playerState.setPlayerProfile({
       ...playerState.profile,
       completedItems: {
         ...playerState.profile.completedItems,
-        [itemId]: checked
+        [typeId]: {
+          ...playerState.profile.completedItems[typeId],
+          [itemId]: checked
+        }
       },
       lastUpdated: new Date().toISOString()
     });
@@ -33,7 +36,7 @@
 <div class="list space-y-2 lg:space-y-4">
   {#each items as item (item.id)}
     <label class="list-row bg-base-200 hover:bg-base-300 rounded-box shadow-md">
-      <input type="checkbox" checked={isItemCollected(item.id)} onchange={(e) => toggleItemCollection(item.id, e.currentTarget.checked)} class="checkbox checkbox-primary checkbox-lg" />
+      <input type="checkbox" checked={isItemCollected(item.type.id, item.id)} onchange={(e) => toggleItemCollection(item.type.id, item.id, e.currentTarget.checked)} class="checkbox checkbox-primary checkbox-lg" />
       <h5>{item.name}</h5>
       <div class="list-col-wrap">
         {#if item.description}

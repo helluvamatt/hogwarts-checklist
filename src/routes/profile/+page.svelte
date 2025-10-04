@@ -3,11 +3,14 @@
   import pDebounce from 'p-debounce';
   import { asset } from '$app/paths';
   import { Import, Download } from '@lucide/svelte';
-  import { usePlayerState, PlayerProfileSchema, AsyncFacade } from '$lib';
+  import { migratePlayerProfile, usePlayerState, ImportPlayerProfileSchema, AsyncFacade } from '$lib';
   import type { PlayerProfile, Facade } from '$lib';
+  import type { PageProps } from './$types';
   type PlayerHouse = PlayerProfile['playerHouse'];
 
+  const { data }: PageProps = $props();
   const playerState = usePlayerState();
+  const { collectibles } = data;
 
   // Validation errors state
   let errors = $state<{ [P in keyof Pick<PlayerProfile, 'playerName'|'playerHouse'|'profilePicture'>]?: string; }>({});
@@ -91,14 +94,17 @@
       const data = JSON.parse(text);
 
       // Validate with Zod
-      const validation = PlayerProfileSchema.safeParse(data);
+      const validation = ImportPlayerProfileSchema.safeParse(data);
       if (!validation.success) {
         generalError = 'Invalid profile file format.';
         return;
       }
 
+      // Migrate player profile (if needed)
+      const profileData = migratePlayerProfile(validation.data, collectibles);
+
       // Update state
-      await playerState.setPlayerProfile(validation.data);
+      await playerState.setPlayerProfile(profileData);
 
       // Reset file input
       target.value = '';

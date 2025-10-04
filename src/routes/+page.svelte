@@ -10,7 +10,7 @@
     const profile = playerState.profile;
     return data.collectibles.map((type) => ({
       ...type,
-      playerItems: profile ? type.items.filter((item) => profile.completedItems[item.id]).map(item => item.id) : undefined
+      playerItemIds: type.items.filter(i => profile?.completedItems[type.id]?.[i.id]).map(i => i.id)
     }));
   });
 
@@ -24,23 +24,25 @@
     let results: ProgressEntry[] = [];
     const profile = playerState.profile;
     const allItems = collectibles.flatMap(group => group.items);
-    const playerItemIds = collectibles.flatMap(group => group.playerItems);
+    const allPlayerItemIds = collectibles.flatMap(group => group.playerItemIds);
 
     // Total Completion
     results.push({
       id: 'all',
       label: 'Total Completion',
       totalItemCount: allItems.length,
-      playerItemCount: playerItemIds.length
+      playerItemCount: allPlayerItemIds.length
     });
 
     // By Location
-    const byLocation = allItems.reduce<ProgressEntry[]>((agg, item) => {
-      if (item.locationId) {
-        const entry = agg.find(e => e.id === item.locationId);
-        if (entry) {
-          entry.totalItemCount++;
-          if (profile?.completedItems?.[item.id]) entry.playerItemCount++;
+    const byLocation = collectibles.reduce<ProgressEntry[]>((agg, group) => {
+      for (const item of group.items) {
+        if (item.locationId) {
+          const entry = agg.find(e => e.id === item.locationId);
+          if (entry) {
+            entry.totalItemCount++;
+            if (profile?.completedItems[group.id]?.[item.id]) entry.playerItemCount++;
+          }
         }
       }
       return agg;
@@ -94,9 +96,9 @@
               <p>{type.description}</p>
             {/if}
             <div class="flex flex-row flex-wrap gap-2">
-              {#if type.playerItems !== undefined}
-                <div class="badge badge-primary">{type.playerItems.length} / {type.items.length} collected</div>
-                {@const percentage = (type.playerItems.length / type.items.length) * 100}
+              {#if type.playerItemIds !== undefined}
+                <div class="badge badge-primary">{type.playerItemIds.length} / {type.items.length} collected</div>
+                {@const percentage = (type.playerItemIds.length / type.items.length) * 100}
                 <div class="badge {getCompletionBadgeClass(percentage)}">{percentage.toFixed(0)}%</div>
               {:else}
                 <div class="badge badge-primary">{type.items.length} items</div>

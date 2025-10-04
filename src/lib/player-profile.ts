@@ -1,4 +1,4 @@
-import { PlayerProfileSchema, type PlayerProfile } from '$lib/models/PlayerProfile';
+import { PlayerProfileSchema, type PlayerProfile, type ImportPlayerProfile, type CollectibleType } from './models';
 
 const STORAGE_KEY = 'playerProfile';
 
@@ -26,4 +26,27 @@ export function setPlayerProfile(profile: PlayerProfile): Promise<void> {
     console.error('Failed to save player profile to localStorage:', error);
   }
   return Promise.resolve();
+}
+
+export function migratePlayerProfile(imported: ImportPlayerProfile, collectibles: CollectibleType[]): PlayerProfile {
+  if (imported.version === 2) return imported;
+
+  if (imported.version === 1) {
+    console.log('Migrating version 1 profile to version 2...', imported);
+    const migrated: PlayerProfile = {
+      ...imported,
+      version: 2,
+      completedItems: collectibles.reduce<Record<string, Record<string, boolean>>>((agg, type) => {
+        agg[type.id] = type.items.reduce<Record<string, boolean>>((typeAgg, item) => {
+          if (imported.completedItems[item.id]) typeAgg[item.id] = true;
+          return typeAgg;
+        }, {});
+        return agg;
+      }, {}),
+    }
+    console.log('Migrated version 1 profile to version 2:', migrated);
+    return migrated;
+  }
+
+  throw new Error('Invalid profile version.');
 }

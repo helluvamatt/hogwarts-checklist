@@ -1,13 +1,13 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { type ResolvedCollectibleItem, type CollectibleType, type Location, type SortGroup, type SortGroupWithSubgroups, usePlayerState } from '$lib';
+  import { type ResolvedCollectibleItem, type ResolvedCollectibleType, type Location, type SortGroup, type SortGroupWithSubgroups, usePlayerState } from '$lib';
   import ItemGroup from '$lib/components/ItemGroup.svelte';
   import ObservableContainer from '$lib/components/ObservableContainer.svelte';
 
   type SortBy = 'type'|'location'|'name'|'collected';
   type SortReducer = (groups: SortGroupWithSubgroups[], item: ResolvedCollectibleItem) => SortGroupWithSubgroups[];
-  type SortTransformer = (type: CollectibleType, locations: Location[]) => SortGroupWithSubgroups[];
+  type SortTransformer = (type: ResolvedCollectibleType, locations: Location[]) => SortGroupWithSubgroups[];
 
   const { data } = $props();
 
@@ -80,7 +80,7 @@
     },
     collected: (type) => type.items
       .reduce<SortGroupWithSubgroups[]>((groups, item) => {
-        const isCollected = playerState.profile?.completedItems?.[item.id] === true;
+        const isCollected = playerState.profile?.completedItems?.[type.id]?.[item.id] === true;
         groups[isCollected ? 1 : 0].items.push(item);
         return groups;
       }, [{ id: 'not_collected', name: 'Not Collected', items: [], showIfEmpty: true }, { id: 'collected', name: 'Collected', items: [], showIfEmpty: true }])
@@ -152,6 +152,7 @@
           {/if}
           <h1>{type.name}</h1>
         </div>
+
         <select class="select w-full lg:max-w-3xs" bind:value={() => sortBy, v => goto(`?sort=${v}`)} aria-label="Sort items by">
           <option value="type" disabled={!type.subtypes?.length}>Sort by Type</option>
           <option value="location">Sort by Location</option>

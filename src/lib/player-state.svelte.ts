@@ -18,7 +18,7 @@ export function providePlayerState(): PlayerState {
   let loading = $state<boolean>(true);
   const now = new SvelteDate().toISOString();
   let profile = $state.raw<PlayerProfile>({
-    version: 1,
+    version: 2,
     playerName: '',
     playerHouse: 'Gryffindor',
     completedItems: {},

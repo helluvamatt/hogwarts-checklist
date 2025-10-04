@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import type { CollectibleItem, CollectibleType, Location, ResolvedCollectibleItem } from '$lib';
+import type { CollectibleItem, CollectibleType, Location, ResolvedCollectibleItem, ResolvedCollectibleType } from '$lib';
 
 function resolveItem(item: CollectibleItem, type: CollectibleType, locations: Location[]): ResolvedCollectibleItem {
   const subtype = type.subtypes?.find(st => st.id === item.subtypeId);
@@ -9,7 +9,7 @@ function resolveItem(item: CollectibleItem, type: CollectibleType, locations: Lo
   return { ...item, type, subtype, location, sublocation };
 }
 
-export const load: PageServerLoad = async ({ parent, params }) => {
+export const load: PageServerLoad = async ({ parent, params }): Promise<{ type: ResolvedCollectibleType }> => {
   const { collectibles, locations } = await parent();
   const { typeId } = params;
   const type = collectibles.find(t => t.id === typeId);

@@ -2,6 +2,7 @@ export * from './CollectibleItem';
 export * from './CollectibleSubtype';
 export * from './CollectibleType';
 export * from './DeepReadonly';
+export * from './ImportPlayerProfile';
 export * from './Location';
 export * from './PlayerProfile';
 export * from './ResolvedCollectibleItem';
