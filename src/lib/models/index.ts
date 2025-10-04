@@ -5,5 +5,6 @@ export * from './DeepReadonly';
 export * from './Location';
 export * from './PlayerProfile';
 export * from './ResolvedCollectibleItem';
+export * from './SortGroup';
 export * from './Sublocation';
 export * from './Tag';

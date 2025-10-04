@@ -5,7 +5,7 @@
   type PlayerHouse = PlayerProfile['playerHouse'];
 
   interface Props {
-    profile: DeepReadonly<PlayerProfile>;
+    profile?: DeepReadonly<PlayerProfile>;
     class?: string;
   }
 
@@ -22,30 +22,37 @@
   };
 </script>
 
-<div class="bg-gradient-to-br {houses[profile.playerHouse].gradient} text-white shadow-lg rounded-box {className}">
-  <div class="card-body p-4">
-    <div class="flex flex-col items-center text-center gap-3">
-      <!-- Profile Picture or House Crest -->
-      <div class="avatar">
-        <div class="w-56 h-56 rounded ring ring-white/30 ring-offset-1 ring-offset-transparent">
-          {#if profile.profilePicture}
-            <img src={profile.profilePicture} alt="Profile" />
-          {:else}
-            <div class="size-full bg-gray-400 flex items-center justify-center opacity-70">
-              <UserRound class="size-11/12" />
-            </div>
-          {/if}
+{#if profile}
+  <div class="bg-gradient-to-br {houses[profile.playerHouse].gradient} text-white shadow-lg rounded-box {className}">
+    <div class="card-body p-4">
+      <div class="flex flex-col items-center text-center gap-3">
+        <!-- Profile Picture or House Crest -->
+        <div class="avatar">
+          <div class="w-56 h-56 rounded ring ring-white/30 ring-offset-1 ring-offset-transparent">
+            {#if profile.profilePicture}
+              <img src={profile.profilePicture} alt="Profile" />
+            {:else}
+              <div class="size-full bg-gray-400 flex items-center justify-center opacity-70">
+                <UserRound class="size-11/12" />
+              </div>
+            {/if}
+          </div>
         </div>
-      </div>
-      <!-- Player Name -->
-      <div>
-        <h3 class="font-bold">{profile.playerName || 'Player'}</h3>
-        <p class="text-sm opacity-90">{profile.playerHouse}</p>
-      </div>
-      <!-- House Crest -->
-      <div class="w-12 h-12">
-        <img src={houses[profile.playerHouse].crest} alt="{profile.playerHouse} Crest" class="w-full h-full object-contain" />
+        <!-- Player Name -->
+        <div>
+          <h3 class="font-bold">{profile.playerName || 'Player'}</h3>
+          <p class="text-sm opacity-90">{profile.playerHouse}</p>
+        </div>
+        <!-- House Crest -->
+        <div class="w-12 h-12">
+          <img src={houses[profile.playerHouse].crest} alt="{profile.playerHouse} Crest" class="w-full h-full object-contain" />
+        </div>
       </div>
     </div>
   </div>
-</div>
+{:else}
+  <div class="flex flex-row items-center gap-2">
+    <div class="loading loading-spinner"></div>
+    <div>Loading...</div>
+  </div>
+{/if}

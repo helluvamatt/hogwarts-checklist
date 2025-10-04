@@ -10,8 +10,10 @@ interface PlayerState {
   setPlayerProfile(value: PlayerProfile): Promise<void>;
 }
 
+const CONTEXT_KEY = 'playerState';
+
 export function providePlayerState(): PlayerState {
-  if (hasContext('playerProfile')) return getContext<PlayerState>('playerProfile');
+  if (hasContext(CONTEXT_KEY)) return getContext<PlayerState>(CONTEXT_KEY);
 
   let loading = $state<boolean>(true);
   const now = new SvelteDate().toISOString();
@@ -36,7 +38,7 @@ export function providePlayerState(): PlayerState {
     }
   }
 
-  setContext('playerProfile', state);
+  setContext(CONTEXT_KEY, state);
   onMount(async () => {
     const read = await getPlayerProfile();
     if (read) profile = read;
@@ -46,5 +48,6 @@ export function providePlayerState(): PlayerState {
 }
 
 export function usePlayerState(): PlayerState {
-  return getContext<PlayerState>('playerProfile');
+  if (!hasContext(CONTEXT_KEY)) throw new Error('Player state context is missing. You must call providePlayerState() in a parent component.');
+  return getContext<PlayerState>(CONTEXT_KEY);
 }
