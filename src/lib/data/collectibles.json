@@ -629,13 +629,13 @@
         "description": "Another in The Great Hall area. Fast travel to The Great Hall Floo Flame, then go right through the double doors, down the stairs past the statue, and through the big archway to see the key. Follow it down the stairs to a cabinet in the far bottom corner of the Quad Courtyard."
       },
       {
-        "id": "faculty-tower",
-        "name": "Faculty Tower",
+        "id": "faculty-tower-1",
+        "name": "Faculty Tower #1",
         "description": "In the South Wing area. You'll need to undertake \"The Caretaker's Lunar Lament\" quest to gain access to the Faculty Tower, since it gives you the ability to unlock doors with Alohomora. Fast travel to the Faculty Tower Floo Flame, go right into the tower itself, then up the stairs to find the key on the next floor. The key will lead you back down to a cabinet near where you entered."
       },
       {
-        "id": "faculty-tower",
-        "name": "Faculty Tower",
+        "id": "faculty-tower-2",
+        "name": "Faculty Tower #2",
         "description": "Same as before, you need \"The Caretaker's Lunar Lament\" quest to get this one. On the highest floors of the Faculty Tower in the South Wing area, you'll find a corridor of portraits that links it to the Clock Tower. The key is in here, and goes to a cabinet beside the entrance to the Prefect's Bathroom with the statues."
       },
       {
