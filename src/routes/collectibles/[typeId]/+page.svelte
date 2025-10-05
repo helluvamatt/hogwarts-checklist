@@ -5,36 +5,63 @@
   import ItemGroup from '$lib/components/ItemGroup.svelte';
   import ObservableContainer from '$lib/components/ObservableContainer.svelte';
 
-  type SortBy = 'type'|'location'|'name'|'collected';
+  type SortBy = 'type'|'location'|'name';
   type SortReducer = (groups: SortGroupWithSubgroups[], item: ResolvedCollectibleItem) => SortGroupWithSubgroups[];
   type SortTransformer = (type: ResolvedCollectibleType, locations: Location[]) => SortGroupWithSubgroups[];
+  type FilterBy = 'not_collected'|'collected'|'all';
+  type FilterPredicate = (item: ResolvedCollectibleItem) => boolean;
 
   const { data } = $props();
+
+  const filters: Record<FilterBy, FilterPredicate> = {
+    not_collected: (item) => !playerState.profile.completedItems?.[item.type.id]?.[item.id],
+    collected: (item) => !!playerState.profile.completedItems?.[item.type.id]?.[item.id],
+    all: () => true,
+  };
 
   const sortTransformers: Record<SortBy, SortTransformer> = {
     type: (type, locations) => {
       if (!type) return [];
-      const locationGroups: () => SortGroupWithSubgroups[] = () => locations.map<SortGroupWithSubgroups>(loc => ({ id: loc.id, name: loc.name, icon: loc.icon, subgroups: loc.sublocations ? loc.sublocations.map<SortGroup>(sub => ({ ...sub, items: [] })) : [], items: [] }));
+      const locationGroups: () => SortGroupWithSubgroups[] = () => locations.map<SortGroupWithSubgroups>(loc => createGroup(loc, loc.sublocations ? loc.sublocations.map<SortGroup>(sub => createGroup(sub)) : []));
       const groups: SortGroupWithSubgroups[] = type.subtypes?.length
-        ? [...type.subtypes.map(st => ({ ...st, items: [], subgroups: locationGroups() })), { id: 'none', name: 'No Type', items: [], subgroups: locationGroups() }]
-        : [{ id: 'none', name: 'No Type', items: [], subgroups: locationGroups() }];
+        ? [...type.subtypes.map(st => createGroup(st, locationGroups())), createGroup({ id: 'none', name: 'No Type'}, locationGroups())]
+        : [createGroup({ id: 'none', name: 'No Type' }, locationGroups())];
       const reducer: SortReducer = (groups, item) => {
         const subtypeGroupKey = type.subtypes?.length ? item.subtypeId : 'none';
         const subtypeGroup = groups.find(g => g.id === subtypeGroupKey);
         const locationGroup = subtypeGroup?.subgroups?.find(g => g.id === item.locationId);
         const sublocationGroup = locationGroup?.subgroups?.find(g => g.id === item.sublocationId);
+        const collectedAddend = isItemCollected(item.type.id, item.id) ? 1 : 0;
         if (sublocationGroup) {
-          sublocationGroup.items.push(item);
-          sublocationGroup.hasItems = true;
-          locationGroup!.hasItems = true;
-          subtypeGroup!.hasItems = true;
+          if (filters[filterBy](item)) {
+            sublocationGroup.items.push(item);
+            sublocationGroup.hasItems = true;
+            locationGroup!.hasItems = true;
+            subtypeGroup!.hasItems = true;
+          }
+          sublocationGroup.totalItemCount++;
+          locationGroup!.totalItemCount++;
+          subtypeGroup!.totalItemCount++;
+          sublocationGroup.playerItemCount = (sublocationGroup.playerItemCount ?? 0) + collectedAddend;
+          locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + collectedAddend;
+          subtypeGroup!.playerItemCount = (subtypeGroup!.playerItemCount ?? 0) + collectedAddend;
         } else if (locationGroup) {
-          locationGroup.items.push(item);
-          locationGroup.hasItems = true;
-          subtypeGroup!.hasItems = true;
+          if (filters[filterBy](item)) {
+            locationGroup.items.push(item);
+            locationGroup.hasItems = true;
+            subtypeGroup!.hasItems = true;
+          }
+          locationGroup.totalItemCount++;
+          subtypeGroup!.totalItemCount++;
+          locationGroup.playerItemCount = (locationGroup.playerItemCount ?? 0) + collectedAddend;
+          subtypeGroup!.playerItemCount = (subtypeGroup!.playerItemCount ?? 0) + collectedAddend;
         } else if (subtypeGroup) {
-          subtypeGroup.items.push(item);
-          subtypeGroup.hasItems = true;
+          if (filters[filterBy](item)) {
+            subtypeGroup.items.push(item);
+            subtypeGroup.hasItems = true;
+          }
+          subtypeGroup.totalItemCount++;
+          subtypeGroup.playerItemCount = (subtypeGroup.playerItemCount ?? 0) + collectedAddend;
         }
         return groups;
       };
@@ -42,15 +69,10 @@
     },
     location: (type, locations) => {
       if (!type) return [];
-      const subtypeGroups: () => SortGroup[] = () => type.subtypes ? type.subtypes.map<SortGroup>(st => ({ ...st, items: [] })) : [];
+      const subtypeGroups: () => SortGroup[] = () => type.subtypes ? type.subtypes.map<SortGroup>(st => createGroup(st)) : [];
       const groups: SortGroupWithSubgroups[] = [
-        ...locations.map<SortGroupWithSubgroups>(loc => ({
-          id: loc.id,
-          name: loc.name,
-          icon: loc.icon,
-          subgroups: loc.sublocations ? [...loc.sublocations.map<SortGroupWithSubgroups>(sub => ({ ...sub, subgroups: subtypeGroups(), items: [] })), { id: 'none', name: 'Other', subgroups: subtypeGroups(), items: [] }] : subtypeGroups(),
-          items: [] })),
-        { id: 'none', name: 'No Location', description: 'Located anywhere in the world', subgroups: subtypeGroups(), items: [] }
+        ...locations.map<SortGroupWithSubgroups>(loc => createGroup(loc, loc.sublocations ? [...loc.sublocations.map<SortGroupWithSubgroups>(sub => createGroup(sub, subtypeGroups())), createGroup({ id: 'none', name: 'Other' }, subtypeGroups())] : subtypeGroups())),
+        createGroup({ id: 'none', name: 'No Location', description: 'Located anywhere in the world' }, subtypeGroups())
       ];
       const reducer: SortReducer = (groups, item) => {
         const locationGroupKey = item.locationId ?? 'none';
@@ -59,39 +81,50 @@
         const sublocationOrSubtypeGroup = locationGroup?.subgroups?.find(g => g.id === sublocationOrSubtypeGroupKey);
         const subtypeGroup = locationGroupKey !== 'none' ? sublocationOrSubtypeGroup?.subgroups?.find(g => g.id === item.subtypeId) : undefined;
         if (subtypeGroup) {
-          subtypeGroup.items.push(item);
-          subtypeGroup.hasItems = true;
-          sublocationOrSubtypeGroup!.hasItems = true;
-          locationGroup!.hasItems = true;
+          if (filters[filterBy](item)) {
+            subtypeGroup.items.push(item);
+            subtypeGroup.hasItems = true;
+            sublocationOrSubtypeGroup!.hasItems = true;
+            locationGroup!.hasItems = true;
+          }
+          subtypeGroup.totalItemCount++;
+          sublocationOrSubtypeGroup!.totalItemCount++;
+          locationGroup!.totalItemCount++;
+          if (isItemCollected(item.type.id, item.id)) {
+            subtypeGroup.playerItemCount = (subtypeGroup.playerItemCount ?? 0) + 1;
+            sublocationOrSubtypeGroup!.playerItemCount = (sublocationOrSubtypeGroup!.playerItemCount ?? 0) + 1;
+            locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + 1;
+          }
         } else if (sublocationOrSubtypeGroup) {
-          sublocationOrSubtypeGroup.items.push(item);
-          sublocationOrSubtypeGroup.hasItems = true;
-          locationGroup!.hasItems = true;
+          if (filters[filterBy](item)) {
+            sublocationOrSubtypeGroup.items.push(item);
+            sublocationOrSubtypeGroup.hasItems = true;
+            locationGroup!.hasItems = true;
+          }
+          sublocationOrSubtypeGroup.totalItemCount++;
+          locationGroup!.totalItemCount++;
+          if (isItemCollected(item.type.id, item.id)) {
+            sublocationOrSubtypeGroup.playerItemCount = (sublocationOrSubtypeGroup.playerItemCount ?? 0) + 1;
+            locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + 1;
+          }
         } else if (locationGroup) {
-          locationGroup.items.push(item);
-          locationGroup.hasItems = true;
+          if (filters[filterBy](item)) {
+            locationGroup.items.push(item);
+            locationGroup.hasItems = true;
+          }
+          locationGroup.totalItemCount++;
+          if (isItemCollected(item.type.id, item.id)) locationGroup.playerItemCount = (locationGroup.playerItemCount ?? 0) + 1;
         }
         return groups;
       }
       return type.items.reduce<SortGroupWithSubgroups[]>(reducer, groups);
     },
     name: (type) => {
-      return [{ id: 'all', name: 'All', items: type.items.toSorted((a, b) => a.name.localeCompare(b.name)), hasItems: type.items.length > 0 }];
+      const items = type.items.filter(filters[filterBy]).toSorted((a, b) => a.name.localeCompare(b.name));
+      const totalItemCount = type.items.length;
+      const playerItemCount = playerState.profile ? type.items.filter(i => isItemCollected(i.type.id, i.id)).length : undefined;
+      return [{ id: 'all', name: 'All', items, totalItemCount, playerItemCount, hasItems: items.length > 0 }];
     },
-    collected: (type) => type.items
-      .reduce<SortGroupWithSubgroups[]>((groups, item) => {
-        const isCollected = playerState.profile?.completedItems?.[type.id]?.[item.id] === true;
-        groups[isCollected ? 1 : 0].items.push(item);
-        return groups;
-      }, [{ id: 'not_collected', name: 'Not Collected', items: [], showIfEmpty: true }, { id: 'collected', name: 'Collected', items: [], showIfEmpty: true }])
-      .map(g => ({ ...g, items: g.items.toSorted((a, b) => a.name.localeCompare(b.name)), hasItems: g.items.length > 0 })),
-  };
-
-  const parseSortBy = (value: string | null): SortBy => {
-    if (value === 'type' || value === 'location' || value === 'name' || value === 'collected') {
-      return value;
-    }
-    return type?.subtypes?.length ? 'type' : 'location';
   };
 
   let activeIds = $state<string[]|undefined>(undefined);
@@ -100,7 +133,55 @@
   let locations = $derived(data.locations);
   let playerState = usePlayerState();
   let sortBy = $derived<SortBy>(parseSortBy(page.url.searchParams.get('sort')));
+  let filterBy = $derived<FilterBy>(parseFilterBy(page.url.searchParams.get('filter')));
   let groupedItems = $derived<SortGroupWithSubgroups[]>(sortTransformers[sortBy](type, locations));
+
+  function isItemCollected(typeId: string, itemId: string): boolean {
+    return playerState.profile?.completedItems?.[typeId]?.[itemId] === true;
+  }
+
+  type CreateGroupParams = {
+    id: string,
+    name: string,
+    description?: string,
+    icon?: string,
+    showIfEmpty?: boolean,
+  };
+  function createGroup(from: CreateGroupParams, subgroups?: SortGroupWithSubgroups[]): SortGroupWithSubgroups {
+    return {
+      ...from,
+      subgroups,
+      items: [],
+      totalItemCount: 0,
+      hasItems: false,
+    };
+  }
+
+  function parseSortBy(value: string | null): SortBy {
+    if (value === 'type' || value === 'location' || value === 'name') {
+      return value;
+    }
+    return type?.subtypes?.length ? 'type' : 'location';
+  };
+
+  function parseFilterBy(value: string | null): FilterBy {
+    if (value === 'collected' || value === 'not_collected' || value === 'all') {
+      return value;
+    }
+    return 'not_collected';
+  }
+
+  function setSortBy(value: SortBy) {
+    const query = new URLSearchParams(page.url.searchParams);
+    query.set('sort', value);
+    goto(`?${query.toString()}`);
+  }
+
+  function setFilterBy(value: FilterBy) {
+    const query = new URLSearchParams(page.url.searchParams);
+    query.set('filter', value);
+    goto(`?${query.toString()}`);
+  }
 </script>
 
 <div class="container mx-auto flex-grow flex flex-row items-start p-2 gap-2 lg:p-4 lg:gap-4 relative">
@@ -152,13 +233,18 @@
           {/if}
           <h1>{type.name}</h1>
         </div>
-
-        <select class="select w-full lg:max-w-3xs" bind:value={() => sortBy, v => goto(`?sort=${v}`)} aria-label="Sort items by">
-          <option value="type" disabled={!type.subtypes?.length}>Sort by Type</option>
-          <option value="location">Sort by Location</option>
-          <option value="name">Sort by Name</option>
-          <option value="collected">Sort by Collected</option>
-        </select>
+        <div class="flex flex-row items-center gap-2">
+          <select class="select w-full lg:max-w-3xs" bind:value={() => filterBy, v => setFilterBy(v)} aria-label="Filter items by">
+            <option value="not_collected">Not Collected</option>
+            <option value="collected">Collected</option>
+            <option value="all">All</option>
+          </select>
+          <select class="select w-full lg:max-w-3xs" bind:value={() => sortBy, v => setSortBy(v)} aria-label="Sort items by">
+            <option value="type" disabled={!type.subtypes?.length}>Sort by Type</option>
+            <option value="location">Sort by Location</option>
+            <option value="name">Sort by Name</option>
+          </select>
+        </div>
       </div>
       {#if type.description}
         <p class="text-base-content/70">{type.description}</p>

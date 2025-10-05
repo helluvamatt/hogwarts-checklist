@@ -1,6 +1,6 @@
 <script lang="ts">
   import { marked } from 'marked';
-  import { usePlayerState, type SortGroupWithSubgroups } from '$lib';
+  import type { SortGroupWithSubgroups } from '$lib';
   import ItemGroup from './ItemGroup.svelte';
   import ItemList from './ItemList.svelte';
   import { observable } from './ObservableContainer.svelte';
@@ -14,16 +14,11 @@
 
   const dividerVariants = ['divider-primary', 'divider-secondary', 'divider-accent', 'divider-neutral', 'divider-default'];
 
-  const playerState = usePlayerState();
   let { group, path, hideTags, maxObservable}: Props = $props();
   let dividerClass = dividerVariants[(path?.length ?? 0) % dividerVariants.length];
 
   function isObservable(p?: string[]) {
     return maxObservable === undefined || (p?.length ?? 0) < maxObservable;
-  }
-
-  function isItemCollected(typeId: string, itemId: string): boolean {
-    return playerState.profile?.completedItems?.[typeId]?.[itemId] === true;
   }
 
   function getCompletionBadgeClass(percentage: number): string {
@@ -32,34 +27,9 @@
     if (percentage >= 50) return 'badge-warning';
     return 'badge-error';
   }
-
-  type Totals = {
-    totalItemCount: number;
-    playerItemCount: number;
-  };
-  function computeTotals(group: SortGroupWithSubgroups): Totals {
-    const results: Totals = {
-      playerItemCount: 0,
-      totalItemCount: 0
-    };
-    for (const item of group.items) {
-      results.totalItemCount++;
-      if (isItemCollected(item.type.id, item.id)) results.playerItemCount++;
-    }
-    if (group.subgroups) {
-      for (const subgroup of group.subgroups) {
-        const groupTotals = computeTotals(subgroup);
-        results.playerItemCount += groupTotals.playerItemCount;
-        results.totalItemCount += groupTotals.totalItemCount;
-      }
-    }
-    return results;
-  }
-  let totals: Totals = $derived(computeTotals(group));
 </script>
 
-{#snippet groupItems(totals: Totals, level: number)}
-  {@const percentage = totals.playerItemCount / totals.totalItemCount * 100}
+{#snippet groupItems(level: number)}
   <div class="divider {dividerClass}">
     {#if group.icon}
       <div aria-label={group.name} class="mask size-16 bg-base-content" style={`mask-image: url('${group.icon}')`}></div>
@@ -77,8 +47,13 @@
     {:else}
       <p>{group.name}</p>
     {/if}
-    <div class="badge {getCompletionBadgeClass(percentage)}">{percentage.toFixed(0)}%</div>
-    <div class="badge badge-secondary">{totals.playerItemCount} of {totals.totalItemCount} collected</div>
+    {#if group.playerItemCount !== undefined}
+      {@const percentage = group.playerItemCount / group.totalItemCount * 100}
+      <div class="badge {getCompletionBadgeClass(percentage)}">{percentage.toFixed(0)}%</div>
+      <div class="badge badge-secondary">{group.playerItemCount} of {group.totalItemCount} collected</div>
+    {:else}
+      <div class="badge badge-secondary">{group.totalItemCount} items</div>
+    {/if}
   </div>
   {#if group.description}
     <div class="prose mb-6 lg:mb-8">{@html marked(group.description)}</div>
@@ -103,7 +78,7 @@
   {@const currentPath = path ? [...path, group.id] : [group.id]}
   {#if isObservable(path)}
     <section id={currentPath.join('/')} use:observable>
-      {@render groupItems(totals, currentPath.length)}
+      {@render groupItems(currentPath.length)}
       {#if !isObservable(currentPath)}
         {@render groupSubgroups(currentPath)}
       {/if}
@@ -112,7 +87,7 @@
       {@render groupSubgroups(currentPath)}
     {/if}
   {:else}
-    {@render groupItems(totals, currentPath.length)}
+    {@render groupItems(currentPath.length)}
     {@render groupSubgroups(currentPath)}
   {/if}
 {/if}
