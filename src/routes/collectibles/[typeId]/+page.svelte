@@ -48,14 +48,14 @@
           id: loc.id,
           name: loc.name,
           icon: loc.icon,
-          subgroups: loc.sublocations ? loc.sublocations.map<SortGroupWithSubgroups>(sub => ({ ...sub, subgroups: subtypeGroups(), items: [] })) : subtypeGroups(),
+          subgroups: loc.sublocations ? [...loc.sublocations.map<SortGroupWithSubgroups>(sub => ({ ...sub, subgroups: subtypeGroups(), items: [] })), { id: 'none', name: 'Other', subgroups: subtypeGroups(), items: [] }] : subtypeGroups(),
           items: [] })),
         { id: 'none', name: 'No Location', description: 'Located anywhere in the world', subgroups: subtypeGroups(), items: [] }
       ];
       const reducer: SortReducer = (groups, item) => {
         const locationGroupKey = item.locationId ?? 'none';
         const locationGroup = groups.find(g => g.id === locationGroupKey);
-        const sublocationOrSubtypeGroupKey = locationGroupKey === 'none' ? item.subtypeId : item.sublocationId;
+        const sublocationOrSubtypeGroupKey = locationGroupKey === 'none' ? item.subtypeId : (item.sublocationId ?? 'none');
         const sublocationOrSubtypeGroup = locationGroup?.subgroups?.find(g => g.id === sublocationOrSubtypeGroupKey);
         const subtypeGroup = locationGroupKey !== 'none' ? sublocationOrSubtypeGroup?.subgroups?.find(g => g.id === item.subtypeId) : undefined;
         if (subtypeGroup) {
