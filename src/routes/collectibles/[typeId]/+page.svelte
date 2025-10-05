@@ -31,7 +31,7 @@
         const subtypeGroup = groups.find(g => g.id === subtypeGroupKey);
         const locationGroup = subtypeGroup?.subgroups?.find(g => g.id === item.locationId);
         const sublocationGroup = locationGroup?.subgroups?.find(g => g.id === item.sublocationId);
-        const collectedAddend = isItemCollected(item.type.id, item.id) ? 1 : 0;
+        const collectedAddend = isItemCollected(item.id) ? 1 : 0;
         if (sublocationGroup) {
           if (filters[filterBy](item)) {
             sublocationGroup.items.push(item);
@@ -80,6 +80,7 @@
         const sublocationOrSubtypeGroupKey = locationGroupKey === 'none' ? item.subtypeId : (item.sublocationId ?? 'none');
         const sublocationOrSubtypeGroup = locationGroup?.subgroups?.find(g => g.id === sublocationOrSubtypeGroupKey);
         const subtypeGroup = locationGroupKey !== 'none' ? sublocationOrSubtypeGroup?.subgroups?.find(g => g.id === item.subtypeId) : undefined;
+        const collectedAddend = isItemCollected(item.id) ? 1 : 0;
         if (subtypeGroup) {
           if (filters[filterBy](item)) {
             subtypeGroup.items.push(item);
@@ -90,11 +91,9 @@
           subtypeGroup.totalItemCount++;
           sublocationOrSubtypeGroup!.totalItemCount++;
           locationGroup!.totalItemCount++;
-          if (isItemCollected(item.type.id, item.id)) {
-            subtypeGroup.playerItemCount = (subtypeGroup.playerItemCount ?? 0) + 1;
-            sublocationOrSubtypeGroup!.playerItemCount = (sublocationOrSubtypeGroup!.playerItemCount ?? 0) + 1;
-            locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + 1;
-          }
+          subtypeGroup.playerItemCount = (subtypeGroup.playerItemCount ?? 0) + collectedAddend;
+          sublocationOrSubtypeGroup!.playerItemCount = (sublocationOrSubtypeGroup!.playerItemCount ?? 0) + collectedAddend;
+          locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + collectedAddend;
         } else if (sublocationOrSubtypeGroup) {
           if (filters[filterBy](item)) {
             sublocationOrSubtypeGroup.items.push(item);
@@ -103,17 +102,15 @@
           }
           sublocationOrSubtypeGroup.totalItemCount++;
           locationGroup!.totalItemCount++;
-          if (isItemCollected(item.type.id, item.id)) {
-            sublocationOrSubtypeGroup.playerItemCount = (sublocationOrSubtypeGroup.playerItemCount ?? 0) + 1;
-            locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + 1;
-          }
+          sublocationOrSubtypeGroup.playerItemCount = (sublocationOrSubtypeGroup.playerItemCount ?? 0) + collectedAddend;
+          locationGroup!.playerItemCount = (locationGroup!.playerItemCount ?? 0) + collectedAddend;
         } else if (locationGroup) {
           if (filters[filterBy](item)) {
             locationGroup.items.push(item);
             locationGroup.hasItems = true;
           }
           locationGroup.totalItemCount++;
-          if (isItemCollected(item.type.id, item.id)) locationGroup.playerItemCount = (locationGroup.playerItemCount ?? 0) + 1;
+          locationGroup.playerItemCount = (locationGroup.playerItemCount ?? 0) + collectedAddend;
         }
         return groups;
       }
@@ -122,7 +119,7 @@
     name: (type) => {
       const items = type.items.filter(filters[filterBy]).toSorted((a, b) => a.name.localeCompare(b.name));
       const totalItemCount = type.items.length;
-      const playerItemCount = playerState.profile ? type.items.filter(i => isItemCollected(i.type.id, i.id)).length : undefined;
+      const playerItemCount = playerState.profile ? type.items.filter(i => isItemCollected(i.id)).length : undefined;
       return [{ id: 'all', name: 'All', items, totalItemCount, playerItemCount, hasItems: items.length > 0 }];
     },
   };
@@ -136,8 +133,8 @@
   let filterBy = $derived<FilterBy>(parseFilterBy(page.url.searchParams.get('filter')));
   let groupedItems = $derived<SortGroupWithSubgroups[]>(sortTransformers[sortBy](type, locations));
 
-  function isItemCollected(typeId: string, itemId: string): boolean {
-    return playerState.profile?.completedItems?.[typeId]?.[itemId] === true;
+  function isItemCollected(itemId: string): boolean {
+    return playerState.profile?.completedItems?.[type.id]?.[itemId] === true;
   }
 
   type CreateGroupParams = {
@@ -168,7 +165,7 @@
     if (value === 'collected' || value === 'not_collected' || value === 'all') {
       return value;
     }
-    return 'not_collected';
+    return playerState.profile && type.items.filter(i => !isItemCollected(i.id)).length ? 'not_collected' : 'all';
   }
 
   function setSortBy(value: SortBy) {
@@ -184,76 +181,84 @@
   }
 </script>
 
-<div class="container mx-auto flex-grow flex flex-row items-start p-2 gap-2 lg:p-4 lg:gap-4 relative">
-  <aside class="hidden lg:block w-64 shrink-0 sticky top-2 lg:top-4 left-0 space-y-2 lg:space-y-4">
-    <div class="bg-base-200 rounded-box">
-      <ul class="menu w-full">
-        {#each groupedItems as group (group.id)}
-          {#if group.hasItems || group.showIfEmpty}
-            <li>
-              <a href="#{group.id}" class="flex flex-row items-center gap-2" class:menu-active={group.id === activeId}>
-                {#if group.icon}
-                  <div aria-label={group.name} class="mask size-16 bg-base-content" style={`mask-image: url('${group.icon}')`}></div>
-                {/if}
-                {#if group.name}
-                  <div>{group.name}</div>
-                {/if}
-              </a>
-              {#if group.subgroups && group.subgroups.length > 0}
-                <ul>
-                  {#each group.subgroups as subgroup (subgroup.id)}
-                    {#if subgroup.hasItems || subgroup.showIfEmpty}
-                      {@const id = `${group.id}/${subgroup.id}`}
-                      <li>
-                        <a href="#{id}" class="flex flex-row items-center gap-2" class:menu-active={id === activeId}>
-                          {#if subgroup.icon}
-                            <div aria-label={subgroup.name} class="mask size-16 bg-base-content" style={`mask-image: url('${subgroup.icon}')`}></div>
-                          {/if}
-                          {#if subgroup.name}
-                            <div>{subgroup.name}</div>
-                          {/if}
-                        </a>
-                      </li>
-                    {/if}
-                  {/each}
-                </ul>
-              {/if}
-            </li>
-          {/if}
-        {/each}
-      </ul>
-    </div>
-  </aside>
-  <main class="flex-grow">
-    <div class="space-y-2 lg:space-y-4">
-      <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-2">
-        <div class="flex flex-row items-center gap-2">
-          {#if type.icon}
-            <div aria-label={type.name} class="mask size-12 bg-base-content" style={`mask-image: url('${type.icon}')`}></div>
-          {/if}
-          <h1>{type.name}</h1>
-        </div>
-        <div class="flex flex-row items-center gap-2">
-          <select class="select w-full lg:max-w-3xs" bind:value={() => filterBy, v => setFilterBy(v)} aria-label="Filter items by">
-            <option value="not_collected">Not Collected</option>
-            <option value="collected">Collected</option>
-            <option value="all">All</option>
-          </select>
-          <select class="select w-full lg:max-w-3xs" bind:value={() => sortBy, v => setSortBy(v)} aria-label="Sort items by">
-            <option value="type" disabled={!type.subtypes?.length}>Sort by Type</option>
-            <option value="location">Sort by Location</option>
-            <option value="name">Sort by Name</option>
-          </select>
-        </div>
-      </div>
-      {#if type.description}
-        <p class="text-base-content/70">{type.description}</p>
+<div class="container mx-auto flex-grow p-2 lg:p-4">
+  <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-2 mb-2 lg:mb-4">
+    <div class="flex flex-row items-center gap-2">
+      {#if type.icon}
+        <div aria-label={type.name} class="mask size-12 bg-base-content" style={`mask-image: url('${type.icon}')`}></div>
       {/if}
-      <ObservableContainer bind:activeIds={activeIds}>
-        {#each groupedItems as rootGroup (rootGroup.id)}
-          <ItemGroup group={rootGroup} hideTags={sortBy === 'location' || sortBy === 'type'} maxObservable={2} />
-        {/each}
-      </ObservableContainer>
+      <h1>{type.name}</h1>
     </div>
-  </main>
+    <div class="flex flex-row items-center gap-2">
+      <select class="select w-full lg:max-w-3xs" bind:value={() => filterBy, v => setFilterBy(v)} aria-label="Filter items by">
+        <option value="not_collected">Not Collected</option>
+        <option value="collected">Collected</option>
+        <option value="all">All</option>
+      </select>
+      <select class="select w-full lg:max-w-3xs" bind:value={() => sortBy, v => setSortBy(v)} aria-label="Sort items by">
+        <option value="type" disabled={!type.subtypes?.length}>Sort by Type</option>
+        <option value="location">Sort by Location</option>
+        <option value="name">Sort by Name</option>
+      </select>
+    </div>
+  </div>
+  <div class="flex flex-row items-start gap-2 lg:gap-4 relative">
+    {#if groupedItems.filter(g => g.hasItems || g.showIfEmpty || g.subgroups?.filter(sg => sg.hasItems || sg.showIfEmpty)?.length).length > 1}
+      <aside class="hidden lg:block w-64 shrink-0 sticky top-2 lg:top-4 left-0 space-y-2 lg:space-y-4">
+        <div class="bg-base-200 rounded-box">
+          <ul class="menu w-full">
+            {#each groupedItems as group (group.id)}
+              {#if group.hasItems || group.showIfEmpty}
+                <li>
+                  <a href="#{group.id}" class="flex flex-row items-center gap-2" class:menu-active={group.id === activeId}>
+                    {#if group.icon}
+                      <div aria-label={group.name} class="mask size-16 bg-base-content" style={`mask-image: url('${group.icon}')`}></div>
+                    {/if}
+                    {#if group.name}
+                      <div>{group.name}</div>
+                    {/if}
+                  </a>
+                  {#if group.subgroups && group.subgroups.length > 0}
+                    <ul>
+                      {#each group.subgroups as subgroup (subgroup.id)}
+                        {#if subgroup.hasItems || subgroup.showIfEmpty}
+                          {@const id = `${group.id}/${subgroup.id}`}
+                          <li>
+                            <a href="#{id}" class="flex flex-row items-center gap-2" class:menu-active={id === activeId}>
+                              {#if subgroup.icon}
+                                <div aria-label={subgroup.name} class="mask size-16 bg-base-content" style={`mask-image: url('${subgroup.icon}')`}></div>
+                              {/if}
+                              {#if subgroup.name}
+                                <div>{subgroup.name}</div>
+                              {/if}
+                            </a>
+                          </li>
+                        {/if}
+                      {/each}
+                    </ul>
+                  {/if}
+                </li>
+              {/if}
+            {/each}
+          </ul>
+        </div>
+      </aside>
+    {/if}
+    <main class="flex-grow">
+      <div class="space-y-2 lg:space-y-4">
+        {#if type.description}
+          <p class="text-base-content/70">{type.description}</p>
+        {/if}
+        {#if groupedItems.filter(g => g.hasItems || g.showIfEmpty || g.subgroups?.filter(sg => sg.hasItems || sg.showIfEmpty)?.length).length > 0}
+          <ObservableContainer bind:activeIds={activeIds}>
+            {#each groupedItems as rootGroup (rootGroup.id)}
+              <ItemGroup group={rootGroup} hideTags={sortBy === 'location' || sortBy === 'type'} maxObservable={2} />
+            {/each}
+          </ObservableContainer>
+        {:else}
+          <div class="text-center text-base-content/70 p-8">No items match this filter.</div>
+        {/if}
+      </div>
+    </main>
+  </div>
 </div>
