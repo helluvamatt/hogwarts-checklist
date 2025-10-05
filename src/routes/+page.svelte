@@ -8,10 +8,31 @@
 
   const collectibles = $derived.by(() => {
     const profile = playerState.profile;
-    return data.collectibles.map((type) => ({
-      ...type,
-      playerItemIds: type.items.filter(i => profile?.completedItems[type.id]?.[i.id]).map(i => i.id)
-    }));
+    return data.collectibles.map((type) => {
+      const playerItemIds = type.items.filter(i => profile?.completedItems[type.id]?.[i.id]).map(i => i.id);
+
+      // Calculate per-location progress for this type
+      const locationProgress = data.locations.map(location => {
+        const locationItems = type.items.filter(item => item.locationId === location.id);
+        const collectedInLocation = locationItems.filter(item =>
+          profile?.completedItems[type.id]?.[item.id]
+        ).length;
+
+        return {
+          locationId: location.id,
+          locationName: location.name,
+          total: locationItems.length,
+          collected: collectedInLocation,
+          percentage: locationItems.length > 0 ? (collectedInLocation / locationItems.length) * 100 : 0
+        };
+      }).filter(loc => loc.total > 0); // Only include locations that have items of this type
+
+      return {
+        ...type,
+        playerItemIds,
+        locationProgress
+      };
+    });
   });
 
   type ProgressEntry = {
@@ -104,6 +125,20 @@
                 <div class="badge badge-primary">{type.items.length} items</div>
               {/if}
             </div>
+            {#if type.locationProgress && type.locationProgress.length > 0}
+              <div class="mt-2 space-y-1">
+                <div class="text-xs font-semibold opacity-70">By Location:</div>
+                {#each type.locationProgress as location (location.locationId)}
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="opacity-70">{location.locationName}</span>
+                    <div class="flex items-center gap-2">
+                      <span class="opacity-50">{location.collected}/{location.total}</span>
+                      <span class="badge badge-xs {getCompletionBadgeClass(location.percentage)}">{location.percentage.toFixed(0)}%</span>
+                    </div>
+                  </div>
+                {/each}
+              </div>
+            {/if}
           </div>
         </a>
       {/each}
