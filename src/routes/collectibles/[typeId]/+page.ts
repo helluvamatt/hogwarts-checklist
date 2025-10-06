@@ -2,6 +2,8 @@ import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import type { CollectibleItem, CollectibleType, Location, ResolvedCollectibleItem, ResolvedCollectibleType } from '$lib';
 
+export const prerender = false;
+
 function resolveItem(item: CollectibleItem, type: CollectibleType, locations: Location[]): ResolvedCollectibleItem {
   const subtype = type.subtypes?.find(st => st.id === item.subtypeId);
   const location = locations.find(loc => loc.id === item.locationId);
