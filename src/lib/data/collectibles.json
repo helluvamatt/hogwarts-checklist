@@ -104,35 +104,35 @@
       {
         "id": "15",
         "locationId": "the-highlands",
-        "sublocationId": "feldcroft-region",
+        "sublocationId": "poidsear-coast",
         "name": "#15",
         "description": "After activating the ancient magic hotspot, use your broom to fly into the broken roof.  and look for the rune on the top floor. Next fly down to the second level where you will find the second rune. Next fly down to the bottom floor and get off your broom. Make your way toward the back room  and look at the wall to the left. Use Depulso to knock down the wall and give you access to the third rune."
       },
       {
         "id": "16",
         "locationId": "the-highlands",
-        "sublocationId": "feldcroft-region",
+        "sublocationId": "poidsear-coast",
         "name": "#16",
         "description": "After activating the ancient magic hotspot, head across the bridge and into the hole in the wall of the castle on the left after using Depulso on the wood covering the bottom half of the wall. Jump across to the platform and climb up for the first rune. Head back outside and look at the building to the South and use your broom to fly through the small opening in the roof of the main building and you will see this rune on the second floor landing. Drop down to the East and face the wall to the North that has the rune on the other side. To get the vines to go up and stay up long enough you will need to use a fire spell and run into the vines as they go up so you can sneak under them before they grow back. Once on the other side of the vines simply collect the final rune of this hotspot."
       },
       {
         "id": "17",
         "locationId": "the-highlands",
-        "sublocationId": "feldcroft-region",
+        "sublocationId": "marunweem-lake",
         "name": "#17",
         "description": "After activating the ancient magic hotspot simply fly up to the first rune that it showed you on your broom. Next fly up to the other side of the archway where you will see a landing that has a gate to the inside of the archway on it. Land there and use Alohamora (Level 3 Required) on the locked gate to open the door and collect this rune. Next head back out of the room and head to the West corner of the platform and look down into the water where you will see the run on a boat floating in the river. Fly down and grab this final rune for this hotspot."
       },
       {
         "id": "18",
         "locationId": "the-highlands",
-        "sublocationId": "feldcroft-region",
+        "sublocationId": "marunweem-lake",
         "name": "#18",
         "description": "After activating the ancient magic hotspot fly up to the rune on the right. Next fly to the platform to the West and attack the hook holding the pallet of rocks. Drop down and use Depulso on the mechanism to open the gate straight ahead of you. Head inside and collect the second rune. Head back out and immediately go to the right and follow the room until you can't anymore. Hop on your broom and go up until you see the relic on a platform above you."
       },
       {
         "id": "19",
         "locationId": "the-highlands",
-        "sublocationId": "feldcroft-region",
+        "sublocationId": "manor-cape",
         "name": "#19",
         "description": "After activating the ancient magic hotspot, fly your broom up to the first relic it showed you (You can't mount your broom inside the building but if you step outside and mount your broom you can go back inside flying). Head up to the top landing and you will see the second rune on the top platform on the South side of the manor. For the last rune head up to the highest portion of the manor on your broom and you can collect it in front of the frog statue."
       },
@@ -214,21 +214,21 @@
       {
         "id": "10",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "#10",
         "description": "On the other side of the bridge just outside the Floo Flame labelled South Poidsear Coast."
       },
       {
         "id": "11",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "#11",
         "description": "In the northeastern area of the region just to the right of a Treasure Vault."
       },
       {
         "id": "12",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "manor-cape",
         "name": "#12",
         "description": "On the southernmost tip of the region inside the castle ruins."
       },
@@ -416,42 +416,42 @@
       {
         "id": "south-of-poidsear-coast",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "South of Poidsear Coast",
         "description": "From the Poidsear Castle Floo Flames, head south and follow the river. You will see this set of Balloons near where the river meets the sea."
       },
       {
         "id": "south-poidsear-coast",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "South Poidsear Coast",
         "description": "From the South Poidsear Coast Floo Flames, head outside and then fly to the southwest to find this cluster of Balloons."
       },
       {
         "id": "southwest-of-phoenix-mountain-cave",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "Southwest of Phoenix Mountain Cave",
         "description": "From the Phoenix Mountain Cave Floo Flames, head southwest to find a narrow river. Follow it and you will see these Balloons hovering above it."
       },
       {
         "id": "marunweem-lake",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "Marunweem Lake",
         "description": "From the Coastal Mine Floo Flames, you can see these Balloons hovering in the air to the south."
       },
       {
         "id": "south-of-west-manor-cape",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "manor-cape",
         "name": "South of West Manor Cape",
         "description": "From the West Manor Cape Floo Flames, head south over the water to find these Balloons above some rocks."
       },
       {
         "id": "west-manor-cape",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "manor-cape",
         "name": "West Manor Cape",
         "description": "From the West Manor Cape Floo Flames, you can find these Balloons just to the west."
       },
@@ -555,7 +555,7 @@
       {
         "id": "butterfly-15",
         "name": "Butterfly #15",
-        "description": "For this one, you shall need to be talking to Clementine Willardsey and she will give you a quest called “Follow The Butterflies”."
+        "description": "For this one, you shall need to be talking to Clementine Willardsey and she will give you a quest called \"Follow The Butterflies\"."
       }
     ]
   },
@@ -630,12 +630,12 @@
       },
       {
         "id": "faculty-tower-1",
-        "name": "Faculty Tower #1",
+        "name": "Faculty Tower",
         "description": "In the South Wing area. You'll need to undertake \"The Caretaker's Lunar Lament\" quest to gain access to the Faculty Tower, since it gives you the ability to unlock doors with Alohomora. Fast travel to the Faculty Tower Floo Flame, go right into the tower itself, then up the stairs to find the key on the next floor. The key will lead you back down to a cabinet near where you entered."
       },
       {
         "id": "faculty-tower-2",
-        "name": "Faculty Tower #2",
+        "name": "Faculty Tower",
         "description": "Same as before, you need \"The Caretaker's Lunar Lament\" quest to get this one. On the highest floors of the Faculty Tower in the South Wing area, you'll find a corridor of portraits that links it to the Clock Tower. The key is in here, and goes to a cabinet beside the entrance to the Prefect's Bathroom with the statues."
       },
       {
@@ -743,35 +743,35 @@
       {
         "id": "14",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "#14",
         "description": "The Poidsear Coast landing platform is South of the South Poidsear Coast floo."
       },
       {
         "id": "15",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "#15",
         "description": "The first Marunween lake landing platform is next to the Marunweem Bridge floo."
       },
       {
         "id": "16",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "poidsear-coast",
         "name": "#16",
         "description": "The second Marunween lake landing platform is South of Coastal Mine"
       },
       {
         "id": "17",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "manor-cape",
         "name": "#17",
         "description": "The first Manor Cape landing platform is South of West Manor Cape Floo."
       },
       {
         "id": "18",
         "locationId": "the-highlands",
-        "sublocationId": "hogwarts-valley",
+        "sublocationId": "manor-cape",
         "name": "#18",
         "description": "The second Manor Cape landing bad is behind the crumbling mansion on the coast."
       },
@@ -833,7 +833,7 @@
       {
         "id": "basic-cast",
         "name": "Basic Cast",
-        "description": "In this trial, you'll notice several fragile stone orbs scattered around the area. Destroy them with a basic cast to solve the trial."
+        "description": "In this trial, you'll notice several fragile stone orbs scattered around the area. Destroy them with a basic cast to solve the trial"
       },
       {
         "id": "accio",
@@ -1820,7 +1820,7 @@
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "Werewolf Saga Tapestries",
-        "description": "The guide page can be tricky to reach as it is well hidden in the dungeons under the Bell Tower Wing. Start by heading south from the Belltower Courtyard Floo Flame, and down the stairs in the North Hall. As soon as you enter the dungeons, walk straight into the large tapestry depicting the letter “K” to find a hidden door, and enter the large room beyond that is lined with more tapestries to find the guide page."
+        "description": "The guide page can be tricky to reach as it is well hidden in the dungeons under the Bell Tower Wing. Start by heading south from the Belltower Courtyard Floo Flame, and down the stairs in the North Hall. As soon as you enter the dungeons, walk straight into the large tapestry depicting the letter \"K\" to find a hidden door, and enter the large room beyond that is lined with more tapestries to find the guide page."
       },
       {
         "id": "revelio-castle-ramparts-bell-tower-wing",
@@ -1995,7 +1995,7 @@
         "subtypeId": "revelio",
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
-        "name": "Headmaster's Office Gargoyle",
+        "name": "Headmaster’s Office Gargoyle",
         "description": "It can be found at the top of the Grand Staircase Tower, past the Trophy Room Floo Flame - but you will need to have gained the Alohomora unlocking spell to unlock the level 1 gate at the end of the room. After unlocking the gate, travel up through the winding passages (and grab a Legendary Chest on the first door on the left) before climbing yet more staircases past locked doors to reach a landing where the giant gargoyle sits on the left, next to a Moth Frame painting."
       },
       {
@@ -2179,7 +2179,7 @@
         "subtypeId": "revelio",
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
-        "name": "Professor Sharp's Auror Badge",
+        "name": "Professor Sharp’s Auror Badge",
         "description": "You can find it on a table in the back of the Potions Classroom (easily reached by Floo Flame), off to the side of the Central Hall."
       },
       {
@@ -2291,7 +2291,7 @@
         "subtypeId": "revelio",
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
-        "name": "Prefect's Bathroom",
+        "name": "Prefect’s Bathroom",
         "description": "After completing Mr. Moon's quest and gaining access to the Faculty Tower, climb up to the very top of the staircase to find a statue on the landing with two statues, and enter the door opposite the hall to the Clock Tower to find the bathroom with a mermaid painting hiding the Guide Page."
       },
       {
@@ -2316,7 +2316,7 @@
         "locationId": "hogwarts",
         "sublocationId": "south-wing",
         "name": "Adventure Novel Set",
-        "description": "From the Faculty Tower Floo Flames, head down the corridor and into the “restricted” area. Ascend the stairs and look to the right to find a locked door (requires Alohomora Level 2). Inside, go right and you'll find the Field Guide page next to a bookshelf."
+        "description": "From the Faculty Tower Floo Flames, head down the corridor and into the \"restricted\" area. Ascend the stairs and look to the right to find a locked door (requires Alohomora Level 2). Inside, go right and you'll find the Field Guide page next to a bookshelf."
       },
       {
         "id": "revelio-grimbald-weft-undefined",
@@ -2400,7 +2400,7 @@
         "subtypeId": "lumos",
         "locationId": "hogwarts",
         "sublocationId": "grand-staircase",
-        "name": "Headmaster's Office Moth Frame",
+        "name": "Headmaster’s Office Moth Frame",
         "description": "It can be found at the top of the Grand Staircase Tower, past the Trophy Room Floo Flame - but you will need to have gained the Alohomora unlocking spell to unlock the level 1 gate at the end of the room. After unlocking the gate, travel up through the winding passages (and grab a Legendary Chest on the first door on the left) before climbing yet more staircases past locked doors to reach a landing where the giant gargoyle sits on the left, next to the Moth Frame painting. Illuminate it with Lumos to find the moth's location. As it happens, the location is back down the stairs you came from, in the winding corridor hall that housed the legendary chest"
       },
       {
@@ -3048,7 +3048,7 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
-        "name": "Ceridwen's Precarious Cauldrons",
+        "name": "Ceridwen’s Precarious Cauldrons",
         "description": "In front of Tomes and Scrolls you'll find Ceridwen's Cauldrons. The field guide page is near the stack of cauldrons next to the front door."
       },
       {
@@ -3056,7 +3056,7 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "south-hogsmeade",
-        "name": "Ollivander's Wand Shop",
+        "name": "Ollivander’s Wand Shop",
         "description": "Navigate to the front door of Ollivander's Wand Shop. Cast Revelio near the door to reveal the guide page."
       },
       {
@@ -3176,7 +3176,7 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Zonko's Joke Shop",
+        "name": "Zonko’s Joke Shop",
         "description": "Make your way to the front entrance of the joke shop. Cast Revelio and you'll find the guide page by the main entrance, near the butterbeer barrels."
       },
       {
@@ -3216,7 +3216,7 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "J. Pippin's Potions",
+        "name": "J. Pippin’s Potions",
         "description": "Unlike most of the other shops, there isn't a guide page outside of J. Pippin's Potions. Instead, head inside and you'll find it near the potions behind the shopkeeper."
       },
       {
@@ -3224,7 +3224,7 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Mounted Hog's Head",
+        "name": "Mounted Hog’s Head",
         "description": "South of the West Hogsmeade Floo Flame, you'll find the Hog's Head pub. Go inside and the page will be behind the bartender."
       },
       {
@@ -3232,7 +3232,7 @@
         "subtypeId": "revelio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Hog's Head Docks",
+        "name": "Hog’s Head Docks",
         "description": "Exit the pub from the back entrance, and turn to your right. You'll find the next page by the docks, facing west."
       },
       {
@@ -3256,7 +3256,7 @@
         "subtypeId": "accio",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Behind Hog's Head Pub",
+        "name": "Behind Hog’s Head Pub",
         "description": "Make your way back to Hog's Head Pub. Outside, in the back where you found the Revelio page, you'll see the next page flying around over the river to the west."
       },
       {
@@ -3288,7 +3288,7 @@
         "subtypeId": "lumos",
         "locationId": "hogsmeade",
         "sublocationId": "west-hogsmeade",
-        "name": "Behind Hog's Head",
+        "name": "Behind Hog’s Head",
         "description": "To find the mirror, make your way to the back area of Hog's Head. Behind the adjacent buildings, start moving in an eastward direction until you find the mirror next to the locked eye-chest. To find the moth, head back to the Hog's Head Dock, and it will be on a box near where you found the Revelio page."
       },
       {
@@ -3557,28 +3557,28 @@
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Transfiguration Classroom",
-        "description": "1. Teleport to the Transfiguration Classroom floo flame in the Astronomy Wing.\n2. Turn around and go through the doors on your left.\n3. Proceed forward and go down all of the stairs on the right.\n4. Go inside the door and head down even more stairs until you reach the dragon statue.\n5. Turn right and find the door with a level one lock on your left.\n6. Unlock the door with Alohomora, and find the Demiguise statue on your right."
+        "description": "1. Teleport to the Transfiguration Classroom floo flame in the Astronomy Wing.\n2. Turn around and go through the doors on your left.\n3. Proceed forward and go down all of the stairs on the right.\n4. Go inside the door and head down even more stairs until you reach the dragon statue.\n5. Turn right and find the door with a level one lock on your left.\n6. Unlock the door with Alohomora, and find the Demiguise statue on your right.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "transfiguration-courtyard",
         "locationId": "hogwarts",
         "sublocationId": "astronomy-wing",
         "name": "Transfiguration Courtyard",
-        "description": "1. Use the Transfiguration Courtyard floo flame in the Astronomy Wing.\n2. Turn around and enter the doors to the Defence Against the Dark Arts Tower.\n3. Go right up the small set of stairs and find the door with a level two lock and two talking gargoyles on both sides of it.\n4. Use Alohomora to open the door, and collect the Demiguise Moon from the statue inside."
+        "description": "1. Use the Transfiguration Courtyard floo flame in the Astronomy Wing.\n2. Turn around and enter the doors to the Defence Against the Dark Arts Tower.\n3. Go right up the small set of stairs and find the door with a level two lock and two talking gargoyles on both sides of it.\n4. Use Alohomora to open the door, and collect the Demiguise Moon from the statue inside.\n\n**Requires Level 2 Lock**"
       },
       {
         "id": "hogwarts-north-exit",
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "Hogwarts North Exit",
-        "description": "1. Teleport to the Hogwarts North Exit floo flame located in the Bell Tower Wing.\n2. Turn around and turn left as soon as you're within castle walls.\n3. Find the door with a level one lock on the right side of the stairs (don't go up the stairs).\n4. Unlock the door and head inside to find a Demiguise statue on the right."
+        "description": "1. Teleport to the Hogwarts North Exit floo flame located in the Bell Tower Wing.\n2. Turn around and turn left as soon as you're within castle walls.\n3. Find the door with a level one lock on the right side of the stairs (don't go up the stairs).\n4. Unlock the door and head inside to find a Demiguise statue on the right.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "beasts-classroom",
         "locationId": "hogwarts",
         "sublocationId": "bell-tower-wing",
         "name": "Beasts Classroom",
-        "description": "1. Fast travel to the Beasts Classroom floo flame which is located in the Bell Tower Wing.\n2. Turn around to find a door with a level two lock.\n3. Unlock the door, and collect the Demiguise moon inside."
+        "description": "1. Fast travel to the Beasts Classroom floo flame which is located in the Bell Tower Wing.\n2. Turn around to find a door with a level two lock.\n3. Unlock the door, and collect the Demiguise moon inside.\n\n**Requires Level 2 Lock**"
       },
       {
         "id": "divination-classroom",
@@ -3592,28 +3592,28 @@
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Restricted Section",
-        "description": "1. Teleport to the Library floo flame in the Library Annex, and turn around towards the fenced area of the library.\n2. Enter the fenced area, which should seem familiar from the “Secrets of the Restricted Section” quest.\n3. Proceed to the bottom of the restricted section, and proceed through the rooms to find the Demiguise statue."
+        "description": "1. Teleport to the Library floo flame in the Library Annex, and turn around towards the fenced area of the library.\n2. Enter the fenced area, which should seem familiar from the \"Secrets of the Restricted Section\" quest.\n3. Proceed to the bottom of the restricted section, and proceed through the rooms to find the Demiguise statue."
       },
       {
         "id": "potions-classroom",
         "locationId": "hogwarts",
         "sublocationId": "library-annex",
         "name": "Potions Classroom",
-        "description": "1. Travel to the Potions Classroom floo flame in the Library Annex, and enter the doors ahead.\n2. Go down the spiral staircase on the left, and proceed through the corridor until you find a door on the left with a level one lock.\n3. Unlock the door, and head down the hallway until you find a door with a level two lock on your left.\n4. Use Alohomora to open the door, and grab the Demiguise moon from the statue inside."
+        "description": "1. Travel to the Potions Classroom floo flame in the Library Annex, and enter the doors ahead.\n2. Go down the spiral staircase on the left, and proceed through the corridor until you find a door on the left with a level one lock.\n3. Unlock the door, and head down the hallway until you find a door with a level two lock on your left.\n4. Use Alohomora to open the door, and grab the Demiguise moon from the statue inside.\n\n**Requires Level 2 Lock**"
       },
       {
         "id": "great-hall",
         "locationId": "hogwarts",
         "sublocationId": "the-great-hall",
         "name": "Great Hall",
-        "description": "1. Fast travel to the Great Hall floo flame in the Great Hall section of Hogwarts.\n2. Move forward until you spot a door with a level one lock on your right.\n3. Unlock the door using Alohomora, and get the Demiguise moon off of the table inside.\n"
+        "description": "1. Fast travel to the Great Hall floo flame in the Great Hall section of Hogwarts.\n2. Move forward until you spot a door with a level one lock on your right.\n3. Unlock the door using Alohomora, and get the Demiguise moon off of the table inside.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "faculty-tower",
         "locationId": "hogwarts",
-        "sublocationId": "the-great-hall",
+        "sublocationId": "south-wing",
         "name": "Faculty Tower",
-        "description": "1. Teleport to the Faculty Tower floo flame located in the South Wing.\n2. Head straight ahead, and proceed down the stairs to the bottom level.\n3. Continue through the corridor filled with musical paintings, and go down the stairs on the right.\n4. Turn left at the corner, and walk down the hallway until you find a door on the left with a locked door with a level one lock.\n5. Unlock the door and enter the middle stall to find the Demiguise statue."
+        "description": "1. Teleport to the Faculty Tower floo flame located in the South Wing.\n2. Head straight ahead, and proceed down the stairs to the bottom level.\n3. Continue through the corridor filled with musical paintings, and go down the stairs on the right.\n4. Turn left at the corner, and walk down the hallway until you find a door on the left with a locked door with a level one lock.\n5. Unlock the door and enter the middle stall to find the Demiguise statue.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "tomes-and-scrolls",
@@ -3625,7 +3625,7 @@
         "id": "hogsmeade-home",
         "locationId": "hogsmeade",
         "name": "Hogsmeade Home",
-        "description": "1. Find the house in Hogsmeade in the alleyway near Tomes and Scrolls. This house has a level two lock and the front of the house faces northeast.\n2. Unlock the door with Alohomora and enter the house.\n3. Go up the stairs to find the Demiguise statue in the room on the left."
+        "description": "1. Find the house in Hogsmeade in the alleyway near Tomes and Scrolls. This house has a level two lock and the front of the house faces northeast.\n2. Unlock the door with Alohomora and enter the house.\n3. Go up the stairs to find the Demiguise statue in the room on the left.\n\n**Requires Level 2 Lock**"
       },
       {
         "id": "hogs-head",
@@ -3637,19 +3637,19 @@
         "id": "house-by-jpippins-potions",
         "locationId": "hogsmeade",
         "name": "House By J.Pippin's Potions",
-        "description": "1. Make your way to J. Pippin's Potions, and find the house to the north of it.\n2. Unlock the level two lock on the door, and enter the house.\n3. Go up the stairs, and collect the Demiguise moon on top of the dresser."
+        "description": "1. Make your way to J. Pippin's Potions, and find the house to the north of it.\n2. Unlock the level two lock on the door, and enter the house.\n3. Go up the stairs, and collect the Demiguise moon on top of the dresser.\n\n**Requires Level 2 Lock**"
       },
       {
         "id": "three-broomsticks",
         "locationId": "hogsmeade",
         "name": "Three Broomsticks",
-        "description": "1. Enter the Three Broomsticks in Hogsmeade, and climb the stairs all the way to the top until you reach a locked door.\n2. Unlock the door and collect the Demiguise moon inside."
+        "description": "1. Enter the Three Broomsticks in Hogsmeade, and climb the stairs all the way to the top until you reach a locked door.\n2. Unlock the door and collect the Demiguise moon inside.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "house-by-three-broomsticks",
         "locationId": "hogsmeade",
         "name": "House by Three Broomsticks",
-        "description": "1. Find the house beside Hogsmeade that has a level one lock.\n2. Unlock the door by using Alohomora, and head upstairs to find the Demiguise statue."
+        "description": "1. Find the house beside Hogsmeade that has a level one lock.\n2. Unlock the door by using Alohomora, and head upstairs to find the Demiguise statue.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "dervish-and-banges",
@@ -3661,13 +3661,13 @@
         "id": "house-across-from-brood-and-peck",
         "locationId": "hogsmeade",
         "name": "House across from Brood and Peck",
-        "description": "1. Make your way to the house across from Brood and Peck, and unlock the door using Alohomora.\n2. Enter the home to immediately find the Demiguise statue above the fireplace."
+        "description": "1. Make your way to the house across from Brood and Peck, and unlock the door using Alohomora.\n2. Enter the home to immediately find the Demiguise statue above the fireplace.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "house-behind-honeydukes",
         "locationId": "hogsmeade",
         "name": "House behind Honeydukes",
-        "description": "1. Make your way to the house behind Honeydukes, and unlock the door.\n2. Collect the Demiguise moon inside."
+        "description": "1. Make your way to the house behind Honeydukes, and unlock the door.\n2. Collect the Demiguise moon inside.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "pitt-upon-ford",
@@ -3681,21 +3681,21 @@
         "name": "Upper Hogsfield",
         "locationId": "the-highlands",
         "sublocationId": "hogsmeade-valley",
-        "description": "1. Travel to the floo flame in Upper Hogsfield, which is in the northern section of Hogsmeade Valley.\n2. Follow the path that leads north to a house with a wheel beside the door.\n3. Unlock the level one lock on the door to immediately find a Demiguise statue."
+        "description": "1. Travel to the floo flame in Upper Hogsfield, which is in the northern section of Hogsmeade Valley.\n2. Follow the path that leads north to a house with a wheel beside the door.\n3. Unlock the level one lock on the door to immediately find a Demiguise statue.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "aranshire",
         "locationId": "the-highlands",
         "sublocationId": "south-hogwarts-region",
         "name": "Aranshire",
-        "description": "1. Travel to Aranshire, which is located on the eastern side of the South Hogwarts Region.\n2. Enter the closest house to the floo flame, which has a level one lock.\n3. Head upstairs to find the Demiguise statue."
+        "description": "1. Travel to Aranshire, which is located on the eastern side of the South Hogwarts Region.\n2. Enter the closest house to the floo flame, which has a level one lock.\n3. Head upstairs to find the Demiguise statue.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "lower-hogsfield",
         "locationId": "the-highlands",
         "sublocationId": "south-hogwarts-region",
         "name": "Lower Hogsfield",
-        "description": "1. Head to Lower Hogsfield, which is located to the south of Hogwarts in the South Hogwarts Region.\n2. Enter the house with a rounded roof, which has a level one lock on the door.\n3. Let the door close to find the Demiguise statue on the floor."
+        "description": "1. Head to Lower Hogsfield, which is located to the south of Hogwarts in the South Hogwarts Region.\n2. Enter the house with a rounded roof, which has a level one lock on the door.\n3. Let the door close to find the Demiguise statue on the floor.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "brocburrow",
@@ -3709,14 +3709,14 @@
         "locationId": "the-highlands",
         "sublocationId": "hogwarts-valley",
         "name": "Keenbridge",
-        "description": "1. Travel to Keenbridge, which is located around the center of Hogwarts Valley.\n2. Follow the path that heads west out of Keenbridge to a house with pumpkins outside and a clothes line coming down from the roof.\n3. Unlock the door with a level one lock using Alohomora, and find the Demiguise statue immediately inside."
+        "description": "1. Travel to Keenbridge, which is located around the center of Hogwarts Valley.\n2. Follow the path that heads west out of Keenbridge to a house with pumpkins outside and a clothes line coming down from the roof.\n3. Unlock the door with a level one lock using Alohomora, and find the Demiguise statue immediately inside.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "feldcroft",
         "locationId": "the-highlands",
         "sublocationId": "feldcroft-region",
         "name": "Feldcroft",
-        "description": "1. Make your way to Feldcroft, which is located in the center of the Feldcroft region.\n2. Head to the east side of the town, and find the house with a clothes line coming from the roof.\n3. Enter the house to find a Demiguise statue on the window sill on the left."
+        "description": "1. Make your way to Feldcroft, which is located in the center of the Feldcroft region.\n2. Head to the east side of the town, and find the house with a clothes line coming from the roof.\n3. Enter the house to find a Demiguise statue on the window sill on the left.\n\n**Requires Level 2 Lock**"
       },
       {
         "id": "irondale",
@@ -3730,14 +3730,14 @@
         "locationId": "the-highlands",
         "sublocationId": "marunweem-lake",
         "name": "Marunweem",
-        "description": "1. Head to Marunweem, which is located in the Marunweem Lake region.\n2. From the floo flame, head north and take the first right turn.\n3. Follow the path to the first home you come across on the left.\n4. Unlock the door using Alohomora, and find Demiguise statue behind the counter"
+        "description": "1. Head to Marunweem, which is located in the Marunweem Lake region.\n2. From the floo flame, head north and take the first right turn.\n3. Follow the path to the first home you come across on the left.\n4. Unlock the door using Alohomora, and find Demiguise statue behind the counter\n\n**Requires Level 1 Lock**"
       },
       {
-        "id": "brainburgh",
+        "id": "bainburgh",
         "locationId": "the-highlands",
         "sublocationId": "manor-cape",
-        "name": "Brainburgh",
-        "description": "1. Travel to the floo flame in Bainburgh, which is located in the northern section of Manor Cape.\n2. Turn left when looking away from the floo flame, and head towards the house on the left.\n3. Unlock the door, and collect the Demiguise moon from the statue inside."
+        "name": "Bainburgh",
+        "description": "1. Travel to the floo flame in Bainburgh, which is located in the northern section of Manor Cape.\n2. Turn left when looking away from the floo flame, and head towards the house on the left.\n3. Unlock the door, and collect the Demiguise moon from the statue inside.\n\n**Requires Level 1 Lock**"
       },
       {
         "id": "cragcroft",
@@ -4928,6 +4928,24 @@
   {
     "id": "additional-appearances",
     "name": "Additional Appearances",
+    "subtypes": [
+      {
+        "id": "handwear",
+        "name": "Handwear"
+      },
+      {
+        "id": "facewear",
+        "name": "Facewear"
+      },
+      {
+        "id": "headwear",
+        "name": "Headwear"
+      },
+      {
+        "id": "neckwear",
+        "name": "Neckwear"
+      }
+    ],
     "items": [
       {
         "id": "checked-gloves",
@@ -5498,24 +5516,6 @@
         "id": "lace-sorcerer-hat",
         "name": "Lace Sorcerer Hat",
         "subtypeId": "headwear"
-      }
-    ],
-    "subtypes": [
-      {
-        "id": "handwear",
-        "name": "Handwear"
-      },
-      {
-        "id": "facewear",
-        "name": "Facewear"
-      },
-      {
-        "id": "headwear",
-        "name": "Headwear"
-      },
-      {
-        "id": "neckwear",
-        "name": "Neckwear"
       }
     ]
   },
@@ -6680,7 +6680,7 @@
       {
         "id": "alls-well-that-ends-bell",
         "subtypeId": "side-quests",
-        "name": "All's Well That Ends Bell"
+        "name": "All’s Well That Ends Bell"
       },
       {
         "id": "a-bird-in-the-hand",
@@ -6690,7 +6690,7 @@
       {
         "id": "beeting-a-curse",
         "subtypeId": "side-quests",
-        "name": "‘Beeting' a Curse"
+        "name": "‘Beeting’ a Curse"
       },
       {
         "id": "birds-of-a-feather",
@@ -6705,7 +6705,7 @@
       {
         "id": "brothers-keeper",
         "subtypeId": "side-quests",
-        "name": "Brother's Keeper"
+        "name": "Brother’s Keeper"
       },
       {
         "id": "cache-in-the-castle",
@@ -6740,7 +6740,7 @@
       {
         "id": "dissending-for-sweets",
         "subtypeId": "side-quests",
-        "name": "‘Dissending' for Sweets"
+        "name": "‘Dissending’ for Sweets"
       },
       {
         "id": "e-vase-ive-manoeuvre",
@@ -6800,7 +6800,7 @@
       {
         "id": "mer-ky-depths",
         "subtypeId": "side-quests",
-        "name": "‘Mer-Ky' Depths"
+        "name": "‘Mer-Ky’ Depths"
       },
       {
         "id": "minding-your-own-business-playstation-exclusive",
@@ -6850,22 +6850,22 @@
       {
         "id": "summoners-court-match-1",
         "subtypeId": "side-quests",
-        "name": "Summoner's Court: Match 1"
+        "name": "Summoner’s Court: Match 1"
       },
       {
         "id": "summoners-court-match-2",
         "subtypeId": "side-quests",
-        "name": "Summoner's Court: Match 2"
+        "name": "Summoner’s Court: Match 2"
       },
       {
         "id": "summoners-court-match-3",
         "subtypeId": "side-quests",
-        "name": "Summoner's Court: Match 3"
+        "name": "Summoner’s Court: Match 3"
       },
       {
         "id": "summoners-court-match-4",
         "subtypeId": "side-quests",
-        "name": "Summoner's Court: Match 4"
+        "name": "Summoner’s Court: Match 4"
       },
       {
         "id": "sweeping-the-competition",
@@ -7959,7 +7959,7 @@
         "description": "Bogs, Dugbog nests"
       },
       {
-        "id": "duellist",
+        "id": "duellist-1",
         "subtypeId": "ashwinder",
         "name": "Duellist",
         "description": "Bandit camps, Battle arenas"
@@ -7971,13 +7971,13 @@
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "assassin",
+        "id": "assassin-1",
         "subtypeId": "ashwinder",
         "name": "Assassin",
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "ranger",
+        "id": "ranger-1",
         "subtypeId": "ashwinder",
         "name": "Ranger",
         "description": "Bandit camps, Battle arenas"
@@ -7989,13 +7989,13 @@
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "executioner",
+        "id": "executioner-1",
         "subtypeId": "ashwinder",
         "name": "Executioner",
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "duellist",
+        "id": "duellist-2",
         "subtypeId": "poacher",
         "name": "Duellist",
         "description": "Bandit camps, Battle arenas"
@@ -8013,7 +8013,7 @@
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "ranger",
+        "id": "ranger-2",
         "subtypeId": "poacher",
         "name": "Ranger",
         "description": "Bandit camps, Battle arenas"
@@ -8025,13 +8025,13 @@
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "executioner",
+        "id": "executioner-2",
         "subtypeId": "poacher",
         "name": "Executioner",
         "description": "Bandit camps, Battle arenas"
       },
       {
-        "id": "assassin",
+        "id": "assassin-2",
         "subtypeId": "loyalist",
         "name": "Assassin",
         "description": "Mining areas"
@@ -8055,55 +8055,55 @@
         "description": "Mining areas"
       },
       {
-        "id": "ranger",
+        "id": "ranger-3",
         "subtypeId": "loyalist",
         "name": "Ranger",
         "description": "Mining areas"
       },
       {
-        "id": "scurriour",
+        "id": "scurriour-1",
         "subtypeId": "venomous-spider",
         "name": "Scurriour",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "ambusher",
+        "id": "ambusher-1",
         "subtypeId": "venomous-spider",
         "name": "Ambusher",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "shooter",
+        "id": "shooter-1",
         "subtypeId": "venomous-spider",
         "name": "Shooter",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "matriarch",
+        "id": "matriarch-1",
         "subtypeId": "venomous-spider",
         "name": "Matriarch",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "scurriour",
+        "id": "scurriour-2",
         "subtypeId": "thornback-spider",
         "name": "Scurriour",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "ambusher",
+        "id": "ambusher-2",
         "subtypeId": "thornback-spider",
         "name": "Ambusher",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "shooter",
+        "id": "shooter-2",
         "subtypeId": "thornback-spider",
         "name": "Shooter",
         "description": "Forbidden forest, battle arenas, spider nests"
       },
       {
-        "id": "matriarch",
+        "id": "matriarch-2",
         "subtypeId": "thornback-spider",
         "name": "Matriarch",
         "description": "Forbidden forest, battle arenas, spider nests"
@@ -8265,7 +8265,7 @@
       {
         "id": "zonkos-chief-prankster-coat",
         "subtypeId": "challenges",
-        "name": "Zonko's Chief Prankster Coat"
+        "name": "Zonko’s Chief Prankster Coat"
       },
       {
         "id": "beast-rescuer-robe",
@@ -8285,7 +8285,7 @@
       {
         "id": "starry-eyed-seers-cape",
         "subtypeId": "challenges",
-        "name": "Starry-Eyed Seer's Cape"
+        "name": "Starry-Eyed Seer’s Cape"
       },
       {
         "id": "venomous-tentacula-robe",
@@ -8310,7 +8310,7 @@
       {
         "id": "treasure-seekers-longcoat",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker's Longcoat"
+        "name": "Treasure-Seeker’s Longcoat"
       },
       {
         "id": "house-fan-atic-school-robe",
@@ -8325,7 +8325,7 @@
       {
         "id": "authentic-historians-uniform",
         "subtypeId": "quests",
-        "name": "Authentic Historian's Uniform"
+        "name": "Authentic Historian’s Uniform"
       },
       {
         "id": "beaked-skull-mask",
@@ -8335,12 +8335,12 @@
       {
         "id": "quidditch-captains-cape",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain's Cape"
+        "name": "Quidditch Captain’s Cape"
       },
       {
         "id": "herodianas-cape",
         "subtypeId": "quests",
-        "name": "Herodiana's Cape"
+        "name": "Herodiana’s Cape"
       },
       {
         "id": "dark-arts-mask",
@@ -8415,7 +8415,7 @@
       {
         "id": "treasure-seekers-gloves",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker's Gloves"
+        "name": "Treasure-Seeker’s Gloves"
       },
       {
         "id": "dark-arts-garrison-hat",
@@ -8425,12 +8425,12 @@
       {
         "id": "dragonhide-protectors-cloak",
         "subtypeId": "challenges",
-        "name": "Dragonhide Protector's Cloak"
+        "name": "Dragonhide Protector’s Cloak"
       },
       {
         "id": "summoners-court-champion-gloves",
         "subtypeId": "quests",
-        "name": "Summoner's Court Champion Gloves"
+        "name": "Summoner’s Court Champion Gloves"
       },
       {
         "id": "dark-arts-scarf",
@@ -8475,7 +8475,7 @@
       {
         "id": "treasure-seekers-bicorne-hat",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker's Bicorne Hat"
+        "name": "Treasure-Seeker’s Bicorne Hat"
       },
       {
         "id": "hogwarts-regalia-spectacles",
@@ -8485,7 +8485,7 @@
       {
         "id": "potioneers-cap",
         "subtypeId": "quests",
-        "name": "Potioneer's Cap"
+        "name": "Potioneer’s Cap"
       },
       {
         "id": "bookish-half-rim-spectacles",
@@ -8495,12 +8495,12 @@
       {
         "id": "herodianas-cap",
         "subtypeId": "quests",
-        "name": "Herodiana's Cap"
+        "name": "Herodiana’s Cap"
       },
       {
         "id": "zonkos-chief-prankster-spectacles",
         "subtypeId": "challenges",
-        "name": "Zonko's Chief Prankster Spectacles"
+        "name": "Zonko’s Chief Prankster Spectacles"
       },
       {
         "id": "niffler-fur-lined-hat",
@@ -8525,7 +8525,7 @@
       {
         "id": "treasure-seekers-scarf",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker's Scarf"
+        "name": "Treasure-Seeker’s Scarf"
       },
       {
         "id": "legendary-masquerade-mask",
@@ -8555,7 +8555,7 @@
       {
         "id": "treasure-seekers-attire",
         "subtypeId": "quests",
-        "name": "Treasure-Seeker's Attire"
+        "name": "Treasure-Seeker’s Attire"
       },
       {
         "id": "legendary-gloves",
@@ -8565,7 +8565,7 @@
       {
         "id": "herodianas-attire",
         "subtypeId": "quests",
-        "name": "Herodiana's Attire"
+        "name": "Herodiana’s Attire"
       },
       {
         "id": "highland-explorer-gloves",
@@ -8580,7 +8580,7 @@
       {
         "id": "quidditch-captains-gloves",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain's Gloves"
+        "name": "Quidditch Captain’s Gloves"
       },
       {
         "id": "mermish-liaison-uniform",
@@ -8615,7 +8615,7 @@
       {
         "id": "quidditch-captains-helmet",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain's Helmet"
+        "name": "Quidditch Captain’s Helmet"
       },
       {
         "id": "halloween-pumpkin-mask",
@@ -8635,12 +8635,12 @@
       {
         "id": "officers-hat",
         "subtypeId": "challenges",
-        "name": "Officer's Hat"
+        "name": "Officer’s Hat"
       },
       {
         "id": "zonkos-chief-prankster-hat",
         "subtypeId": "challenges",
-        "name": "Zonko's Chief Prankster Hat"
+        "name": "Zonko’s Chief Prankster Hat"
       },
       {
         "id": "lucky-leprechaun-hat",
@@ -8660,7 +8660,7 @@
       {
         "id": "starry-eyed-seers-scarf",
         "subtypeId": "challenges",
-        "name": "Starry-Eyed Seer's Scarf"
+        "name": "Starry-Eyed Seer’s Scarf"
       },
       {
         "id": "legendary-armored-attire",
@@ -8680,22 +8680,22 @@
       {
         "id": "zonkos-chief-prankster-ensemble",
         "subtypeId": "challenges",
-        "name": "Zonko's Chief Prankster Ensemble"
+        "name": "Zonko’s Chief Prankster Ensemble"
       },
       {
         "id": "quidditch-captains-uniform",
         "subtypeId": "challenges",
-        "name": "Quidditch Captain's Uniform"
+        "name": "Quidditch Captain’s Uniform"
       },
       {
         "id": "secret-solvers-bathing-costume",
         "subtypeId": "challenges",
-        "name": "Secret Solver's Bathing Costume"
+        "name": "Secret Solver’s Bathing Costume"
       },
       {
         "id": "starry-eyed-seers-ensemble",
         "subtypeId": "challenges",
-        "name": "Starry-Eyed Seer's Ensemble"
+        "name": "Starry-Eyed Seer’s Ensemble"
       },
       {
         "id": "hogwarts-regalia-ensemble",
@@ -8705,12 +8705,12 @@
       {
         "id": "protectors-ensemble",
         "subtypeId": "challenges",
-        "name": "Protector's Ensemble"
+        "name": "Protector’s Ensemble"
       },
       {
         "id": "officers-uniform",
         "subtypeId": "challenges",
-        "name": "Officer's Uniform"
+        "name": "Officer’s Uniform"
       },
       {
         "id": "lucky-leprechaun-ensemble",
