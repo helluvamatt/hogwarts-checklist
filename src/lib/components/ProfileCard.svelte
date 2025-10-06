@@ -44,7 +44,7 @@
           <p class="text-sm opacity-90">{profile.playerHouse}</p>
         </div>
         <!-- House Crest -->
-        <div class="w-12 h-12">
+        <div class="size-24">
           <img src={houses[profile.playerHouse].crest} alt="{profile.playerHouse} Crest" class="w-full h-full object-contain" />
         </div>
       </div>

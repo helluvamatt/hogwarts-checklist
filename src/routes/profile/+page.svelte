@@ -117,11 +117,7 @@
   // Reset progress
   async function handleResetProgress() {
     try {
-      await playerState.setPlayerProfile({
-        ...playerState.profile,
-        completedItems: {},
-        lastUpdated: new Date().toISOString()
-      });
+      await updateProfile({ completedItems: {} });
       showResetModal = false;
     } catch (error) {
       console.error('Failed to dreset progress:', error);
@@ -228,11 +224,11 @@
           {/if}
         </div>
       </fieldset>
-      <fieldset class="fieldset bg-error/10 border-error rounded-box border p-4 mb-4 lg:mb-6">
+      <fieldset class="fieldset border-error rounded-box border p-4 mb-4 lg:mb-6">
         <legend class="fieldset-legend text-error -my-4 lg:-my-6">Danger Zone</legend>
-        <p class="text-error">Resetting your progress will clear all completed items but retain your profile details. This action cannot be undone.</p>
+        <p>Resetting your progress will clear all completed items but retain your profile details. This action cannot be undone.</p>
         <div>
-          <button type="button" class="btn btn-error btn-outline" onclick={() => showResetModal = true} disabled={!playerState.profile}>Reset Progress</button>
+          <button type="button" class="btn btn-error btn-sm" onclick={() => showResetModal = true} disabled={!playerState.profile}>Reset Progress</button>
         </div>
       </fieldset>
     </form>
