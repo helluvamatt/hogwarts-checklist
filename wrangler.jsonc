@@ -1,8 +1,10 @@
 {
 	"name": "hogwarts-checklist",
 	"compatibility_date": "2025-10-01",
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "build/"
-	}
+  //"main": ".svelte-kit/cloudflare/_worker.js",
+  "assets": {
+    //"binding": "ASSETS",
+		//"directory": ".svelte-kit/cloudflare",
+    "directory": "./build/"
+  }
 }
