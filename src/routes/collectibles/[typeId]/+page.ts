@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import type { CollectibleItem, CollectibleType, Location, ResolvedCollectibleItem, ResolvedCollectibleType } from '$lib';
 
 function resolveItem(item: CollectibleItem, type: CollectibleType, locations: Location[]): ResolvedCollectibleItem {
@@ -9,7 +9,7 @@ function resolveItem(item: CollectibleItem, type: CollectibleType, locations: Lo
   return { ...item, type, subtype, location, sublocation };
 }
 
-export const load: PageServerLoad = async ({ parent, params }): Promise<{ type: ResolvedCollectibleType }> => {
+export const load: PageLoad = async ({ parent, params }): Promise<{ type: ResolvedCollectibleType }> => {
   const { collectibles, locations } = await parent();
   const { typeId } = params;
   const type = collectibles.find(t => t.id === typeId);

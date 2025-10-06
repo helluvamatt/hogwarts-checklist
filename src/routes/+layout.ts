@@ -1,7 +1,7 @@
-import type { LayoutServerLoad } from './$types';
+import type { LayoutLoad } from './$types';
 import { getCollectiblesAsync, getLocationsAsync } from '$lib';
 
-export const load: LayoutServerLoad = async () => {
+export const load: LayoutLoad = async () => {
   const collectibles = await getCollectiblesAsync();
   const locations = await getLocationsAsync();
   return { collectibles, locations };

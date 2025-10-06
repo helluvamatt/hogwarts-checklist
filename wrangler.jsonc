@@ -1,0 +1,8 @@
+{
+	"name": "hogwarts-checklist",
+	"compatibility_date": "2025-10-01",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "build/"
+	}
+}
