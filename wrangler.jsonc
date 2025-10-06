@@ -5,6 +5,7 @@
   "assets": {
     //"binding": "ASSETS",
 		//"directory": ".svelte-kit/cloudflare",
-    "directory": "./build/"
+    "directory": "./build/",
+    "not_found_handling": "single-page-application"
   }
 }

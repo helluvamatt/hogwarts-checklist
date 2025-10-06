@@ -1,5 +1,13 @@
 {
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
-  }
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/wrangler.jsonc"
+      ],
+      "url": "./node_modules/wrangler/config-schema.json"
+    }
+  ]
 }
