@@ -12,6 +12,11 @@ declare global {
     // interface PageState {}
     // interface Platform {}
   }
+
+  declare const APP_AUTHOR: string;
+  declare const APP_VERSION: string;
+  declare const APP_BUGS_URL: string;
+  declare const APP_REPOSITORY_URL: string;
 }
 
 export {};

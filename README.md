@@ -2,6 +2,8 @@
 
 A mobile-first web application for tracking collectibles in Hogwarts Legacy, built with SvelteKit and TypeScript.
 
+[Hogwarts Checklist](https://hogwarts.schneenet.com)
+
 ## Features
 
 - 📋 **Collectible Tracking**: Track various collectible types from Hogwarts Legacy

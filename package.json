@@ -3,6 +3,18 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Matt Schneeberger",
+    "email": "matt@schneenet.com"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/helluvamatt/hogwarts-checklist"
+  },
+  "bugs": {
+    "url": "https://github.com/helluvamatt/hogwarts-checklist/issues"
+  },
   "scripts": {
     "start": "vite dev",
     "dev": "vite dev",
