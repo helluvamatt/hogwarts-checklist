@@ -137,9 +137,9 @@
   <title>Profile | Hogwarts Checklist</title>
 </svelte:head>
 
-<main class="flex-1 container mx-auto my-4">
-  <div class="space-y-2 lg:space-y-4">
-    <div class="flex flex-row items-center gap-4 mb-2 lg:mb-4">
+<main class="flex-1 container mx-auto p-4">
+  <div class="space-y-4">
+    <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
       <h1 class="flex-1">Profile</h1>
       {#if playerState.profile}
         <button type="button" class="btn btn-primary" onclick={exportProfile}>
@@ -147,13 +147,11 @@
           Export
         </button>
       {/if}
-      <div>
-        <button type="button" class="btn btn-secondary" onclick={() => importInput.click()}>
-          <Import class="size-4" />
-          Import
-        </button>
-        <input type="file" bind:this={importInput} accept=".json" class="hidden" onchange={importProfile} />
-      </div>
+      <button type="button" class="btn btn-secondary" onclick={() => importInput.click()}>
+        <Import class="size-4" />
+        Import
+      </button>
+      <input type="file" bind:this={importInput} accept=".json" class="hidden" onchange={importProfile} />
     </div>
 
     {#if generalError}

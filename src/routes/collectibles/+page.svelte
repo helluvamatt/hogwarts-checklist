@@ -6,9 +6,9 @@
   const { collectibles } = data;
 </script>
 
-<main class="flex-1 container mx-auto my-4">
-  <h1 class="mb-2 lg:mb-4">Collectibles</h1>
-  <div class="list space-y-2 lg:space-y-4">
+<main class="flex-1 container mx-auto p-4">
+  <h1 class="mb-4">Collectibles</h1>
+  <div class="list space-y-4">
     {#each collectibles as type (type.id)}
       <a href={resolve('/collectibles/[typeId]', { typeId: type.id })} class="list-row bg-base-200 transition-colors hover:bg-base-300">
         <div>

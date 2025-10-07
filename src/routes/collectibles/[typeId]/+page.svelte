@@ -181,15 +181,15 @@
   }
 </script>
 
-<div class="container mx-auto flex-grow p-2 lg:p-4">
-  <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-2 mb-2 lg:mb-4">
+<div class="container mx-auto flex-grow p-4">
+  <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-4">
     <div class="flex flex-row items-center gap-2">
       {#if type.icon}
         <div aria-label={type.name} class="mask size-12 bg-base-content" style={`mask-image: url('${type.icon}')`}></div>
       {/if}
       <h1>{type.name}</h1>
     </div>
-    <div class="flex flex-row items-center gap-2">
+    <div class="flex flex-row items-center gap-4">
       <select class="select w-full lg:max-w-3xs" bind:value={() => filterBy, v => setFilterBy(v)} aria-label="Filter items by">
         <option value="not_collected">Not Collected</option>
         <option value="collected">Collected</option>
@@ -202,46 +202,45 @@
       </select>
     </div>
   </div>
-  <div class="flex flex-row items-start gap-2 lg:gap-4 relative">
+  <div class="flex flex-col lg:flex-row items-start gap-4 relative">
     {#if groupedItems.filter(g => g.hasItems || g.showIfEmpty || g.subgroups?.filter(sg => sg.hasItems || sg.showIfEmpty)?.length).length > 1}
-      <aside class="hidden lg:block w-64 shrink-0 sticky top-2 lg:top-4 left-0 space-y-2 lg:space-y-4">
-        <div class="bg-base-200 rounded-box">
-          <ul class="menu w-full">
-            {#each groupedItems as group (group.id)}
-              {#if group.hasItems || group.showIfEmpty}
-                <li>
-                  <a href="#{group.id}" class="flex flex-row items-center gap-2" class:menu-active={group.id === activeId}>
-                    {#if group.icon}
-                      <div aria-label={group.name} class="mask size-16 bg-base-content" style={`mask-image: url('${group.icon}')`}></div>
-                    {/if}
-                    {#if group.name}
-                      <div>{group.name}</div>
-                    {/if}
-                  </a>
-                  {#if group.subgroups && group.subgroups.length > 0}
-                    <ul>
-                      {#each group.subgroups as subgroup (subgroup.id)}
-                        {#if subgroup.hasItems || subgroup.showIfEmpty}
-                          {@const id = `${group.id}/${subgroup.id}`}
-                          <li>
-                            <a href="#{id}" class="flex flex-row items-center gap-2" class:menu-active={id === activeId}>
-                              {#if subgroup.icon}
-                                <div aria-label={subgroup.name} class="mask size-16 bg-base-content" style={`mask-image: url('${subgroup.icon}')`}></div>
-                              {/if}
-                              {#if subgroup.name}
-                                <div>{subgroup.name}</div>
-                              {/if}
-                            </a>
-                          </li>
-                        {/if}
-                      {/each}
-                    </ul>
+      <aside class="w-64 shrink-0 lg:sticky lg:top-4 lg:left-0 space-y-4">
+        <ul class="menu w-full bg-base-200 rounded-box">
+          <li class="menu-title">Jump to:</li>
+          {#each groupedItems as group (group.id)}
+            {#if group.hasItems || group.showIfEmpty}
+              <li>
+                <a href="#{group.id}" class="flex flex-row items-center gap-2" class:menu-active={group.id === activeId}>
+                  {#if group.icon}
+                    <div aria-label={group.name} class="mask size-16 bg-base-content" style={`mask-image: url('${group.icon}')`}></div>
                   {/if}
-                </li>
-              {/if}
-            {/each}
-          </ul>
-        </div>
+                  {#if group.name}
+                    <div>{group.name}</div>
+                  {/if}
+                </a>
+                {#if group.subgroups && group.subgroups.length > 0}
+                  <ul>
+                    {#each group.subgroups as subgroup (subgroup.id)}
+                      {#if subgroup.hasItems || subgroup.showIfEmpty}
+                        {@const id = `${group.id}/${subgroup.id}`}
+                        <li>
+                          <a href="#{id}" class="flex flex-row items-center gap-2" class:menu-active={id === activeId}>
+                            {#if subgroup.icon}
+                              <div aria-label={subgroup.name} class="mask size-16 bg-base-content" style={`mask-image: url('${subgroup.icon}')`}></div>
+                            {/if}
+                            {#if subgroup.name}
+                              <div>{subgroup.name}</div>
+                            {/if}
+                          </a>
+                        </li>
+                      {/if}
+                    {/each}
+                  </ul>
+                {/if}
+              </li>
+            {/if}
+          {/each}
+        </ul>
       </aside>
     {/if}
     <main class="flex-grow">

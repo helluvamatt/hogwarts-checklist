@@ -88,22 +88,22 @@
   }
 </script>
 
-<div class="container mx-auto flex-grow flex flex-row items-start p-2 gap-2 lg:p-4 lg:gap-4 relative">
-  <aside class="hidden lg:block w-64 shrink-0 sticky top-2 lg:top-4 left-0 space-y-2 lg:space-y-4">
+<div class="container mx-auto flex-grow flex flex-col lg:flex-row lg:items-start p-4 gap-4 relative">
+  <aside class="w-64 mx-auto shrink-0 lg:sticky lg:top-4 lg:left-0 space-y-4">
     <ProfileCard profile={playerState.profile} />
   </aside>
-  <main class="flex-grow space-y-2 lg:space-y-4">
-    <div class="stats shadow bg-base-200">
+  <main class="flex-grow space-y-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 mx-auto gap-4">
       {#each progress as entry(entry.id)}
         {@const percentage = entry.playerItemCount / entry.totalItemCount * 100}
-        <div class="stat">
+        <div class="stat shadow bg-base-200 rounded-box" style="border: none;">
           <div class="stat-title">{entry.label}</div>
           <div class="stat-value {getCompletionTextClass(percentage)}">{percentage.toFixed(0)}%</div>
           <div class="stat-desc">{entry.playerItemCount} of {entry.totalItemCount} collected</div>
         </div>
       {/each}
     </div>
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {#each collectibles as type (type.id)}
         <a href={resolve('/collectibles/[typeId]', { typeId: type.id })} class="card card-xs md:card-sm bg-base-200 transition-colors hover:bg-base-300">
           <div class="card-body">

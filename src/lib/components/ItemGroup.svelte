@@ -49,6 +49,15 @@
     {/if}
     {#if group.playerItemCount !== undefined}
       {@const percentage = group.playerItemCount / group.totalItemCount * 100}
+      <div class="hidden lg:block badge {getCompletionBadgeClass(percentage)}">{percentage.toFixed(0)}%</div>
+      <div class="hidden lg:block badge badge-secondary">{group.playerItemCount} of {group.totalItemCount} collected</div>
+    {:else}
+      <div class="hidden lg:block badge badge-secondary">{group.totalItemCount} items</div>
+    {/if}
+  </div>
+  <div class="lg:hidden mb-6">
+    {#if group.playerItemCount !== undefined}
+      {@const percentage = group.playerItemCount / group.totalItemCount * 100}
       <div class="badge {getCompletionBadgeClass(percentage)}">{percentage.toFixed(0)}%</div>
       <div class="badge badge-secondary">{group.playerItemCount} of {group.totalItemCount} collected</div>
     {:else}
@@ -56,7 +65,7 @@
     {/if}
   </div>
   {#if group.description}
-    <div class="prose mb-6 lg:mb-8">{@html marked(group.description)}</div>
+    <div class="prose mb-6">{@html marked(group.description)}</div>
   {/if}
   {#if !group.hasItems}
     <p class="text-base-content/50 italic">No items here.</p>

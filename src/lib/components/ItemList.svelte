@@ -33,7 +33,7 @@
   }
 </script>
 
-<div class="list space-y-2 lg:space-y-4">
+<div class="list space-y-4">
   {#each items as item (item.id)}
     <label class="list-row bg-base-200 hover:bg-base-300 rounded-box shadow-md">
       <input type="checkbox" checked={isItemCollected(item.type.id, item.id)} onchange={(e) => toggleItemCollection(item.type.id, item.id, e.currentTarget.checked)} class="checkbox checkbox-primary checkbox-lg" />
